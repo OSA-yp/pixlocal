@@ -39,7 +39,7 @@ flowchart LR
 - [ ] Аккаунт [Vercel](https://vercel.com) (рекомендуемый путь для Next.js)
 - [ ] Импорт репозитория / загрузка проекта, **Root Directory = `web`**
 - [ ] Environment Variable: `NEXT_PUBLIC_SITE_URL=https://pixlocal.ru`
-- [ ] Production Deploy успешен
+- [ ] Production Deploy успешен (Next.js **≥ 15.5.25** на `main`; если Vercel предложит свой PR на апгрейд — **закройте его**, источник правды уже `main`)
 - [ ] Project → Domains → добавить `pixlocal.ru` и `www.pixlocal.ru` (www → redirect на apex)
 - [ ] В Cloudflare DNS: записи по подсказке Vercel (обычно CNAME/`A` на Vercel; прокси Cloudflare можно оставить DNS-only серым облаком на старте или orange — оба варианта ок при корректных записях)
 - [ ] Открыть `https://pixlocal.ru` — сайт ПиксЛокал, не statuspage nic.ru
