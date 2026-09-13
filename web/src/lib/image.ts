@@ -19,6 +19,7 @@ export type ProcessedFile = {
   blob: Blob;
   previewUrl: string;
   outputExt: string;
+  grew: boolean;
 };
 
 function extFor(type: OutputFormat) {
@@ -31,33 +32,35 @@ function baseName(name: string) {
   return name.replace(/\.[^.]+$/, "");
 }
 
+export function isHeicFile(file: File) {
+  const lower = file.name.toLowerCase();
+  return (
+    file.type === "image/heic" ||
+    file.type === "image/heif" ||
+    lower.endsWith(".heic") ||
+    lower.endsWith(".heif")
+  );
+}
+
 async function loadHeicAsBitmap(file: File): Promise<ImageBitmap> {
   const heic2any = (await import("heic2any")).default;
   const converted = await heic2any({
     blob: file,
     toType: "image/jpeg",
-    quality: 0.95,
+    quality: 0.82,
   });
   const blob = Array.isArray(converted) ? converted[0] : converted;
   return createImageBitmap(blob as Blob);
 }
 
 async function fileToBitmap(file: File): Promise<ImageBitmap> {
-  const lower = file.name.toLowerCase();
-  const isHeic =
-    file.type === "image/heic" ||
-    file.type === "image/heif" ||
-    lower.endsWith(".heic") ||
-    lower.endsWith(".heif");
-
-  if (isHeic) {
+  if (isHeicFile(file)) {
     return loadHeicAsBitmap(file);
   }
 
   try {
     return await createImageBitmap(file);
   } catch {
-    // fallback via object URL
     const url = URL.createObjectURL(file);
     try {
       const img = await new Promise<HTMLImageElement>((resolve, reject) => {
@@ -76,7 +79,7 @@ async function fileToBitmap(file: File): Promise<ImageBitmap> {
 function drawToCanvas(
   bitmap: ImageBitmap,
   maxSide?: number,
-): { canvas: HTMLCanvasElement; width: number; height: number } {
+): HTMLCanvasElement {
   let { width, height } = bitmap;
   if (maxSide && Math.max(width, height) > maxSide) {
     const scale = maxSide / Math.max(width, height);
@@ -93,7 +96,7 @@ function drawToCanvas(
     ctx.imageSmoothingQuality = "high";
   }
   ctx.drawImage(bitmap, 0, 0, width, height);
-  return { canvas, width, height };
+  return canvas;
 }
 
 function canvasToBlob(
@@ -131,23 +134,100 @@ async function encodeWithTarget(
   return blob;
 }
 
+function buildSideLadder(userMax?: number): (number | undefined)[] {
+  const sides: (number | undefined)[] = [];
+  const seen = new Set<number | "full">();
+  const push = (s: number | undefined) => {
+    const key = s === undefined ? "full" : s;
+    if (seen.has(key)) return;
+    seen.add(key);
+    sides.push(s);
+  };
+
+  if (userMax && userMax > 0) {
+    push(userMax);
+  } else {
+    push(undefined);
+  }
+  for (const s of [2560, 1920, 1600]) {
+    if (!userMax || userMax <= 0 || s < userMax) push(s);
+  }
+  return sides;
+}
+
+/**
+ * Encode and, for lossy formats / compress mode, keep lowering quality
+ * and long-side until the file is smaller than the original (or targetBytes).
+ */
+async function encodeUntilSmaller(
+  bitmap: ImageBitmap,
+  options: ToolOptions,
+  originalSize: number,
+): Promise<Blob> {
+  const type = options.outputType;
+  const chaseSmaller =
+    type !== "image/png" &&
+    (options.mode === "compress" ||
+      options.mode === "convert" ||
+      Boolean(options.targetBytes));
+
+  if (!chaseSmaller) {
+    const canvas = drawToCanvas(bitmap, options.maxWidthOrHeight);
+    return encodeWithTarget(
+      canvas,
+      type,
+      options.quality,
+      options.targetBytes,
+    );
+  }
+
+  const sides = buildSideLadder(options.maxWidthOrHeight);
+  let best: Blob | null = null;
+
+  for (const maxSide of sides) {
+    let q = options.quality;
+    const canvas = drawToCanvas(bitmap, maxSide);
+    let blob = await encodeWithTarget(canvas, type, q, options.targetBytes);
+    if (!best || blob.size < best.size) best = blob;
+
+    let guard = 0;
+    while (blob.size >= originalSize && q > 0.2 && guard < 12) {
+      q = Math.max(0.2, q - 0.08);
+      blob = await canvasToBlob(canvas, type, q);
+      if (blob.size < best.size) best = blob;
+      guard += 1;
+      if (options.targetBytes && blob.size <= options.targetBytes) {
+        return blob;
+      }
+      if (blob.size < originalSize) {
+        return blob;
+      }
+    }
+
+    if (options.targetBytes && blob.size <= options.targetBytes) {
+      return blob;
+    }
+    if (blob.size < originalSize) {
+      return blob;
+    }
+  }
+
+  return best!;
+}
+
 export async function processImageFile(
   file: File,
   options: ToolOptions,
 ): Promise<ProcessedFile> {
+  const quality = isHeicFile(file)
+    ? Math.min(options.quality, 0.8)
+    : options.quality;
   const bitmap = await fileToBitmap(file);
   try {
-    const maxSide =
-      options.mode === "resize"
-        ? options.maxWidthOrHeight
-        : options.maxWidthOrHeight;
-
-    const { canvas } = drawToCanvas(bitmap, maxSide);
-    const blob = await encodeWithTarget(
-      canvas,
-      options.outputType,
-      options.quality,
-      options.targetBytes,
+    const blob = await encodeUntilSmaller(
+      bitmap,
+      { ...options, quality },
+      file.size,
     );
     const ext = extFor(options.outputType);
     const name = `${baseName(file.name)}.${ext}`;
@@ -160,6 +240,7 @@ export async function processImageFile(
       blob,
       previewUrl: URL.createObjectURL(blob),
       outputExt: ext,
+      grew: blob.size > file.size,
     };
   } finally {
     bitmap.close();
@@ -174,5 +255,22 @@ export function formatBytes(n: number) {
 
 export function savingsPercent(original: number, result: number) {
   if (original <= 0) return 0;
-  return Math.max(0, Math.round((1 - result / original) * 100));
+  return Math.round((1 - result / original) * 100);
+}
+
+export function canShareFiles() {
+  if (typeof navigator === "undefined" || typeof File === "undefined") {
+    return false;
+  }
+  try {
+    return (
+      typeof navigator.share === "function" &&
+      (!navigator.canShare ||
+        navigator.canShare({
+          files: [new File([new Blob(["x"])], "t.jpg", { type: "image/jpeg" })],
+        }))
+    );
+  } catch {
+    return typeof navigator.share === "function";
+  }
 }

@@ -30,8 +30,12 @@ export const toolDefs: Record<string, Def> = {
         a: "При перекодировании через canvas часть EXIF может быть потеряна. Для архива важных снимков держите оригинал HEIC.",
       },
       {
+        q: "Почему JPG иногда больше HEIC?",
+        a: "HEIC эффективнее JPEG. Мы автоматически снижаем качество и ограничиваем сторону (по умолчанию 2560 px), чтобы файл стал легче. Уменьшите качество или макс. сторону при необходимости.",
+      },
+      {
         q: "Можно ли несколько файлов сразу?",
-        a: "Да, выберите пачку HEIC и скачайте ZIP с JPG.",
+        a: "Да, выберите пачку HEIC и скачайте ZIP с JPG или поделитесь отдельными кадрами в «Фото» через «Поделиться».",
       },
     ],
     preset: {
@@ -41,7 +45,8 @@ export const toolDefs: Record<string, Def> = {
       accept: ".heic,.heif,image/heic,image/heif,image/*",
       defaultOutput: "image/jpeg",
       lockOutput: true,
-      defaultQuality: 0.9,
+      defaultQuality: 0.75,
+      defaultMaxSide: 2560,
     },
   },
   "webp-v-jpg": {
@@ -67,7 +72,8 @@ export const toolDefs: Record<string, Def> = {
       accept: "image/webp,.webp",
       defaultOutput: "image/jpeg",
       lockOutput: true,
-      defaultQuality: 0.9,
+      defaultQuality: 0.8,
+      defaultMaxSide: 2560,
     },
   },
   "png-v-jpg": {
@@ -93,7 +99,8 @@ export const toolDefs: Record<string, Def> = {
       accept: "image/png,.png",
       defaultOutput: "image/jpeg",
       lockOutput: true,
-      defaultQuality: 0.85,
+      defaultQuality: 0.8,
+      defaultMaxSide: 2560,
     },
   },
   "jpg-v-png": {

@@ -25,12 +25,9 @@ npm run dev
 5. Вебмастер + GSC + sitemap; Метрика/GA4 в env.
 6. После трафика — РСЯ/AdSense, затем `NEXT_PUBLIC_ADS_ENABLED=true`.
 
-## Структура
+## Лицензии
 
-- `src/components/ImageTool.tsx` — инструмент
-- `src/lib/image.ts` — локальная обработка
-- `src/lib/tools.ts` — SEO-посадочные
-- `src/app/*/page.tsx` — страницы кластера
+См. [LICENSES.md](./LICENSES.md) — Canvas API, heic2any/libheif (LGPL-3.0), jszip (MIT).
 
 ## Монетизация и итерации
 

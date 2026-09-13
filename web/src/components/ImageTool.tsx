@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
 import {
+  canShareFiles,
   formatBytes,
   processImageFile,
   savingsPercent,
@@ -38,6 +39,11 @@ export function ImageTool({ preset }: Props) {
   const [maxSide, setMaxSide] = useState(preset.defaultMaxSide ?? 0);
   const [targetKb, setTargetKb] = useState(preset.defaultTargetKb ?? 0);
   const [outputType, setOutputType] = useState<OutputFormat>(preset.defaultOutput);
+  const [shareOk, setShareOk] = useState(false);
+
+  useEffect(() => {
+    setShareOk(canShareFiles());
+  }, []);
 
   const totals = useMemo(() => {
     const original = items.reduce((s, i) => s + i.originalSize, 0);
@@ -93,6 +99,25 @@ export function ImageTool({ preset }: Props) {
     a.href = item.previewUrl;
     a.download = item.name;
     a.click();
+  };
+
+  const shareOne = async (item: ProcessedFile) => {
+    try {
+      const file = new File([item.blob], item.name, {
+        type: item.blob.type || "image/jpeg",
+      });
+      if (!navigator.share) {
+        downloadOne(item);
+        return;
+      }
+      await navigator.share({
+        files: [file],
+        title: item.name,
+      });
+    } catch (e) {
+      if (e instanceof Error && e.name === "AbortError") return;
+      downloadOne(item);
+    }
   };
 
   const downloadZip = async () => {
@@ -182,7 +207,7 @@ export function ImageTool({ preset }: Props) {
             ) : null}
 
             <label className="block text-sm text-[var(--ink-soft)]">
-              Макс. сторона (px), 0 = без изменения
+              Макс. сторона (px), 0 = без ограничения
               <input
                 type="number"
                 min={0}
@@ -225,56 +250,85 @@ export function ImageTool({ preset }: Props) {
 
         {items.length > 0 ? (
           <div className="mt-8 space-y-4">
-            <div className="flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <p className="text-sm text-[var(--ink-soft)]">Итого</p>
-                <p className="text-lg text-[var(--ink)]">
-                  {formatBytes(totals.original)} → {formatBytes(totals.result)}
-                  {totals.saved > 0 ? (
-                    <span className="ml-2 text-[var(--brand)]">−{totals.saved}%</span>
-                  ) : null}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => void downloadZip()}
-                className="rounded-full bg-[var(--ink)] px-5 py-2.5 text-sm font-medium text-white"
-              >
-                Скачать всё ZIP
-              </button>
+            <div>
+              <p className="text-sm text-[var(--ink-soft)]">Итого</p>
+              <p className="text-lg text-[var(--ink)]">
+                {formatBytes(totals.original)} → {formatBytes(totals.result)}
+                {totals.saved > 0 ? (
+                  <span className="ml-2 text-[var(--brand)]">−{totals.saved}%</span>
+                ) : totals.saved < 0 ? (
+                  <span className="ml-2 text-[var(--brand-hot)]">
+                    +{Math.abs(totals.saved)}%
+                  </span>
+                ) : null}
+              </p>
             </div>
 
+            {shareOk ? (
+              <p className="text-xs text-[var(--ink-soft)]">
+                На iPhone: «Поделиться» → «Сохранить изображение», чтобы фото попало
+                в галерею. «Скачать» обычно сохраняет в «Файлы».
+              </p>
+            ) : null}
+
             <ul className="grid gap-3 sm:grid-cols-2">
-              {items.map((item) => (
-                <li
-                  key={item.id}
-                  className="flex gap-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item.previewUrl}
-                    alt={item.name}
-                    className="h-20 w-20 rounded-xl object-cover"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-medium">{item.name}</p>
-                    <p className="mt-1 text-xs text-[var(--ink-soft)]">
-                      {formatBytes(item.originalSize)} → {formatBytes(item.resultSize)}
-                      {savingsPercent(item.originalSize, item.resultSize) > 0
-                        ? ` (−${savingsPercent(item.originalSize, item.resultSize)}%)`
-                        : ""}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => downloadOne(item)}
-                      className="mt-2 text-sm text-[var(--brand)] underline-offset-2 hover:underline"
-                    >
-                      Скачать
-                    </button>
-                  </div>
-                </li>
-              ))}
+              {items.map((item) => {
+                const pct = savingsPercent(item.originalSize, item.resultSize);
+                return (
+                  <li
+                    key={item.id}
+                    className="flex gap-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.previewUrl}
+                      alt={item.name}
+                      className="h-20 w-20 rounded-xl object-cover"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium">{item.name}</p>
+                      <p className="mt-1 text-xs text-[var(--ink-soft)]">
+                        {formatBytes(item.originalSize)} →{" "}
+                        {formatBytes(item.resultSize)}
+                        {pct > 0 ? ` (−${pct}%)` : pct < 0 ? ` (+${Math.abs(pct)}%)` : ""}
+                      </p>
+                      {item.grew ? (
+                        <p className="mt-1 text-xs text-[var(--brand-hot)]">
+                          Стал больше — снизьте качество или макс. сторону и
+                          пересчитайте.
+                        </p>
+                      ) : null}
+                      <div className="mt-2 flex flex-wrap gap-3">
+                        {shareOk ? (
+                          <button
+                            type="button"
+                            onClick={() => void shareOne(item)}
+                            className="text-sm font-medium text-[var(--brand)] underline-offset-2 hover:underline"
+                          >
+                            Поделиться
+                          </button>
+                        ) : null}
+                        <button
+                          type="button"
+                          onClick={() => downloadOne(item)}
+                          className="text-sm text-[var(--ink-soft)] underline-offset-2 hover:underline"
+                        >
+                          Скачать
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
+
+            <button
+              type="button"
+              onClick={() => void downloadZip()}
+              className="w-full rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-medium text-white"
+            >
+              Скачать всё ZIP
+            </button>
           </div>
         ) : null}
       </div>

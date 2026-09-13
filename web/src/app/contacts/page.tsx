@@ -16,20 +16,14 @@ export default function ContactsPage() {
         Контакты
       </h1>
       <div className="mt-6 space-y-4 text-[var(--ink-soft)] leading-relaxed">
-        <p>
-          По вопросам работы сервиса, конфиденциальности и партнёрств напишите:
-        </p>
+        <p>По вопросам сервиса напишите:</p>
         <p>
           <a
             className="text-[var(--brand)] underline-offset-2 hover:underline"
-            href="mailto:hello@pixlocal.ru"
+            href="mailto:wasp777@mail.ru"
           >
-            hello@pixlocal.ru
+            wasp777@mail.ru
           </a>
-        </p>
-        <p className="text-sm">
-          Письма принимаются после настройки Email Routing в Cloudflare (см.
-          план запуска).
         </p>
       </div>
     </article>
