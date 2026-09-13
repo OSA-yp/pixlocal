@@ -1,0 +1,31 @@
+{
+  "probed_at": "2026-09-13",
+  "updated_at": "2026-09-13",
+  "chosen_domain": "pixlocal.ru",
+  "status": "registered",
+  "registrar_dns_at_purchase": [
+    "statuspage1.nic.ru",
+    "statuspage2.nic.ru"
+  ],
+  "next_step": "Point NS to Cloudflare, then attach domain on Vercel",
+  "method": "Owner confirmed purchase; DNS was nic.ru statuspage placeholders",
+  "priority_buy_order": [
+    "pixlocal.ru"
+  ],
+  "shortlist_archive": {
+    "pixlocal.ru": "registered_ours",
+    "localpix.ru": "no_dns_unused",
+    "pixlok.ru": "no_dns_unused",
+    "lokpix.ru": "no_dns_unused",
+    "localimg.ru": "no_dns_unused",
+    "imglocal.ru": "no_dns_unused",
+    "pixzip.ru": "no_dns_unused",
+    "pixpress.ru": "no_dns_unused",
+    "pixloco.ru": "no_dns_unused",
+    "pixhome.ru": "no_dns_unused",
+    "pixneat.ru": "no_dns_unused",
+    "browserpix.ru": "no_dns_unused",
+    "pixli.ru": "resolves_skip",
+    "pixcraft.ru": "resolves_skip"
+  }
+}

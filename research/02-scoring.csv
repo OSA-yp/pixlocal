@@ -1,0 +1,13 @@
+niche,demand_1_5,competition_1_5,mvp_complexity_1_5,monetization_1_5,ai_resist_1_5,legal_ok,score,notes
+compress_image_privacy,5,4,2,5,5,1,3.90,"Сжать фото/картинку/изображение; щель = обработка в браузере vs TinyPNG/iLoveIMG"
+heic_to_jpg,4,3,2,4,5,1,3.80,"iPhone→Windows/формы; много слабых облачных клонов; libheif в браузере"
+webp_convert,3,3,1,4,5,1,3.65,"WebP↔JPG/PNG; нативный canvas; хвост к compress"
+png_jpg,3,3,1,4,5,1,3.65,"Классика конвертации; входит в хаб"
+compress_pdf,5,5,4,5,5,1,3.35,"Огромный спрос; топ занят iLovePDF/Smallpdf; MVP тяжелее"
+remove_bg,4,5,5,5,4,1,2.85,"Нужен AI/модель; remove.bg и аналоги"
+password_gen,3,4,1,2,2,1,2.65,"AI-выдача легко закрывает; низкий RPM"
+char_counter,3,3,1,2,1,1,2.50,"Zero-click / Алиса риск высокий"
+qr_gen,3,4,1,3,3,1,2.80,"Насыщено; средняя монетизация"
+bmi_calc,3,4,1,2,1,0.5,2.35,"Мед. осторожность + AI отвечает формулой"
+merge_pdf,4,5,3,4,5,1,3.20,"Сильные бренды в топе"
+translit,2,3,1,2,2,1,2.45,"Слабый CPM/engagement"

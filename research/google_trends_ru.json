@@ -1,0 +1,38 @@
+{
+  "сжать фото": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "сжать пдф": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "удалить фон": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "heic в jpg": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "webp в jpg": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "генератор паролей": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "подсчет символов": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "объединить pdf": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "qr код": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "транслит": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "калькулятор имт": {
+    "error": "HTTP Error 429: unknown"
+  },
+  "png в jpg": {
+    "error": "HTTP Error 429: unknown"
+  }
+}
