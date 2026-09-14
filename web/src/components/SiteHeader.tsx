@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/", label: "Сжать" },
   { href: "/heic-v-jpg", label: "HEIC→JPG" },
+  { href: "/szhat-do-100kb", label: "100 КБ" },
+  { href: "/szhat-jpg", label: "Сжать JPG" },
   { href: "/webp-v-jpg", label: "WebP→JPG" },
-  { href: "/png-v-jpg", label: "PNG→JPG" },
-  { href: "/izmenit-razmer", label: "Размер" },
 ];
 
 export function SiteHeader() {

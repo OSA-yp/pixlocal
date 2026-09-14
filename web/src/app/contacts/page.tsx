@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Контакты",
@@ -7,6 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function ContactsPage() {
+  const email = siteConfig.contactEmail;
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
       <h1
@@ -20,9 +23,9 @@ export default function ContactsPage() {
         <p>
           <a
             className="text-[var(--brand)] underline-offset-2 hover:underline"
-            href="mailto:wasp777@mail.ru"
+            href={`mailto:${email}`}
           >
-            wasp777@mail.ru
+            {email}
           </a>
         </p>
       </div>

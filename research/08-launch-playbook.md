@@ -22,72 +22,61 @@ flowchart LR
 
 - [x] Куплен **pixlocal.ru** на 1 год
 - [x] SSL GlobalSign у регистратора **не** покупали (HTTPS даст Vercel/Cloudflare)
-- [ ] Сменить DNS с заглушки nic.ru на Cloudflare (сейчас стоят `statuspage1.nic.ru` / `statuspage2.nic.ru` — это временная страница регистратора, не сайт)
-
-**Что сделать в кабинете NIC.RU / REG.RU:**
-
-1. Зарегистрироваться на [Cloudflare](https://dash.cloudflare.com) → Add site → `pixlocal.ru` (тариф Free).
-2. Cloudflare покажет два NS вида `*.ns.cloudflare.com`.
-3. В панели домена заменить DNS-серверы с `statuspage1/2.nic.ru` на NS от Cloudflare.
-4. Дождаться «Active» в Cloudflare (часто от минут до суток).
-5. Отдельный платный SSL у регистратора не нужен.
+- [x] Сайт открывается на `https://pixlocal.ru` (не statuspage nic.ru)
 
 ---
 
 ## Фаза 1 — деплой сайта
 
-- [ ] Аккаунт [Vercel](https://vercel.com) (рекомендуемый путь для Next.js)
-- [ ] Импорт репозитория / загрузка проекта, **Root Directory = `web`**
-- [ ] Environment Variable: `NEXT_PUBLIC_SITE_URL=https://pixlocal.ru`
-- [ ] Production Deploy успешен (Next.js **≥ 15.5.25** на `main`; если Vercel предложит свой PR на апгрейд — **закройте его**, источник правды уже `main`)
-- [ ] Project → Domains → добавить `pixlocal.ru` и `www.pixlocal.ru` (www → redirect на apex)
-- [ ] В Cloudflare DNS: записи по подсказке Vercel (обычно CNAME/`A` на Vercel; прокси Cloudflare можно оставить DNS-only серым облаком на старте или orange — оба варианта ок при корректных записях)
-- [ ] Открыть `https://pixlocal.ru` — сайт ПиксЛокал, не statuspage nic.ru
-- [ ] Проверить `https://pixlocal.ru/sitemap.xml` и `/heic-v-jpg`
+- [x] Сайт в проде: [https://pixlocal.ru](https://pixlocal.ru), sitemap: [https://pixlocal.ru/sitemap.xml](https://pixlocal.ru/sitemap.xml)
 
 **Запрещено:** аренда VPS, API загрузки файлов, свой GlobalSign «вместо» CDN.
-
-Альтернатива: Cloudflare Pages вместо Vercel — см. [07 §4](07-economics-and-domains.md).
 
 ---
 
 ## Фаза 2 — почта и юридические страницы
 
 - [ ] Cloudflare → Email Routing: `hello@pixlocal.ru` → ваш личный ящик
-- [ ] На сайте контакты уже `hello@pixlocal.ru` ([`/contacts`](../web/src/app/contacts/page.tsx))
+- [x] На сайте контакты `hello@pixlocal.ru` ([`/contacts`](../web/src/app/contacts/page.tsx))
 - [ ] Написать тестовое письмо на `hello@…` и убедиться, что доходит
-- [ ] Перечитать `/privacy` и `/terms` под боевой домен
+- [x] `/privacy` упоминает Метрику и события выбора файлов / скачивания / ZIP
 
 ---
 
-## Фаза 3 — день 0: поиск и аналитика
+## Фаза 3 — поиск и аналитика (код готов, кабинеты — вручную)
 
-- [ ] [Яндекс.Вебмастер](https://webmaster.yandex.ru) — добавить `https://pixlocal.ru`, подтвердить, отправить sitemap
+Код: счётчик в [`Analytics.tsx`](../web/src/components/Analytics.tsx), цели в [`track.ts`](../web/src/lib/track.ts), favicon/OG, verification-мета из env.
+
+Пошагово: [06-iterate.md](06-iterate.md) (день 0).
+
+- [ ] Счётчик [Метрики](https://metrika.yandex.ru), вебвизор + карта кликов
+- [ ] Цели JavaScript-событие: `file_select`, `download`, `zip_download`
+- [ ] [Яндекс.Вебмастер](https://webmaster.yandex.ru) — подтвердить, sitemap, обход `/`, `/heic-v-jpg`, `/szhat-jpg`, `/szhat-do-100kb`, `/webp-v-jpg`
 - [ ] [Google Search Console](https://search.google.com/search-console) — то же
-- [ ] Создать счётчик [Метрики](https://metrika.yandex.ru); цели: выбор файлов / скачивание / ZIP (по событиям позже)
-- [ ] По желанию GA4
-- [ ] В Vercel env: `NEXT_PUBLIC_YM_ID=…`, при необходимости `NEXT_PUBLIC_GA4_ID=…` → Redeploy
+- [ ] Env на хостинге: `NEXT_PUBLIC_YM_ID=…` (опционально `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_YANDEX_VERIFICATION`, `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`) → **Redeploy**
+- [ ] Проверка: Network `mc.yandex.ru`; тестовое сжатие бьёт `download`
 - [ ] `NEXT_PUBLIC_ADS_ENABLED` оставить `false`
 
 ---
 
 ## Фаза 4 — недели 1–2
 
+Чеклист и пятничный ритуал: [06-iterate.md](06-iterate.md).
+
 - [ ] Все ключевые URL в индексе / «ожидают» без ошибок обхода
 - [ ] Smoke: сжать JPG, HEIC→JPG, ZIP на мобильном
 - [ ] Вебвизор: где бросают dropzone
-- [ ] Сверка ядра в Wordstat (вручную) — [NICHE_DECISION.md](NICHE_DECISION.md)
+- [ ] Сверка ядра в Wordstat — [NICHE_DECISION.md](NICHE_DECISION.md)
 - [ ] Отчёт «Алиса AI» в Вебмастере — только мониторинг
-
-Детали: [06-iterate.md](06-iterate.md).
 
 ---
 
-## Фаза 5 — месяцы 1–2
+## Фаза 5 — месяцы 1–3 (органика)
 
-- [ ] Новые посадочные только под запросы из GSC / Метрики
-- [ ] Улучшения UX по факту поведения
-- [ ] Аккуратные упоминания (без спам-ссылок)
+- [ ] Пятница 15 мин: индекс, фразы, воронка визит → файл → скачать
+- [ ] Новые посадочные только под запросы из GSC / Вебмастера
+- [ ] Упоминания без спама: HEIC / 100 КБ / «файлы не уходят на сервер»
+- [ ] Не Директ, не каталоги, не блог без CTA
 
 ---
 
@@ -117,4 +106,4 @@ flowchart LR
 4. Работает `hello@pixlocal.ru`.  
 5. Реклама ещё выключена.
 
-**Следующий ваш шаг прямо сейчас:** фаза 0 — заменить NS `statuspage*.nic.ru` на Cloudflare, затем фаза 1 — Vercel.
+**Следующий ваш шаг прямо сейчас:** [06-iterate.md](06-iterate.md) — день 0: Метрика, Вебмастер, GSC, `NEXT_PUBLIC_YM_ID` и Redeploy.

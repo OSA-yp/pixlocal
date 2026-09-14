@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { OutputFormat } from "@/lib/image";
 import type { ToolPreset } from "@/components/ImageTool";
 
@@ -304,3 +305,18 @@ export const toolDefs: Record<string, Def> = {
     },
   },
 };
+
+export function pageMeta(def: Pick<Def, "title" | "description" | "path">): Metadata {
+  return {
+    title: def.title,
+    description: def.description,
+    alternates: { canonical: def.path },
+    openGraph: {
+      title: def.title,
+      description: def.description,
+      url: def.path,
+      locale: "ru_RU",
+      siteName: "ПиксЛокал",
+    },
+  };
+}

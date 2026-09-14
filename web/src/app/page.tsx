@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description:
     "Сжать изображение онлайн прямо в браузере: JPG, PNG, WebP. Без загрузки на сервер, пакетная обработка и ZIP.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Сжать фото онлайн бесплатно без регистрации",
+    description:
+      "Сжать изображение онлайн прямо в браузере: JPG, PNG, WebP. Без загрузки на сервер, пакетная обработка и ZIP.",
+    url: "/",
+    locale: "ru_RU",
+    siteName: "ПиксЛокал",
+  },
 };
 
 export default function HomePage() {

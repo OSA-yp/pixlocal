@@ -11,6 +11,7 @@ import {
   type ProcessMode,
   type ProcessedFile,
 } from "@/lib/image";
+import { TRACK_GOALS, track } from "@/lib/track";
 
 export type ToolPreset = {
   mode: ProcessMode;
@@ -52,7 +53,7 @@ export function ImageTool({ preset }: Props) {
   }, [items]);
 
   const runFiles = useCallback(
-    async (files: FileList | File[]) => {
+    async (files: FileList | File[], source: "select" | "recalc" = "select") => {
       const list = Array.from(files).filter(
         (f) => f.type.startsWith("image/") || /\.(heic|heif)$/i.test(f.name),
       );
@@ -79,6 +80,12 @@ export function ImageTool({ preset }: Props) {
           prev.forEach((p) => URL.revokeObjectURL(p.previewUrl));
           return next;
         });
+        if (source === "select") {
+          track(TRACK_GOALS.fileSelect, {
+            mode: preset.mode,
+            files: list.length,
+          });
+        }
       } catch (e) {
         setError(e instanceof Error ? e.message : "Ошибка обработки");
       } finally {
@@ -95,6 +102,7 @@ export function ImageTool({ preset }: Props) {
   };
 
   const downloadOne = (item: ProcessedFile) => {
+    track(TRACK_GOALS.download, { mode: preset.mode, method: "download" });
     const a = document.createElement("a");
     a.href = item.previewUrl;
     a.download = item.name;
@@ -114,6 +122,7 @@ export function ImageTool({ preset }: Props) {
         files: [file],
         title: item.name,
       });
+      track(TRACK_GOALS.download, { mode: preset.mode, method: "share" });
     } catch (e) {
       if (e instanceof Error && e.name === "AbortError") return;
       downloadOne(item);
@@ -131,6 +140,10 @@ export function ImageTool({ preset }: Props) {
     a.download = "pixlocal.zip";
     a.click();
     URL.revokeObjectURL(url);
+    track(TRACK_GOALS.zipDownload, {
+      mode: preset.mode,
+      files: items.length,
+    });
   };
 
   return (
@@ -233,7 +246,7 @@ export function ImageTool({ preset }: Props) {
             {items.length > 0 ? (
               <button
                 type="button"
-                onClick={() => void runFiles(sourceFiles.current)}
+                onClick={() => void runFiles(sourceFiles.current, "recalc")}
                 className="w-full rounded-xl border border-[var(--line)] bg-white/70 px-4 py-2 text-sm hover:bg-white"
                 disabled={busy}
               >

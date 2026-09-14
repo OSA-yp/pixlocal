@@ -3,6 +3,7 @@ import { Manrope, Unbounded } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { analyticsConfig, siteConfig } from "@/lib/config";
 import "./globals.css";
 
 const display = Unbounded({
@@ -17,7 +18,8 @@ const body = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixlocal.ru";
+const siteUrl = siteConfig.url;
+const { yandexVerification, googleVerification } = analyticsConfig;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -35,8 +37,22 @@ export const metadata: Metadata = {
     description:
       "Приватное сжатие и конвертация изображений без регистрации. HEIC, WebP, PNG, JPG.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "ПиксЛокал — сжать фото онлайн в браузере",
+    description:
+      "Приватное сжатие и конвертация изображений без регистрации. HEIC, WebP, PNG, JPG.",
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
+  ...(yandexVerification || googleVerification
+    ? {
+        verification: {
+          ...(yandexVerification ? { yandex: yandexVerification } : {}),
+          ...(googleVerification ? { google: googleVerification } : {}),
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({

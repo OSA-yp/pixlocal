@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import { ToolPage } from "@/components/ToolPage";
-import { toolDefs } from "@/lib/tools";
+import { pageMeta, toolDefs } from "@/lib/tools";
 
 const def = toolDefs["jpg-v-png"];
 
-export const metadata: Metadata = {
-  title: def.title,
-  description: def.description,
-  alternates: { canonical: def.path },
-};
+export const metadata: Metadata = pageMeta(def);
 
 export default function Page() {
   return (
