@@ -24,6 +24,7 @@ export const adsConfig = {
 export const analyticsConfig = {
   yandexMetrikaId: process.env.NEXT_PUBLIC_YM_ID || "112570778",
   ga4Id: process.env.NEXT_PUBLIC_GA4_ID ?? "",
-  yandexVerification: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION ?? "",
+  yandexVerification:
+    process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "75ecea8009b278fe",
   googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
 };
