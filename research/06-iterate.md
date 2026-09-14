@@ -32,6 +32,18 @@
    - `NEXT_PUBLIC_ADS_ENABLED` оставить `false`
 8. Production Redeploy. Проверка: DevTools → Network есть запрос на `mc.yandex.ru`; через 5–15 мин визит в Метрике. Тест: сжать фото → скачать — цель `download` должна сработать.
 
+После выкладки индексации:
+
+1. Ключ IndexNow: `https://pixlocal.ru/7f3a9c2e4b18d056a91c4e8f02b7d3c5.txt` должен отдавать ту же строку. Пинг: в каталоге `web/` выполнить `npm run indexnow`.
+2. [Яндекс.Вебмастер](https://webmaster.yandex.ru): регион **Россия**, sitemap принят, «Важные страницы» и **Переобход**:
+   - `https://pixlocal.ru/`
+   - `https://pixlocal.ru/heic-v-jpg`
+   - `https://pixlocal.ru/szhat-do-100kb`
+   - `https://pixlocal.ru/szhat-jpg`
+   - `https://pixlocal.ru/webp-v-jpg`
+3. [Google Search Console](https://search.google.com/search-console): sitemap + «Проверка URL → Запрос индексирования» по тем же пяти.
+4. Через 3–7 дней: `site:pixlocal.ru` в Яндексе и Google.
+
 Почта: Cloudflare Email Routing `hello@pixlocal.ru` → личный ящик, затем тестовое письмо. На сайте контакт уже `hello@pixlocal.ru`.
 
 ---

@@ -2,6 +2,7 @@ import { AdSlot } from "@/components/AdSlot";
 import { Faq } from "@/components/Faq";
 import { ImageTool, type ToolPreset } from "@/components/ImageTool";
 import { ToolLinks } from "@/components/ToolLinks";
+import { siteConfig } from "@/lib/config";
 
 type Props = {
   preset: ToolPreset;
@@ -24,11 +25,44 @@ export function ToolPage({ preset, h1, lead, body, faq, path }: Props) {
     inLanguage: "ru",
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement:
+      path === "/"
+        ? [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: siteConfig.name,
+              item: siteConfig.url,
+            },
+          ]
+        : [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Главная",
+              item: siteConfig.url,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: h1,
+              item: `${siteConfig.url}${path}`,
+            },
+          ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(appLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <section className="mx-auto max-w-6xl px-4 pb-8 pt-4 sm:px-6 sm:pt-8">
         <p className="animate-rise text-sm uppercase tracking-[0.2em] text-[var(--brand)]">

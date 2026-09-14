@@ -16,7 +16,7 @@ export function SiteHeader() {
 
   return (
     <header className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-5 sm:px-6">
-      <Link href="/" className="group flex items-baseline gap-2">
+      <Link href="/" prefetch={false} className="group flex items-baseline gap-2">
         <span
           className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-[var(--ink)] sm:text-3xl"
           style={{ fontFamily: "var(--font-display), serif" }}
@@ -34,6 +34,7 @@ export function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
+              prefetch={false}
               className={`rounded-full px-3 py-1.5 transition ${
                 active
                   ? "bg-[var(--brand)] text-white"

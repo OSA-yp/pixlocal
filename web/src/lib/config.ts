@@ -2,6 +2,9 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixlocal.ru",
   name: "ПиксЛокал",
   contactEmail: "hello@pixlocal.ru",
+  /** Дата смыслового обновления контента — для sitemap lastmod, не «сейчас». */
+  contentUpdated: "2026-09-14",
+  indexNowKey: "7f3a9c2e4b18d056a91c4e8f02b7d3c5",
 };
 
 /** Рекламные слоты. Включаются только после появления стабильного трафика. */

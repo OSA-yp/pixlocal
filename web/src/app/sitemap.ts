@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/config";
 import { toolDefs } from "@/lib/tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pixlocal.ru";
+const siteUrl = siteConfig.url;
+const lastModified = new Date(`${siteConfig.contentUpdated}T00:00:00.000Z`);
 
 function sitemapPriority(path: string): number {
   if (path === "") return 1;
@@ -21,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...toolRoutes].map((path) => ({
     url: `${siteUrl}${path}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: sitemapPriority(path),
   }));

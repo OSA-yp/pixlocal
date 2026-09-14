@@ -9,13 +9,15 @@ import "./globals.css";
 const display = Unbounded({
   subsets: ["latin", "cyrillic"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  weight: "600",
+  preload: true,
 });
 
 const body = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
+  preload: false,
 });
 
 const siteUrl = siteConfig.url;

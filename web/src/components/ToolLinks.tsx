@@ -31,6 +31,7 @@ export function ToolLinks({ exclude }: { exclude?: string }) {
             <li key={t.href}>
               <Link
                 href={t.href}
+                prefetch={false}
                 className="block rounded-2xl border border-[var(--line)] bg-white/50 px-4 py-4 transition hover:border-[var(--brand)]/40 hover:bg-white/80"
               >
                 <span className="font-medium text-[var(--ink)]">{t.title}</span>

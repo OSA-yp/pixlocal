@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import JSZip from "jszip";
 import {
   canShareFiles,
   formatBytes,
@@ -131,6 +130,7 @@ export function ImageTool({ preset }: Props) {
 
   const downloadZip = async () => {
     if (!items.length) return;
+    const { default: JSZip } = await import("jszip");
     const zip = new JSZip();
     items.forEach((item) => zip.file(item.name, item.blob));
     const blob = await zip.generateAsync({ type: "blob" });
