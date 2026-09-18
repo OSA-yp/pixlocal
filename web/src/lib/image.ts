@@ -42,15 +42,32 @@ export function isHeicFile(file: File) {
   );
 }
 
+function heicErrorMessage(err: unknown): string {
+  if (err instanceof Error && err.message) return err.message;
+  if (typeof err === "string" && err) return err;
+  if (err && typeof err === "object" && "message" in err) {
+    const msg = (err as { message: unknown }).message;
+    if (typeof msg === "string" && msg) return msg;
+  }
+  return "не удалось декодировать HEIC";
+}
+
 async function loadHeicAsBitmap(file: File): Promise<ImageBitmap> {
-  const heic2any = (await import("heic2any")).default;
-  const converted = await heic2any({
-    blob: file,
-    toType: "image/jpeg",
-    quality: 0.82,
-  });
-  const blob = Array.isArray(converted) ? converted[0] : converted;
-  return createImageBitmap(blob as Blob);
+  try {
+    return await createImageBitmap(file);
+  } catch {
+    // Chrome/Firefox: no native HEIC — fall through to WASM decoder
+  }
+
+  try {
+    const { heicTo } = await import("heic-to");
+    return await heicTo({
+      blob: file,
+      type: "bitmap",
+    });
+  } catch (err) {
+    throw new Error(`HEIC: ${heicErrorMessage(err)}`);
+  }
 }
 
 async function fileToBitmap(file: File): Promise<ImageBitmap> {

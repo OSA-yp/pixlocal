@@ -28,8 +28,19 @@ type Props = {
   preset: ToolPreset;
 };
 
+function formatProcessError(err: unknown): string {
+  if (err instanceof Error && err.message) return err.message;
+  if (typeof err === "string" && err) return err;
+  if (err && typeof err === "object" && "message" in err) {
+    const msg = (err as { message: unknown }).message;
+    if (typeof msg === "string" && msg) return msg;
+  }
+  return "Не удалось обработать файл";
+}
+
 export function ImageTool({ preset }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
   const sourceFiles = useRef<File[]>([]);
   const [dragging, setDragging] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -40,10 +51,20 @@ export function ImageTool({ preset }: Props) {
   const [targetKb, setTargetKb] = useState(preset.defaultTargetKb ?? 0);
   const [outputType, setOutputType] = useState<OutputFormat>(preset.defaultOutput);
   const [shareOk, setShareOk] = useState(false);
+  const scrollAfterSelect = useRef(false);
 
   useEffect(() => {
     setShareOk(canShareFiles());
   }, []);
+
+  useEffect(() => {
+    if (!scrollAfterSelect.current || items.length === 0) return;
+    scrollAfterSelect.current = false;
+    resultsRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [items]);
 
   const totals = useMemo(() => {
     const original = items.reduce((s, i) => s + i.originalSize, 0);
@@ -80,13 +101,14 @@ export function ImageTool({ preset }: Props) {
           return next;
         });
         if (source === "select") {
+          scrollAfterSelect.current = true;
           track(TRACK_GOALS.fileSelect, {
             mode: preset.mode,
             files: list.length,
           });
         }
       } catch (e) {
-        setError(e instanceof Error ? e.message : "Ошибка обработки");
+        setError(formatProcessError(e));
       } finally {
         setBusy(false);
       }
@@ -146,6 +168,8 @@ export function ImageTool({ preset }: Props) {
     });
   };
 
+  const hasResults = items.length > 0;
+
   return (
     <section className="mx-auto w-full max-w-6xl px-4 sm:px-6">
       <div
@@ -159,25 +183,62 @@ export function ImageTool({ preset }: Props) {
         onDragLeave={() => setDragging(false)}
         onDrop={onDrop}
       >
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+        {/*
+          Mobile order: picker → results → settings
+          Desktop: picker | settings, then results full-width
+        */}
+        <div className="flex flex-col gap-6 lg:flex-row lg:flex-wrap lg:items-start">
           <button
             type="button"
             onClick={() => inputRef.current?.click()}
-            className="group flex min-h-[220px] flex-1 flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-6 py-10 text-center transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)]"
+            className={
+              hasResults
+                ? "group order-1 flex w-full items-center justify-between gap-3 rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-4 py-3 text-left transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)] lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:px-6 lg:py-6 lg:text-center"
+                : "group order-1 flex min-h-[220px] w-full flex-1 flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-6 py-10 text-center transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)]"
+            }
           >
-            <span
-              className="text-2xl text-[var(--brand)] sm:text-3xl"
-              style={{ fontFamily: "var(--font-display), serif" }}
-            >
-              Перетащите фото сюда
-            </span>
-            <span className="mt-3 max-w-md text-sm text-[var(--ink-soft)]">
-              или нажмите, чтобы выбрать файлы. Обработка идёт на этом устройстве —
-              на сервер ничего не уходит.
-            </span>
-            <span className="mt-6 rounded-full bg-[var(--brand)] px-5 py-2 text-sm font-medium text-white transition group-hover:translate-y-[-1px]">
-              Выбрать файлы
-            </span>
+            {hasResults ? (
+              <>
+                <span className="lg:text-center">
+                  <span
+                    className="block text-sm font-medium text-[var(--brand)] lg:text-2xl"
+                    style={{ fontFamily: "var(--font-display), serif" }}
+                  >
+                    Добавить или заменить файлы
+                  </span>
+                  <span className="mt-0.5 block text-xs text-[var(--ink-soft)] lg:mt-3 lg:text-sm">
+                    Обработка только на устройстве — на сервер и в облако ничего не
+                    уходит.
+                  </span>
+                </span>
+                <span className="shrink-0 rounded-full bg-[var(--brand)] px-3 py-1.5 text-xs font-medium text-white lg:mt-6 lg:px-5 lg:py-2 lg:text-sm">
+                  Выбрать файлы
+                </span>
+              </>
+            ) : (
+              <>
+                <span
+                  className="text-2xl text-[var(--brand)] sm:text-3xl"
+                  style={{ fontFamily: "var(--font-display), serif" }}
+                >
+                  <span className="lg:hidden">Выберите фото</span>
+                  <span className="hidden lg:inline">Перетащите фото сюда</span>
+                </span>
+                <span className="mt-3 max-w-md text-sm text-[var(--ink-soft)]">
+                  <span className="lg:hidden">
+                    Обработка идёт на этом устройстве — на сервер и в облако ничего
+                    не уходит.
+                  </span>
+                  <span className="hidden lg:inline">
+                    или нажмите, чтобы выбрать файлы. Обработка идёт на этом
+                    устройстве — на сервер и в облако ничего не уходит.
+                  </span>
+                </span>
+                <span className="mt-6 rounded-full bg-[var(--brand)] px-5 py-2 text-sm font-medium text-white transition group-hover:translate-y-[-1px]">
+                  Выбрать файлы
+                </span>
+              </>
+            )}
             <input
               ref={inputRef}
               type="file"
@@ -190,7 +251,11 @@ export function ImageTool({ preset }: Props) {
             />
           </button>
 
-          <div className="w-full space-y-4 lg:max-w-sm">
+          <div
+            className={`w-full space-y-4 lg:max-w-sm ${
+              hasResults || busy ? "order-3 lg:order-2" : "order-2"
+            }`}
+          >
             <label className="block text-sm text-[var(--ink-soft)]">
               Качество: {Math.round(quality * 100)}%
               <input
@@ -243,7 +308,7 @@ export function ImageTool({ preset }: Props) {
               />
             </label>
 
-            {items.length > 0 ? (
+            {hasResults ? (
               <button
                 type="button"
                 onClick={() => void runFiles(sourceFiles.current, "recalc")}
@@ -254,96 +319,109 @@ export function ImageTool({ preset }: Props) {
               </button>
             ) : null}
           </div>
-        </div>
 
-        {busy ? (
-          <p className="mt-6 text-sm text-[var(--brand)]">Обрабатываем локально…</p>
-        ) : null}
-        {error ? <p className="mt-4 text-sm text-[var(--brand-hot)]">{error}</p> : null}
+          {busy ? (
+            <p className="order-2 w-full text-sm text-[var(--brand)] lg:order-3 lg:basis-full">
+              Обрабатываем локально…
+            </p>
+          ) : null}
+          {error ? (
+            <p className="order-2 w-full text-sm text-[var(--brand-hot)] lg:order-3 lg:basis-full">
+              {error}
+            </p>
+          ) : null}
 
-        {items.length > 0 ? (
-          <div className="mt-8 space-y-4">
-            <div>
-              <p className="text-sm text-[var(--ink-soft)]">Итого</p>
-              <p className="text-lg text-[var(--ink)]">
-                {formatBytes(totals.original)} → {formatBytes(totals.result)}
-                {totals.saved > 0 ? (
-                  <span className="ml-2 text-[var(--brand)]">−{totals.saved}%</span>
-                ) : totals.saved < 0 ? (
-                  <span className="ml-2 text-[var(--brand-hot)]">
-                    +{Math.abs(totals.saved)}%
-                  </span>
-                ) : null}
-              </p>
-            </div>
+          {hasResults ? (
+            <div
+              ref={resultsRef}
+              className="order-2 w-full scroll-mt-4 space-y-4 lg:order-3 lg:basis-full lg:scroll-mt-6"
+            >
+              <div>
+                <p className="text-sm text-[var(--ink-soft)]">Итого</p>
+                <p className="text-lg text-[var(--ink)]">
+                  {formatBytes(totals.original)} → {formatBytes(totals.result)}
+                  {totals.saved > 0 ? (
+                    <span className="ml-2 text-[var(--brand)]">−{totals.saved}%</span>
+                  ) : totals.saved < 0 ? (
+                    <span className="ml-2 text-[var(--brand-hot)]">
+                      +{Math.abs(totals.saved)}%
+                    </span>
+                  ) : null}
+                </p>
+              </div>
 
-            {shareOk ? (
-              <p className="text-xs text-[var(--ink-soft)]">
-                На iPhone: «Поделиться» → «Сохранить изображение», чтобы фото попало
-                в галерею. «Скачать» обычно сохраняет в «Файлы».
-              </p>
-            ) : null}
+              {shareOk ? (
+                <p className="text-xs text-[var(--ink-soft)]">
+                  На iPhone: «Поделиться» → «Сохранить изображение», чтобы фото
+                  попало в галерею. «Скачать» обычно сохраняет в «Файлы».
+                </p>
+              ) : null}
 
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {items.map((item) => {
-                const pct = savingsPercent(item.originalSize, item.resultSize);
-                return (
-                  <li
-                    key={item.id}
-                    className="flex gap-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.previewUrl}
-                      alt={item.name}
-                      className="h-20 w-20 rounded-xl object-cover"
-                    />
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium">{item.name}</p>
-                      <p className="mt-1 text-xs text-[var(--ink-soft)]">
-                        {formatBytes(item.originalSize)} →{" "}
-                        {formatBytes(item.resultSize)}
-                        {pct > 0 ? ` (−${pct}%)` : pct < 0 ? ` (+${Math.abs(pct)}%)` : ""}
-                      </p>
-                      {item.grew ? (
-                        <p className="mt-1 text-xs text-[var(--brand-hot)]">
-                          Стал больше — снизьте качество или макс. сторону и
-                          пересчитайте.
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {items.map((item) => {
+                  const pct = savingsPercent(item.originalSize, item.resultSize);
+                  return (
+                    <li
+                      key={item.id}
+                      className="flex gap-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.previewUrl}
+                        alt={item.name}
+                        className="h-20 w-20 rounded-xl object-cover"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-medium">{item.name}</p>
+                        <p className="mt-1 text-xs text-[var(--ink-soft)]">
+                          {formatBytes(item.originalSize)} →{" "}
+                          {formatBytes(item.resultSize)}
+                          {pct > 0
+                            ? ` (−${pct}%)`
+                            : pct < 0
+                              ? ` (+${Math.abs(pct)}%)`
+                              : ""}
                         </p>
-                      ) : null}
-                      <div className="mt-2 flex flex-wrap gap-3">
-                        {shareOk ? (
+                        {item.grew ? (
+                          <p className="mt-1 text-xs text-[var(--brand-hot)]">
+                            Стал больше — снизьте качество или макс. сторону и
+                            пересчитайте.
+                          </p>
+                        ) : null}
+                        <div className="mt-2 flex flex-wrap gap-3">
+                          {shareOk ? (
+                            <button
+                              type="button"
+                              onClick={() => void shareOne(item)}
+                              className="text-sm font-medium text-[var(--brand)] underline-offset-2 hover:underline"
+                            >
+                              Поделиться
+                            </button>
+                          ) : null}
                           <button
                             type="button"
-                            onClick={() => void shareOne(item)}
-                            className="text-sm font-medium text-[var(--brand)] underline-offset-2 hover:underline"
+                            onClick={() => downloadOne(item)}
+                            className="text-sm text-[var(--ink-soft)] underline-offset-2 hover:underline"
                           >
-                            Поделиться
+                            Скачать
                           </button>
-                        ) : null}
-                        <button
-                          type="button"
-                          onClick={() => downloadOne(item)}
-                          className="text-sm text-[var(--ink-soft)] underline-offset-2 hover:underline"
-                        >
-                          Скачать
-                        </button>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <button
-              type="button"
-              onClick={() => void downloadZip()}
-              className="w-full rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-medium text-white"
-            >
-              Скачать всё ZIP
-            </button>
-          </div>
-        ) : null}
+              <button
+                type="button"
+                onClick={() => void downloadZip()}
+                className="w-full rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-medium text-white"
+              >
+                Скачать всё ZIP
+              </button>
+            </div>
+          ) : null}
+        </div>
       </div>
     </section>
   );

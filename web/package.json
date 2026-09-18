@@ -10,7 +10,7 @@
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
-    "heic2any": "^0.0.4",
+    "heic-to": "1.5.2",
     "jszip": "^3.10.2",
     "next": "15.5.25",
     "react": "19.1.0",

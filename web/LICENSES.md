@@ -10,8 +10,8 @@
 
 ## HEIC / HEIF
 
-- **Пакет:** [`heic2any`](https://github.com/alexcorvi/heic2any)
-- **Под капотом:** [libheif](https://github.com/strukturag/libheif) (декодирование HEIF)
+- **Пакет:** [`heic-to`](https://github.com/hoppergee/heic-to)
+- **Под капотом:** [libheif](https://github.com/strukturag/libheif) 1.22+ (декодирование HEIF, в т.ч. iOS 18 / HDR gain map)
 - **Лицензия libheif:** LGPL-3.0
 - **Легальность:** open-source декодер; распространённая практика для онлайн-конвертеров. Это не «взлом» формата Apple, а свободная реализация чтения контейнера HEIF. При распространении бинарников/WASM соблюдайте условия LGPL (сохранение уведомлений о лицензии, возможность получить соответствующий код библиотеки — у upstream-проекта).
 
