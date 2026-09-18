@@ -11,15 +11,15 @@
 - нет БД и серверной обработки изображений;
 - нет S3 для пользовательских файлов.
 
-USP «файлы не уходят на сервер» обязателен. Инфраструктура = **CDN/static hosting + один домен**.
+USP «файлы не уходят на сервер» обязателен. Инфраструктура = **статика в Yandex Object Storage + один домен**. Vercel / Cloudflare Pages в РФ на мобильных режутся ТСПУ — не использовать как origin.
 
 ```mermaid
 flowchart LR
   user[Пользователь]
-  cdn[CDN_Pages_или_Vercel]
+  storage[Yandex_Object_Storage]
   browser[Браузер_обработка]
   ads[РСЯ_AdSense]
-  user --> cdn --> browser
+  user --> storage --> browser
   user --> ads
 ```
 
@@ -31,15 +31,15 @@ flowchart LR
 |---|---|
 | vCPU | 0 |
 | RAM | 0 |
-| Диск приложения | 0 (билд на Pages/Vercel) |
+| Диск приложения | 0 (HTML/JS в Object Storage, бакет сайта ≠ хранилище юзер-фото) |
 | Канал под юзер-фото | нет (обработка в браузере) |
 
 ### Этап A — старт (0–20k визитов/мес)
 
 | Компонент | Выбор | Стоимость |
 |---|---|---|
-| Хостинг | Cloudflare Pages **или** Vercel Hobby | **0 ₽** |
-| DNS | Cloudflare Free | **0 ₽** |
+| Хостинг | Yandex Object Storage (хостинг сайта, free tier) | **0 ₽** |
+| DNS | Yandex Cloud DNS (зона уже на `ns1`/`ns2.yandexcloud.net`) | **0 ₽** на старте |
 | Домен | один `.ru` | **~200–900 ₽/год** |
 | Почта | Cloudflare Email Routing → личный ящик / Yandex 360 | **0–~200 ₽/мес** |
 | Аналитика | Метрика + GA4 | **0 ₽** |
@@ -48,21 +48,21 @@ flowchart LR
 
 ### Этап B — рост (20–200k+ визитов/мес)
 
-Без VPS. Если free упёрся в bandwidth / лимиты билдов:
+Без VPS. Если free Object Storage упёрся в GET/трафик:
 
-- Cloudflare Pro (~$20/мес) **или**
-- Vercel Pro (~$20/мес)
+- смотреть фактический счёт Yandex Cloud (копейки сверх квот GET);
+- при устойчивых десятках тысяч визитов — дешёвый shared в РФ (Beget Start и аналоги), **не** Vercel/Cloudflare Pages.
 
-Это **единственный** заложенный апгрейд инфраструктуры.
+Vercel Pro / Cloudflare Pro **не** апгрейд для аудитории РФ: ТСПУ душит эти CDN на мобильных.
 
-### Трафик vs CDN
+### Трафик vs Object Storage
 
 | Визиты/мес | Исходящий трафик статики (грубо) | Действие |
 |---:|---|---|
-| 5k | ~5–20 ГБ | free |
-| 50k | ~50–200 ГБ | free, смотреть квоты |
-| 200k | ~200–800 ГБ | при лимитах → Pro |
-| 1M+ | смотреть Pro / тариф CDN | всё ещё без бэкенда |
+| 5k | ~5–20 ГБ | free (100 ГБ исходящего) |
+| 20k+ | смотреть квоту **100k GET/мес** | сверх квоты — копейки, не Vercel |
+| 200k | ~200–800 ГБ | трафик сверх 100 ГБ + GET; всё ещё без бэкенда |
+| 1M+ | считать GET и ГБ | shared/CDN в РФ, без VPS |
 
 ---
 
@@ -108,7 +108,7 @@ RPM ориентир после модерации рекламы: **50–150 �
 ### Shortlist имён (латиница под «ПиксЛокал»)
 
 **Выбран и куплен (сен 2026): [`pixlocal.ru`](https://pixlocal.ru)** — 1 год.  
-На момент покупки DNS стояли `statuspage1.nic.ru` / `statuspage2.nic.ru` (заглушка регистратора). **Следующий шаг:** NS → Cloudflare, деплой на Vercel — см. [08-launch-playbook.md](08-launch-playbook.md).
+На момент покупки DNS стояли `statuspage1.nic.ru` / `statuspage2.nic.ru`. Сейчас NS → **Yandex Cloud DNS**, origin — Object Storage — см. [08-launch-playbook.md](08-launch-playbook.md).
 
 Архив кандидатов ([domain_dns_probe.json](domain_dns_probe.json)):
 
@@ -118,43 +118,41 @@ RPM ориентир после модерации рекламы: **50–150 �
 | localpix.ru, pixlok.ru, lokpix.ru, … | не покупаем |
 | pixli.ru, pixcraft.ru | заняты (DNS) |
 
-После покупки: `NEXT_PUBLIC_SITE_URL=https://pixlocal.ru`, контакты `hello@pixlocal.ru`.
+После покупки: `NEXT_PUBLIC_SITE_URL=https://pixlocal.ru`, контакты `wasp777@mail.ru`.
 
 ---
 
-## 4. Деплой static/edge (без серверных фич)
+## 4. Деплой статики (без серверных фич)
+
+Сборка: `output: 'export'` в [`web/next.config.ts`](../web/next.config.ts) → каталог `web/out`. Выкладка: GitHub Action [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) → бакет `pixlocal.ru`.
 
 ### Разрешено
 
-- Статический / edge-рендер страниц Next.js на **Cloudflare Pages** или **Vercel**
+- Статический HTML/JS/CSS в **Yandex Object Storage** (режим хостинга сайта)
 - Клиентский JS: canvas, heic2any, JSZip
-- Переменные только `NEXT_PUBLIC_*` (URL, аналитика, флаги рекламы)
-- CDN-кэш HTML/JS/CSS
+- Переменные только `NEXT_PUBLIC_*` (URL, аналитика, флаги рекламы) — в GitHub Actions **Variables**
+- DNS: Yandex Cloud DNS, ANAME на `pixlocal.ru.website.yandexcloud.net`
 
 ### Запрещено (ломает стратегию)
 
+- Origin на Vercel, Cloudflare Pages, Cloudflare proxy (оранжевое облако) — ТСПУ на мобильных в РФ
 - Route Handlers / API Routes для приёма файлов
 - Server Actions, пишущие файлы или вызывающие тяжёлую обработку картинок на сервере
-- Подключение БД, Redis, S3 под пользовательский контент
+- Object Storage / S3 **под пользовательские фото** (сайт в бакете — это статика приложения, не загрузки)
 - Аренда VPS «чтобы было куда деплоить»
-- `output: 'standalone'` + свой Node на VM — не нужен для этой модели
+- `output: 'standalone'` + свой Node на VM
 
-### Практические варианты деплоя
+### Практический деплой — Yandex Object Storage
 
-**Вариант 1 — Vercel (проще для Next as-is)**
+Пошагово в консоли: [08-launch-playbook.md](08-launch-playbook.md). Кратко:
 
-1. Импорт репозитория / папки `web`
-2. Root Directory: `web`
-3. Env: `NEXT_PUBLIC_SITE_URL=https://ваш-домен.ru`
-4. Custom domain → DNS у Cloudflare (CNAME/A по инструкции Vercel)
+1. `cd web && npm run build` (или push в `main` — Action)
+2. Бакет с именем **точно** `pixlocal.ru`, публичный, хостинг, index `index.html`, ошибка `404.html`
+3. Let's Encrypt в Certificate Manager, HTTPS на бакете
+4. DNS: CNAME `pixlocal.ru` → `pixlocal.ru.website.yandexcloud.net`, **DNS only**
+5. Секреты GitHub: `YC_SA_ACCESS_KEY_ID`, `YC_SA_SECRET_ACCESS_KEY`
 
-**Вариант 2 — Cloudflare Pages**
-
-1. Сборка из `web` (фреймворк Next.js; при необходимости — адаптер/@cloudflare или OpenNext по актуальной доке CF на момент деплоя)
-2. Тот же env `NEXT_PUBLIC_SITE_URL`
-3. Custom domain в проекте Pages
-
-Пока нет аккаунта CF/Vercel — локально достаточно `npm run build && npm run start` только для проверки; прод = Pages/Vercel.
+Локальный просмотр статики: `npx serve out` из `web/` (не `next start` — это не Node-сервер).
 
 Реклама и Метрика: см. [05-monetize.md](05-monetize.md), [06-iterate.md](06-iterate.md). Флаг `NEXT_PUBLIC_ADS_ENABLED=false` до модерации.
 
@@ -166,21 +164,21 @@ RPM ориентир после модерации рекламы: **50–150 �
 
 - [ ] Выбрать имя из shortlist, подтвердить свободу у регистратора
 - [ ] Купить **один** `.ru` на 1 год
-- [ ] Создать аккаунт Cloudflare, делегировать NS
+- [ ] Зона Cloud DNS `pixlocal.ru.`, NS у регистратора `ns1`/`ns2.yandexcloud.net`
 - [ ] Не покупать второй домен и не арендовать VPS
 
 ### Хостинг
 
-- [ ] Создать проект Cloudflare Pages **или** Vercel
-- [ ] Root = `web`, успешный production-deploy
-- [ ] Подключить кастомный домен + HTTPS
-- [ ] `NEXT_PUBLIC_SITE_URL=https://<домен>`
-- [ ] Проверить canonical / sitemap: `https://<домен>/sitemap.xml`
+- [ ] Бакет Object Storage `pixlocal.ru`, хостинг сайта, публичный доступ
+- [ ] HTTPS (Certificate Manager / Let's Encrypt)
+- [ ] GitHub Action: секреты ключа сервисного аккаунта, успешный sync
+- [ ] `NEXT_PUBLIC_SITE_URL=https://pixlocal.ru`
+- [ ] Проверить canonical / sitemap: `https://pixlocal.ru/sitemap.xml`
+- [ ] Android без VPN (мобильный интернет): главная и инструмент открываются
 
 ### Почта и юр. страницы
 
-- [ ] Cloudflare Email Routing: `hello@<домен>` → ваш ящик
-- [ ] Обновить email на странице `/contacts`
+- [x] Контакт на `/contacts`: `wasp777@mail.ru` (без доменной почты)
 - [ ] Перечитать `/privacy` и `/terms` под реальный домен
 
 ### Поиск и аналитика
@@ -199,11 +197,11 @@ RPM ориентир после модерации рекламы: **50–150 �
 
 ### Когда повышать бюджет
 
-- [ ] Free режет bandwidth/билды → Pro CDN (~$20/мес)
-- [ ] Иначе — не повышать
+- [ ] Free GET/трафик Object Storage исчерпан → сначала смотреть счёт (обычно копейки)
+- [ ] Иначе — не повышать; не возвращаться на Vercel/Cloudflare Pages
 
 ---
 
 ## Итог одной строкой
 
-**0 собственного сервера + CDN free + 1× `.ru` ≈ 1–2 тыс. ₽/год** до Pro; бэкенд и VPS вне стратегии.
+**0 собственного сервера + Object Storage free + 1× `.ru` ≈ 1–2 тыс. ₽/год**; бэкенд, VPS и зарубежный CDN вне стратегии.

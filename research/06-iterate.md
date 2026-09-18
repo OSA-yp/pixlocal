@@ -1,6 +1,6 @@
 # Итерации после запуска
 
-Сайт в проде: [https://pixlocal.ru](https://pixlocal.ru). Рекламу не включать, пока нет стабильного органика.
+Сайт в проде: [https://pixlocal.ru](https://pixlocal.ru). Рекламу не включать, пока нет стабильного органика. Стратегия роста и privacy: [09-growth-and-privacy.md](09-growth-and-privacy.md).
 
 Цели в коде (имена совпадают с `reachGoal` / GA4): `file_select`, `download`, `zip_download` — см. [`web/src/lib/track.ts`](../web/src/lib/track.ts).
 
@@ -16,35 +16,35 @@
    - `download` — скачать один файл или «Поделиться»
    - `zip_download` — ZIP
    Главная конверсия: `download`. ZIP — вторичная.
-3. [Яндекс.Вебмастер](https://webmaster.yandex.ru) → `https://pixlocal.ru`. Подтверждение: DNS TXT в Cloudflare **или** счётчик Метрики **или** `NEXT_PUBLIC_YANDEX_VERIFICATION` + Redeploy.
+3. [Яндекс.Вебмастер](https://webmaster.yandex.ru) → `https://pixlocal.ru`. Подтверждение: DNS TXT в Cloud DNS **или** счётчик Метрики **или** `NEXT_PUBLIC_YANDEX_VERIFICATION` + Redeploy.
 4. Отправить sitemap: `https://pixlocal.ru/sitemap.xml`.
 5. Запросить обход:
    - `https://pixlocal.ru/`
-   - `https://pixlocal.ru/heic-v-jpg`
-   - `https://pixlocal.ru/szhat-jpg`
-   - `https://pixlocal.ru/szhat-do-100kb`
-   - `https://pixlocal.ru/webp-v-jpg`
+   - `https://pixlocal.ru/heic-v-jpg/`
+   - `https://pixlocal.ru/szhat-jpg/`
+   - `https://pixlocal.ru/szhat-do-100kb/`
+   - `https://pixlocal.ru/webp-v-jpg/`
 6. [Google Search Console](https://search.google.com/search-console) — URL-prefix `https://pixlocal.ru`, sitemap, проверка тех же URL. Токен: DNS TXT или `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`.
-7. В хостинге (Vercel / Cloudflare Pages), root = `web`:
-   - `NEXT_PUBLIC_SITE_URL=https://pixlocal.ru`
+7. В GitHub → Settings → Variables (подхватывает [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml)):
+   - `NEXT_PUBLIC_SITE_URL` не обязателен (в workflow уже `https://pixlocal.ru`)
    - `NEXT_PUBLIC_YM_ID=<id>`
    - по желанию `NEXT_PUBLIC_GA4_ID`
-   - `NEXT_PUBLIC_ADS_ENABLED` оставить `false`
-8. Production Redeploy. Проверка: DevTools → Network есть запрос на `mc.yandex.ru`; через 5–15 мин визит в Метрике. Тест: сжать фото → скачать — цель `download` должна сработать.
+   - `NEXT_PUBLIC_ADS_ENABLED` оставить пустым или `false`
+8. Actions → **Deploy to Yandex Object Storage** (нужны секреты ключа бакета). Проверка: DevTools → Network есть запрос на `mc.yandex.ru`; через 5–15 мин визит в Метрике. Тест: сжать фото → скачать — цель `download` должна сработать. На Android без VPN главная должна открываться.
 
 После выкладки индексации:
 
 1. Ключ IndexNow: `https://pixlocal.ru/7f3a9c2e4b18d056a91c4e8f02b7d3c5.txt` должен отдавать ту же строку. Пинг: в каталоге `web/` выполнить `npm run indexnow`.
 2. [Яндекс.Вебмастер](https://webmaster.yandex.ru): регион **Россия**, sitemap принят, «Важные страницы» и **Переобход**:
    - `https://pixlocal.ru/`
-   - `https://pixlocal.ru/heic-v-jpg`
-   - `https://pixlocal.ru/szhat-do-100kb`
-   - `https://pixlocal.ru/szhat-jpg`
-   - `https://pixlocal.ru/webp-v-jpg`
+   - `https://pixlocal.ru/heic-v-jpg/`
+   - `https://pixlocal.ru/szhat-do-100kb/`
+   - `https://pixlocal.ru/szhat-jpg/`
+   - `https://pixlocal.ru/webp-v-jpg/`
 3. [Google Search Console](https://search.google.com/search-console): sitemap + «Проверка URL → Запрос индексирования» по тем же пяти.
 4. Через 3–7 дней: `site:pixlocal.ru` в Яндексе и Google.
 
-Почта: Cloudflare Email Routing `hello@pixlocal.ru` → личный ящик, затем тестовое письмо. На сайте контакт уже `hello@pixlocal.ru`.
+Контакт на сайте: `wasp777@mail.ru` (личная почта, доменный ящик не используем).
 
 ---
 
