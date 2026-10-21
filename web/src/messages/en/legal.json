@@ -1,0 +1,32 @@
+{
+  "privacy": {
+    "title": "Privacy policy",
+    "description": "How PixLocal handles data: local photo processing, no ads, anonymized visit stats via Google Analytics.",
+    "h1": "Privacy",
+    "body": [
+      "We physically do not request, receive, store, or see your images. Period.",
+      "PixLocal is an online tool for image compression and conversion. File processing runs in your browser on your device. The contents of loaded images are not sent to our servers for compression or conversion.",
+      "Zero pixel transfer: during compression and conversion the file body is not sent to the PixLocal server and is not stored in the cloud. The site only serves static assets (HTML, JS, CSS); encoding runs through Canvas and local libraries in the browser. EXIF/GPS inspection, metadata stripping, and area redaction also run only on your device. You can verify this in the Network tab of DevTools while processing.",
+      "There are no ads on the site, and none are planned.",
+      "If a Google Analytics ID is set, we may collect anonymized technical visit statistics: page URL, device type, UI events (file selection, download, ZIP). File names and contents are not transmitted. Analytics cookies can be limited in your browser settings.",
+      "Optional Offline button: when you press it, the browser may cache static pages and processing libraries for the current language via a service worker. User file contents are never part of that cache.",
+      "For privacy questions, write to the address listed on the Contact page."
+    ]
+  },
+  "terms": {
+    "title": "Terms of use",
+    "description": "Rules for using the PixLocal service.",
+    "h1": "Terms of use",
+    "body": [
+      "The service is provided “as is”, free of charge, with no guarantee of uninterrupted availability. You are responsible for checking the result before publishing or sharing files with third parties.",
+      "You may not use the service to process illegal content. You are responsible for the files you open in the browser.",
+      "We may change features, design, and terms. The current version is always on this page."
+    ]
+  },
+  "contacts": {
+    "title": "Contact",
+    "description": "Get in touch with the PixLocal team.",
+    "h1": "Contact",
+    "intro": "For questions about the service, write to:"
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "heic-v-jpg": {
+    "title": "iPhone photos to JPG: HEIC online with no server upload",
+    "description": "Free HEIC/HEIF to JPG converter in the browser. Open iPhone photos on Windows and in forms — no cloud and no apps.",
+    "h1": "HEIC to JPG online",
+    "lead": "Shot on iPhone — but the file won’t open on a PC or in a form? Convert HEIC/HEIF to JPG locally, with no cloud and no sign-up.",
+    "body": [
+      "The iPhone camera writes HEIC by default (sometimes HEIF). Windows, many websites, printers, and email attachments expect plain JPG — so “iPhone photos” often won’t open on a computer.",
+      "How to use: pick one or more .heic/.heif → conversion to JPG runs in the browser → download the file or a ZIP. Adjust quality and long edge to match a form limit.",
+      "PixLocal never uploads the shot to a server — unlike typical cloud converters. HEIC decoding and JPEG saving stay on the device; you can shrink the file before sending."
+    ],
+    "faq": [
+      {
+        "q": "How do I open an iPhone photo on Windows?",
+        "a": "Transfer the HEIC to your PC and convert it here to JPG — no codecs or apps to install. The file doesn’t go to the cloud: processing is browser-only."
+      },
+      {
+        "q": "How is HEIC different from JPG?",
+        "a": "HEIC is more compact and newer (iPhone camera standard); JPG is the universal format for Windows, websites, and printing. Conversion is for compatibility."
+      },
+      {
+        "q": "Does the photo go to a server?",
+        "a": "No. HEIC decoding and JPG saving run in the browser. Check the Network tab: the image body is not sent."
+      },
+      {
+        "q": "Are metadata preserved?",
+        "a": "When re-encoding via Canvas, some EXIF may be lost. Keep the original HEIC for important archives."
+      },
+      {
+        "q": "Why is JPG sometimes larger than HEIC?",
+        "a": "HEIC is more efficient than JPEG. We automatically lower quality and cap the side (default 2560 px) so the file gets lighter. Reduce quality or max side if needed."
+      },
+      {
+        "q": "Can I convert several files at once?",
+        "a": "Yes — select a batch of HEIC and download a ZIP of JPGs, or share individual frames to Photos via Share."
+      }
+    ]
+  },
+  "webp-v-jpg": {
+    "title": "WebP to JPG online with no server upload",
+    "description": "Free WebP to JPG converter locally in the browser. Files never go to the cloud.",
+    "h1": "WebP to JPG",
+    "lead": "Open a downloaded WebP in any editor: convert to JPG locally on your device.",
+    "body": [
+      "WebP is common on websites and in messengers. If an editor, printer, or Windows form only opens JPG — re-encode the file here.",
+      "Decoding and JPEG saving run in the browser: the source is never uploaded. You can cap the long edge so the attachment doesn’t balloon.",
+      "Batch: several WebP at once, then ZIP or Share on iPhone. Use the quality slider when you need a sharpness-vs-size tradeoff."
+    ],
+    "faq": [
+      {
+        "q": "Why is JPG heavier than WebP?",
+        "a": "WebP is usually more efficient. JPG is for compatibility, not for a smaller file."
+      },
+      {
+        "q": "Will WebP animation be kept?",
+        "a": "No: JPG gets a single frame. For a clip, keep the original WebP or convert to video."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose files on this page and download JPG — no account and no cloud."
+      }
+    ]
+  },
+  "png-v-jpg": {
+    "title": "PNG to JPG online",
+    "description": "Free PNG to JPG converter online, locally in the browser.",
+    "h1": "PNG to JPG",
+    "lead": "Convert PNG to JPG and cut file size a lot for the web and messengers.",
+    "body": [
+      "PNG is great for graphics, screenshots, and transparency, but often overkill for photos: JPG of the same scene can be many times smaller.",
+      "Transparent areas become a light Canvas background when saved as JPG — check the preview if the alpha channel matters.",
+      "Handy before email, a CMS, or a marketplace where PNG hits a size limit. You can lower quality and max side further."
+    ],
+    "faq": [
+      {
+        "q": "How do I keep transparency?",
+        "a": "Stay on PNG or pick WebP in the main compressor on the home page."
+      },
+      {
+        "q": "Why does a screenshot look soft?",
+        "a": "JPEG handles fine text poorly. Raise quality toward 90% or keep PNG/WebP for UI."
+      },
+      {
+        "q": "Can I do a batch at once?",
+        "a": "Yes — select several PNGs and download a ZIP of JPGs."
+      }
+    ]
+  },
+  "jpg-v-png": {
+    "title": "JPG to PNG online",
+    "description": "JPG to PNG converter online in the browser with no sign-up.",
+    "h1": "JPG to PNG",
+    "lead": "Convert JPEG to PNG locally when you need PNG for further editing.",
+    "body": [
+      "JPG→PNG conversion does not restore detail already lost to JPEG. But you can edit further without new “JPEG generation” artifacts.",
+      "The PNG will be noticeably heavier than the source — normal for a lossless format. If size is the goal, prefer WebP or recompress JPG.",
+      "Processing is local: handy when a template, print shop, or stock asks for PNG specifically."
+    ],
+    "faq": [
+      {
+        "q": "Will the file get larger?",
+        "a": "Often yes: lossless PNG is usually heavier than JPEG."
+      },
+      {
+        "q": "Will transparency appear?",
+        "a": "No. JPEG has no alpha channel, so the PNG will be opaque. Transparency must be added separately."
+      },
+      {
+        "q": "Why do this if PNG is heavier?",
+        "a": "When the next step is an editor or print workflow that needs PNG, not kilobyte savings."
+      }
+    ]
+  },
+  "jpg-v-webp": {
+    "title": "JPG to WebP online",
+    "description": "JPG to WebP converter for websites — locally in the browser.",
+    "h1": "JPG to WebP",
+    "lead": "Prep images for fast pages: JPG → WebP with no cloud.",
+    "body": [
+      "WebP on a site is usually lighter than JPEG at similar looks — fewer bytes for LCP and mobile data.",
+      "PixLocal encodes WebP in the browser: source JPGs never go to a server. Set quality and, if needed, cap the side.",
+      "Keep a JPG fallback in your markup for older clients: the converter gives you a modern file — it doesn’t mean every browser forgot JPEG."
+    ],
+    "faq": [
+      {
+        "q": "Do all browsers open WebP?",
+        "a": "Modern ones do. Keep a JPG fallback for older clients."
+      },
+      {
+        "q": "Is it good for product photos?",
+        "a": "Yes — quality 75–85% is usually enough. Check the preview on fine text and gradients."
+      },
+      {
+        "q": "Can I batch?",
+        "a": "Yes — upload several JPGs and download a ZIP of WebP."
+      }
+    ]
+  },
+  "png-v-webp": {
+    "title": "PNG to WebP online",
+    "description": "Free PNG to WebP converter online in the browser.",
+    "h1": "PNG to WebP",
+    "lead": "Compress PNG to WebP locally — great for landings and product cards.",
+    "body": [
+      "WebP is often lighter than PNG at a similar look — especially photos and soft gradients. For flat-color icons the gain is smaller; check the preview.",
+      "WebP supports transparency: a logo on a transparent background usually survives conversion, but check anti-aliased edges.",
+      "Done locally, with no cloud queue. If you need maximum lossless PNG, this mode is not a substitute for oxipng/pngquant."
+    ],
+    "faq": [
+      {
+        "q": "Is transparency preserved?",
+        "a": "WebP supports an alpha channel; the result depends on the browser encoder. Check object edges in the preview."
+      },
+      {
+        "q": "When should I keep PNG?",
+        "a": "Small UI, pixel art, text screenshots — if WebP looks mushy. Then resize PNG without changing format."
+      },
+      {
+        "q": "Is this for an online store?",
+        "a": "Yes: cards and banners often shrink without a visible hit. Don’t replace everything wholesale without spot-checking."
+      }
+    ]
+  },
+  "webp-v-png": {
+    "title": "WebP to PNG online",
+    "description": "WebP to PNG converter online, processed in the browser.",
+    "h1": "WebP to PNG",
+    "lead": "Need PNG from WebP — convert locally and download the result.",
+    "body": [
+      "You need PNG because Photoshop, a print shop, or a form won’t take WebP — re-encode locally and download the file.",
+      "Lossless PNG is almost always heavier than the source WebP. If size is the goal, stay on WebP or go to JPG without transparency.",
+      "Animated WebP collapses to a single frame. This tool is not for clips."
+    ],
+    "faq": [
+      {
+        "q": "Will the file be larger?",
+        "a": "Usually yes — lossless PNG weighs more than WebP."
+      },
+      {
+        "q": "Will transparency remain?",
+        "a": "If the WebP had an alpha channel, PNG keeps it. Opaque WebP yields opaque PNG."
+      },
+      {
+        "q": "Why is there one image when the source “blinked”?",
+        "a": "Animation is not transferred. Export video or GIF from an editor, not through this converter."
+      }
+    ]
+  },
+  "izmenit-razmer": {
+    "title": "Resize photos online",
+    "description": "Reduce photo resolution online — resize the long edge in the browser.",
+    "h1": "Resize a photo",
+    "lead": "Cap the long edge in pixels and shrink file size if needed.",
+    "body": [
+      "Resizing the long edge is a quick way to meet social/CMS limits and speed up pages: fewer pixels mean less weight even at the same JPEG quality.",
+      "Set a max on the longer side (default 1920 px); proportions stay. No need to calculate the short side.",
+      "Upscaling is technically possible, but sharpness won’t appear: the tool is built for reducing. Files never leave the device."
+    ],
+    "faq": [
+      {
+        "q": "Can I enlarge a photo?",
+        "a": "Technically yes, but quality won’t improve. The tool is meant for reducing."
+      },
+      {
+        "q": "Are proportions preserved?",
+        "a": "Yes — resize follows the longer side, so the aspect ratio stays intact."
+      },
+      {
+        "q": "How else can I shrink size?",
+        "a": "After resize, lower JPEG/WebP quality or set a KB target on the home page / “to 100 KB” page."
+      }
+    ]
+  },
+  "szhat-do-100kb": {
+    "title": "Compress a photo to 100 KB online without the cloud",
+    "description": "Compress an image to 100 KB locally in the browser — no server upload. Handy for forms and attachments.",
+    "h1": "Compress a photo to 100 KB",
+    "lead": "Fit a file under a form or attachment limit — 100 KB target, processed locally.",
+    "body": [
+      "A 100 KB limit is common on government forms, job applications, email attachments, and older forums. The tool tunes JPEG/WebP quality and resolution until weight approaches the target.",
+      "By default the long edge is up to 1600 px and the target is 100 KB. If the frame is noisy or very detailed, drop the side to 1280 or 1024 px and recalculate.",
+      "Everything runs in the browser — a passport scan or form photo doesn’t go to someone else’s cloud. Exactly 102400 bytes isn’t always possible: the goal is “fit”, not bit-for-bit."
+    ],
+    "faq": [
+      {
+        "q": "Is it safe to compress documents?",
+        "a": "File contents are not sent to the PixLocal server. Processing is browser-only. Google Analytics may count button clicks, not file names or pixels."
+      },
+      {
+        "q": "Do I always get exactly 100 KB?",
+        "a": "Not always — it depends on the frame. You can also lower the max side in pixels."
+      },
+      {
+        "q": "Why does the photo look soft?",
+        "a": "To fit 100 KB you must trade detail. Resize first, then quality: that usually looks livelier than only a very low JPEG."
+      },
+      {
+        "q": "Does PNG also compress to 100 KB?",
+        "a": "More often via JPG or WebP. Pure lossless PNG under 100 KB for photos is almost unrealistic."
+      }
+    ]
+  },
+  "szhat-png": {
+    "title": "Compress PNG online with no server upload",
+    "description": "Compress PNG locally in the browser for free — the file never goes to the cloud.",
+    "h1": "Compress PNG online",
+    "lead": "Shrink PNG size: re-encode to WebP/JPG or keep PNG with a resize.",
+    "body": [
+      "A browser PNG encoder doesn’t do heavy lossless like pngquant or oxipng. If you don’t need transparency, WebP or JPG shrinks far more.",
+      "For text screenshots try WebP first: often lighter than PNG and more readable than harsh JPEG. Check logo alpha edges.",
+      "Batch PNG → ZIP on the device, no sign-up. If the file barely changed — switch output format instead of twisting the PNG slider."
+    ],
+    "faq": [
+      {
+        "q": "Why did the PNG barely shrink?",
+        "a": "Lossless PNG is limited. Switch the output format to WebP or JPG."
+      },
+      {
+        "q": "Need transparency and small size?",
+        "a": "Aim for WebP. JPG kills transparency with a light fill."
+      },
+      {
+        "q": "Is this a TinyPNG replacement?",
+        "a": "No: there’s no cloud lossless here. But the file never leaves your computer. For icon archives, CLI optimizers are still stronger."
+      }
+    ]
+  },
+  "szhat-jpg": {
+    "title": "Compress JPG online with no server upload",
+    "description": "Compress JPEG locally in the browser for free — no cloud and no sign-up.",
+    "h1": "Compress JPG online",
+    "lead": "Recompress JPEG with quality and size-target control — all in the browser.",
+    "body": [
+      "Recompressing JPEG adds artifacts: start around 70–85% and watch the preview instead of jumping to the minimum.",
+      "Size drops most when you also resize the long edge (e.g. 1920 or 1600 px). Quality alone on a 12-megapixel frame helps less.",
+      "Several JPGs at once, ZIP at the end. Sources stay with you — handy before a site, listing, or email."
+    ],
+    "faq": [
+      {
+        "q": "Can I batch?",
+        "a": "Yes — upload several JPGs and download a ZIP."
+      },
+      {
+        "q": "Is 75% quality too low?",
+        "a": "For the web and messengers it’s usually enough. For print or archives keep the original and don’t recompress repeatedly."
+      },
+      {
+        "q": "Why is the file a bit larger after compression?",
+        "a": "Rarely, if the source was already very light. Lower the side or quality and hit Recalculate."
+      }
+    ]
+  },
+  "udalit-exif": {
+    "title": "Remove EXIF and metadata online",
+    "description": "Hide GPS coordinates and camera data before sharing — locally in the browser, no server upload.",
+    "h1": "Remove EXIF and metadata",
+    "lead": "Hide GPS coordinates and camera data before sharing.",
+    "body": [
+      "Photos store more than you think: shoot location, phone model, exact time. We wipe that data in your browser. The original never leaves your device — you get a clean file ready to post.",
+      "Handy before sending to a chat or social network. Quality stays high by default; shrink the size only if you need a lighter file.",
+      "Nothing is sent to a server for inspection or cleaning — the same privacy model as compression."
+    ],
+    "faq": [
+      {
+        "q": "Is the shoot location really removed?",
+        "a": "Yes. The download is rewritten locally without GPS or camera service tags."
+      },
+      {
+        "q": "Do you store my photos?",
+        "a": "No. For this tool, files never leave your device."
+      },
+      {
+        "q": "What about HEIC?",
+        "a": "HEIC is decoded locally and saved without metadata as JPG, WebP, or PNG."
+      }
+    ]
+  },
+  "skryt-oblast": {
+    "title": "Blur or hide an area on a photo",
+    "description": "Hide faces, license plates, and private details locally in the browser — no server upload.",
+    "h1": "Blur or hide an area on a photo",
+    "lead": "Hide faces, license plates, and private details.",
+    "body": [
+      "Select the area to hide — blur or pixelation appears at once. Ideal for chat screenshots and document photos. Processing stays on your device — the unblurred original is never sent or stored.",
+      "Adjust strength with the slider. When it looks right, download the file.",
+      "The saved file has no service metadata — the same local privacy promise as the rest of PixLocal."
+    ],
+    "faq": [
+      {
+        "q": "Is there automatic face detection?",
+        "a": "No. You mark areas yourself — simpler and fully offline."
+      },
+      {
+        "q": "Are originals uploaded?",
+        "a": "No. Everything stays in the tab."
+      },
+      {
+        "q": "Can I mark several areas?",
+        "a": "Yes. Draw multiple boxes — the effect applies to each immediately."
+      }
+    ]
+  },
+  "compress-pdf": {
+    "title": "Compress PDF online with no server upload",
+    "description": "Shrink a document on your device — locally in the browser, with no server upload.",
+    "h1": "Compress PDF",
+    "lead": "Shrink a document on your device",
+    "body": [
+      "We shrink PDFs on your device: each page is rendered and saved as JPEG inside a new PDF. That cuts size for scans and heavy documents.",
+      "Important: after strong compression, text is usually no longer selectable — pages become images. Use a lighter level if you need selectable text, or keep the original.",
+      "The file body never goes to our server."
+    ],
+    "faq": [
+      {
+        "q": "Why can’t I select text?",
+        "a": "Strong compression re-renders pages as JPEG. That is how client-side shrink works without a server Ghostscript."
+      },
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "merge-pdf": {
+    "title": "Merge PDF online with no server upload",
+    "description": "Combine several files into one — locally in the browser, with no server upload.",
+    "h1": "Merge PDF",
+    "lead": "Combine several files into one",
+    "body": [
+      "Combine several PDFs into one document. Drag files in the list to set the order.",
+      "Runs entirely in the browser on open-source libraries — no cloud."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "pdf-sanitize": {
+    "title": "Remove PDF metadata online with no server upload",
+    "description": "Strip service data before sharing — locally in the browser, with no server upload.",
+    "h1": "Remove PDF metadata",
+    "lead": "Strip service data before sharing",
+    "body": [
+      "We clear Title, Author, Creator, Producer, Keywords, and dates by copying pages into a fresh PDF.",
+      "Useful before sharing contracts or CVs when app names and authors linger in metadata."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "split-pdf": {
+    "title": "Split PDF online with no server upload",
+    "description": "Extract pages or ranges — locally in the browser, with no server upload.",
+    "h1": "Split PDF",
+    "lead": "Extract pages or ranges",
+    "body": [
+      "Extract pages or ranges. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "rotate-pdf": {
+    "title": "Rotate PDF online with no server upload",
+    "description": "Turn pages 90°, 180°, or 270° — locally in the browser, with no server upload.",
+    "h1": "Rotate PDF",
+    "lead": "Turn pages 90°, 180°, or 270°",
+    "body": [
+      "Turn pages 90°, 180°, or 270°. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "organize-pdf": {
+    "title": "Organize PDF online with no server upload",
+    "description": "Reorder, rotate, or delete pages — locally in the browser, with no server upload.",
+    "h1": "Organize PDF",
+    "lead": "Reorder, rotate, or delete pages",
+    "body": [
+      "Reorder, rotate, or delete pages. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "jpg-to-pdf": {
+    "title": "JPG to PDF online with no server upload",
+    "description": "Build a PDF from images — locally in the browser, with no server upload.",
+    "h1": "JPG to PDF",
+    "lead": "Build a PDF from images",
+    "body": [
+      "Build a PDF from images. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "pdf-to-jpg": {
+    "title": "PDF to JPG online with no server upload",
+    "description": "Export each page as an image — locally in the browser, with no server upload.",
+    "h1": "PDF to JPG",
+    "lead": "Export each page as an image",
+    "body": [
+      "Export each page as an image. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "watermark-pdf": {
+    "title": "Watermark PDF online with no server upload",
+    "description": "Stamp text over every page — locally in the browser, with no server upload.",
+    "h1": "Watermark PDF",
+    "lead": "Stamp text over every page",
+    "body": [
+      "Stamp text over every page. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "page-numbers-pdf": {
+    "title": "Page numbers online with no server upload",
+    "description": "Add page numbers to a PDF — locally in the browser, with no server upload.",
+    "h1": "Page numbers",
+    "lead": "Add page numbers to a PDF",
+    "body": [
+      "Add page numbers to a PDF. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "crop-pdf": {
+    "title": "Crop PDF online with no server upload",
+    "description": "Trim margins on every page — locally in the browser, with no server upload.",
+    "h1": "Crop PDF",
+    "lead": "Trim margins on every page",
+    "body": [
+      "Trim margins on every page. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "protect-pdf": {
+    "title": "Protect PDF online with no server upload",
+    "description": "Lock with a password (AES-256) — locally in the browser, with no server upload.",
+    "h1": "Protect PDF",
+    "lead": "Lock with a password (AES-256)",
+    "body": [
+      "Lock with a password (AES-256). Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "unlock-pdf": {
+    "title": "Unlock PDF online with no server upload",
+    "description": "Remove password with the known key — locally in the browser, with no server upload.",
+    "h1": "Unlock PDF",
+    "lead": "Remove password with the known key",
+    "body": [
+      "Remove password with the known key. Processing stays locally in the browser, with no server upload.",
+      "Download the result immediately; file contents are never uploaded."
+    ],
+    "faq": [
+      {
+        "q": "Are files uploaded?",
+        "a": "No. Processing runs in your browser on this device."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No. Choose a file and download the result."
+      },
+      {
+        "q": "Which libraries?",
+        "a": "Open source: pdf-lib and PDF.js (Mozilla). Passwords use @pdfsmaller (MIT)."
+      }
+    ]
+  }
+}

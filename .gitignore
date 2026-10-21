@@ -1,0 +1,35 @@
+# Root
+.DS_Store
+*.pem
+*.p12
+*.key
+authorized_key.json
+**/authorized_key*.json
+.env
+.env.*
+!.env.example
+
+# Next.js app
+web/node_modules/
+web/.next/
+web/out/
+web/build/
+web/.vercel/
+web/*.tsbuildinfo
+web/next-env.d.ts
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+# Copied from pdfjs-dist on prebuild
+web/public/pdf.worker.min.mjs
+
+# Local junk
+/node_modules/
+/package.json
+/package-lock.json
+/тест/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp

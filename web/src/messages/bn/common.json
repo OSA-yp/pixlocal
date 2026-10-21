@@ -1,0 +1,411 @@
+{
+  "brandTagline": "প্রাইভেট টুল · ব্রাউজারে",
+  "nav": {
+    "compress": "কম্প্রেস",
+    "heic-v-jpg": "iPhone→JPG",
+    "szhat-do-100kb": "100 KB",
+    "szhat-jpg": "JPG কম্প্রেস",
+    "webp-v-jpg": "WebP→JPG",
+    "udalit-exif": "EXIF"
+  },
+  "footer": {
+    "blurb": "ফাইলের জন্য প্রাইভেট টুল। সব ব্রাউজারে — সার্ভার বা ক্লাউডে কিছু যায় না।",
+    "zeroKnowledge": "গোপনীয়তা: আমরা আপনার ফাইল চাই না, পাই না, রাখি না বা দেখি না।",
+    "privacy": "গোপনীয়তা",
+    "terms": "শর্তাবলি",
+    "contacts": "যোগাযোগ",
+    "sitemap": "সাইটম্যাপ",
+    "copyright": "ব্যক্তিগত ফাইলের টুল।"
+  },
+  "trust": {
+    "aria": "গোপনীয়তা",
+    "hook": "",
+    "flow": {
+      "aria": "ছবি কীভাবে প্রক্রিয়া হয়",
+      "photo": "আপনার ছবি",
+      "device": "আপনার ব্রাউজার",
+      "result": "কম্প্রেসড ছবি",
+      "noCloud": "ক্লাউডে নয়"
+    },
+    "items": [
+      {
+        "title": "শুধু ডিভাইসে",
+        "text": "সংকোচন ও রূপান্তর ব্রাউজারে হয় — পিক্সেল ফোন বা কম্পিউটার ছাড়ে না।"
+      },
+      {
+        "title": "ফটো আপলোড নেই",
+        "text": "প্রক্রিয়াকরণে ফাইলের দেহ নেটওয়ার্কে যায় না। মোবাইল ডেটা বাঁচান: মেগাবাইট অন্য সার্ভারে পাঠাবেন না।"
+      },
+      {
+        "title": "বিজ্ঞাপন নেই",
+        "text": "আমরা বিজ্ঞাপন দেখাই না এবং আপনার ফাইল গ্রহণ করি না। আপনার ছবি আমরা দেখিই না।"
+      },
+      {
+        "title": "ফটো রাখি না",
+        "text": "ছবি সার্ভার বা ক্লাউডে রাখি না। খুলুন, প্রসেস করুন, ডাউনলোড করুন।"
+      }
+    ]
+  },
+  "faqTitle": "প্রশ্ন",
+  "toolLinksTitle": "অন্যান্য টুল",
+  "homeLink": {
+    "title": "ছবি কম্প্রেস করুন",
+    "text": "JPG, PNG, WebP — মান নিয়ন্ত্রণসহ"
+  },
+  "toolLinks": {
+    "heic-v-jpg": {
+      "title": "HEIC → JPG",
+      "text": "iPhone ছবি Windows ও ফর্মের জন্য JPG-তে"
+    },
+    "webp-v-jpg": {
+      "title": "WebP → JPG",
+      "text": "সাইটের ছবি না খুললে"
+    },
+    "png-v-jpg": {
+      "title": "PNG → JPG",
+      "text": "স্ক্রিনশট ও গ্রাফিক্সের আকার কমান"
+    },
+    "jpg-v-png": {
+      "title": "JPG → PNG",
+      "text": "স্বচ্ছতা বা PNG লাগলে"
+    },
+    "jpg-v-webp": {
+      "title": "JPG → WebP",
+      "text": "দ্রুত সাইট ও CWV-এর জন্য"
+    },
+    "png-v-webp": {
+      "title": "PNG → WebP",
+      "text": "অতিরিক্ত মেগাবাইট ছাড়া PNG কম্প্রেস"
+    },
+    "webp-v-png": {
+      "title": "WebP → PNG",
+      "text": "স্বচ্ছতা রাখুন"
+    },
+    "izmenit-razmer": {
+      "title": "আকার পরিবর্তন",
+      "text": "লম্বা দিক px-এ সীমিত করুন"
+    },
+    "szhat-do-100kb": {
+      "title": "100 KB পর্যন্ত কম্প্রেস",
+      "text": "ফর্ম ও ইমেইল সীমার জন্য"
+    },
+    "szhat-png": {
+      "title": "PNG কম্প্রেস",
+      "text": "অনলাইন PNG অপ্টিমাইজেশন"
+    },
+    "szhat-jpg": {
+      "title": "JPG কম্প্রেস",
+      "text": "দ্রুত JPEG কম্প্রেশন"
+    },
+    "udalit-exif": {
+      "title": "EXIF ও মেটাডেটা মুছুন",
+      "text": "পাঠানোর আগে GPS ও ক্যামেরা ডেটা লুকান"
+    },
+    "skryt-oblast": {
+      "title": "এলাকা ব্লার বা লুকান",
+      "text": "মুখ, নম্বর ও ব্যক্তিগত তথ্য লুকান"
+    },
+    "compress-pdf": {
+      "title": "PDF সংকুচিত করুন",
+      "text": "ডিভাইসে নথি ছোট করুন"
+    },
+    "merge-pdf": {
+      "title": "PDF একত্র করুন",
+      "text": "একাধিক ফাইল একটিতে"
+    },
+    "pdf-sanitize": {
+      "title": "PDF মেটাডেটা মুছুন",
+      "text": "সার্ভিস ডেটা সরান"
+    },
+    "split-pdf": {
+      "title": "PDF ভাগ করুন",
+      "text": "পৃষ্ঠা বা পরিসর বের করুন"
+    },
+    "rotate-pdf": {
+      "title": "PDF ঘোরান",
+      "text": "৯০°, ১৮০° বা ২৭০°"
+    },
+    "organize-pdf": {
+      "title": "PDF সাজান",
+      "text": "ক্রম, ঘোরানো, মুছা"
+    },
+    "jpg-to-pdf": {
+      "title": "JPG → PDF",
+      "text": "ছবি থেকে PDF"
+    },
+    "pdf-to-jpg": {
+      "title": "PDF → JPG",
+      "text": "প্রতি পৃষ্ঠা ছবি"
+    },
+    "watermark-pdf": {
+      "title": "ওয়াটারমার্ক",
+      "text": "সব পৃষ্ঠায় লেখা"
+    },
+    "page-numbers-pdf": {
+      "title": "পৃষ্ঠা নম্বর",
+      "text": "PDF নম্বর দিন"
+    },
+    "crop-pdf": {
+      "title": "PDF কাটুন",
+      "text": "মার্জিন কাটুন"
+    },
+    "protect-pdf": {
+      "title": "PDF সুরক্ষিত করুন",
+      "text": "পাসওয়ার্ড AES-256"
+    },
+    "unlock-pdf": {
+      "title": "PDF আনলক করুন",
+      "text": "জানা পাসওয়ার্ড সরান"
+    }
+  },
+  "breadcrumbHome": "হোম",
+  "schemaFeatures": [
+    "সার্ভারে আপলোড ছাড়া ব্রাউজারে স্থানীয় প্রক্রিয়াকরণ",
+    "ফাইল ক্লাউডে যায় না",
+    "JPG, PNG, WebP, HEIC কম্প্রেস ও রূপান্তর",
+    "ব্যাচ প্রক্রিয়াকরণ ও ZIP ডাউনলোড",
+    "নিবন্ধন ছাড়া",
+    "Compress and edit PDFs locally in the browser"
+  ],
+  "language": "ভাষা",
+  "tool": {
+    "processError": "ফাইল প্রক্রিয়া করা যায়নি",
+    "heicDecode": "HEIC ডিকোড করা যায়নি",
+    "canvasUnavailable": "Canvas উপলব্ধ নয়",
+    "encodeFailed": "ছবি এনকোড করা যায়নি",
+    "addImages": "ছবি যোগ করুন (JPG, PNG, WebP, HEIC)।",
+    "addOrReplace": "ফাইল যোগ বা প্রতিস্থাপন করুন",
+    "localBadge": "আপনার ডিভাইসে",
+    "localOnlyShort": "প্রক্রিয়াকরণ শুধু ডিভাইসে — সার্ভার বা ক্লাউডে কিছু যায় না।",
+    "chooseFiles": "ফাইল বেছে নিন",
+    "choosePhoto": "ছবি বেছে নিন",
+    "dropHere": "ছবি এখানে ছাড়ুন",
+    "localOnlyMobile": "প্রক্রিয়াকরণ এই ডিভাইসে হয় — সার্ভার বা ক্লাউডে কিছু যায় না।",
+    "localOnlyDesktop": "অথবা ফাইল বেছে নিতে ক্লিক করুন। প্রক্রিয়াকরণ এই ডিভাইসে হয় — সার্ভার বা ক্লাউডে কিছু যায় না।",
+    "quality": "মান: {percent}%",
+    "outputFormat": "আউটপুট ফরম্যাট",
+    "maxSide": "সর্বোচ্চ দিক (px), 0 = সীমা নেই",
+    "targetKb": "আকার লক্ষ্য (KB), 0 = বন্ধ",
+    "recalc": "নতুন সেটিংস দিয়ে পুনরায় গণনা",
+    "processing": "আপনার ডিভাইসে প্রক্রিয়া হচ্ছে…",
+    "processingHint": "ছবি সার্ভারে পাঠানো হয় না — কম্প্রেশন ব্রাউজারে হয়।",
+    "total": "মোট",
+    "shareHint": "iPhone-এ: Share → Save Image দিয়ে ছবি গ্যালারিতে যায়। Download সাধারণত Files-এ সেভ করে।",
+    "grew": "আরও বড় হয়েছে — মান বা সর্বোচ্চ দিক কমিয়ে পুনরায় গণনা করুন।",
+    "share": "শেয়ার",
+    "download": "ডাউনলোড",
+    "downloadZip": "সব ZIP ডাউনলোড করুন",
+    "stripMetadata": "মেটাডেটা মুছুন",
+    "stripMetadataHint": "কম্প্রেশন বা ফর্ম্যাট বদলালে রি-এনকোডের সাথে মেটাডেটা চলে যায়।",
+    "fileInMemory": "ফাইল ব্রাউজার মেমোরিতে। সার্ভার সংযোগ ব্যবহার হয় না।",
+    "savedLocally": "হয়ে গেছে। ফাইল স্থানীয়ভাবে সংরক্ষিত।"
+  },
+  "presetTitles": {
+    "home": "ছবি কম্প্রেস করুন",
+    "homeSubtitle": "স্থানীয় কম্প্রেশন",
+    "heic-v-jpg": "HEIC → JPG",
+    "webp-v-jpg": "WebP → JPG",
+    "png-v-jpg": "PNG → JPG",
+    "jpg-v-png": "JPG → PNG",
+    "jpg-v-webp": "JPG → WebP",
+    "png-v-webp": "PNG → WebP",
+    "webp-v-png": "WebP → PNG",
+    "izmenit-razmer": "রিসাইজ",
+    "szhat-do-100kb": "100 KB পর্যন্ত",
+    "szhat-png": "PNG কম্প্রেস",
+    "szhat-jpg": "JPG কম্প্রেস",
+    "udalit-exif": "EXIF মুছুন",
+    "skryt-oblast": "এলাকা লুকান",
+    "compress-pdf": "PDF সংকুচিত করুন",
+    "merge-pdf": "PDF একত্র করুন",
+    "pdf-sanitize": "PDF মেটাডেটা মুছুন",
+    "split-pdf": "PDF ভাগ করুন",
+    "rotate-pdf": "PDF ঘোরান",
+    "organize-pdf": "PDF সাজান",
+    "jpg-to-pdf": "JPG → PDF",
+    "pdf-to-jpg": "PDF → JPG",
+    "watermark-pdf": "ওয়াটারমার্ক",
+    "page-numbers-pdf": "পৃষ্ঠা নম্বর",
+    "crop-pdf": "PDF কাটুন",
+    "protect-pdf": "PDF সুরক্ষিত করুন",
+    "unlock-pdf": "PDF আনলক করুন"
+  },
+  "layout": {
+    "titleDefault": "PixLocal — ব্রাউজারে ছবি কম্প্রেস ও রূপান্তর করুন",
+    "titleTemplate": "%s · PixLocal",
+    "description": "JPG, PNG, WebP ও HEIC বিনামূল্যে অনলাইনে কম্প্রেস ও রূপান্তর করুন। ফাইল স্থানীয়ভাবে প্রক্রিয়া হয় — সার্ভার বা ক্লাউডে আপলোড হয় না।",
+    "ogTitle": "PixLocal — ক্লাউড ছাড়া অনলাইনে ছবি কম্প্রেস",
+    "ogDescription": "সার্ভারে আপলোড ছাড়া ব্যক্তিগত ছবি কম্প্রেশন ও রূপান্তর। HEIC, WebP, PNG, JPG।"
+  },
+  "meta": {
+    "title": "ফাইলে কী আছে",
+    "localNote": "পরীক্ষা শুধু আপনার ডিভাইসে — ফাইল আপলোড হয় না।",
+    "gpsWarn": "ফাইলে শুট লোকেশন (GPS) আছে — ছবি কোথায় তোলা জানাতে পারে।",
+    "noneFound": "লুকানো স্থান বা ক্যামেরা ডেটা নেই।",
+    "stripped": "লুকানো ডেটা মুছে: ফলাফলে স্থান বা ক্যামেরা ট্যাগ নেই।",
+    "cleared": "পরিষ্কার",
+    "hintGps": "মেটাডেটা মুছা চালু রেখে ডাউনলোড করুন — স্থান ও সার্ভিস ট্যাগ যাবে।",
+    "hintClean": "স্থান নেই; প্রসেসিং তবু সার্ভিস ট্যাগ সরাতে পারে।",
+    "techTitle": "টেকনিশিয়ানদের জন্য",
+    "techBody": "ফলাফল ব্রাউজারে এনকোড হয় (Canvas API → toBlob); EXIF/GPS কপি হয় না। যাচাই: প্রসেসকালে DevTools → Network — শুধু সাইটের স্ট্যাটিক; আপনার ইমেজ বডি আমাদের origin-এ আপলোড হয় না।",
+    "keys": {
+      "gps": "স্থান",
+      "camera": "ক্যামেরা",
+      "date": "তারিখ",
+      "software": "সফটওয়্যার",
+      "orientation": "অরিয়েন্টেশন"
+    },
+    "techBodyPdfCompress": "PDF pages are rendered with PDF.js into Canvas, encoded as JPEG, and rebuilt with pdf-lib. After strong compression, text is usually not selectable. While processing, Network only shows site static assets — your PDF body is not uploaded to our origin.",
+    "techBodyPdfSanitize": "Pages are copied into a new PDFDocument (pdf-lib); Info metadata fields are cleared. Check Network — no file-body upload."
+  },
+  "redact": {
+    "choosePhoto": "ছবি বেছে নিন",
+    "dropHere": "ছবি এখানে ছাড়ুন",
+    "chooseFiles": "ফাইল বেছে নিন",
+    "localBadge": "আপনার ডিভাইসে",
+    "hint": "এলাকা আঁকুন — লুকানো সাথে সাথে দেখা যাবে। শুধু ব্রাউজারে।",
+    "modePixel": "পিক্সেলেট",
+    "modeBlur": "ব্লার",
+    "strength": "তীব্রতা: {percent}%",
+    "download": "ডাউনলোড",
+    "clear": "এলাকা মুছুন",
+    "replace": "অন্য ছবি",
+    "processing": "স্থানীয়ভাবে সংরক্ষণ…",
+    "fileInMemory": "ফাইল ব্রাউজার মেমোরিতে। সার্ভার সংযোগ ব্যবহার হয় না।",
+    "savedLocally": "হয়ে গেছে। ফাইল স্থানীয়ভাবে সংরক্ষিত।",
+    "error": "ছবি প্রক্রিয়া করা যায়নি"
+  },
+  "crossSell": {
+    "title": "হয়ে গেছে। পাঠানোর আগে আর কিছু?",
+    "exif": "GPS স্থানাঙ্ক মুছবেন?",
+    "exifCta": "EXIF মুছুন",
+    "blur": "মুখ বা নম্বর লুকাতে চান?",
+    "blurCta": "এলাকা লুকান"
+  },
+  "toolsMenu": {
+    "trigger": "টুল",
+    "close": "বন্ধ",
+    "photo": "ছবি",
+    "pdf": "PDF",
+    "localNote": "ব্রাউজারে স্থানীয়। সার্ভারে আপলোড নেই।"
+  },
+  "privacyDetails": {
+    "title": "কীভাবে কাজ করে",
+    "body": "ফটো ব্রাউজার মেমরিতে থাকে এবং সংকোচনের সময় আমাদের সার্ভারে যায় না। সাইট খুললে পেজ স্বাভাবিকভাবে ডাউনলোড হয়। ভিজিট পরিসংখ্যানে Google Analytics থাকতে পারে: পেজ, ডিভাইসের ধরন, বাটন ক্লিক — ফাইলের নাম বা পিক্সেল নয়। ভাষা ব্রাউজারে মনে থাকতে পারে। অ্যানালিটিক্স কুকি Google-এর; ব্রাউজার সেটিংসে সীমিত করা যায়। হেডারে Offline চাপলে এই ভাষার পেজ ও ইঞ্জিন ডিভাইসে সংরক্ষিত হয়; আপনার ফাইল আপলোড হয় না।"
+  },
+  "pdfTool": {
+    "processError": "Could not process the PDF",
+    "pdfEncrypted": "This PDF is password-protected. Use Unlock PDF first.",
+    "pdfLoadFailed": "Could not read this PDF",
+    "pdfEmpty": "Nothing to process",
+    "canvasUnavailable": "Canvas is unavailable",
+    "encodeFailed": "Could not encode the result",
+    "pdfBadPassword": "Incorrect password",
+    "pdfNotEncrypted": "This PDF is not password-protected",
+    "pdfNeedPassword": "Enter a password",
+    "pdfNoImages": "Add JPG, PNG, or WebP images",
+    "passwordMismatch": "Passwords do not match",
+    "addPdfs": "Add one or more PDF files",
+    "addImages": "Add JPG, PNG, or WebP images",
+    "addOrReplace": "Add or replace files",
+    "localBadge": "100% client-side · zero-knowledge",
+    "localOnly": "Processing stays on your device — file contents are not sent to a server.",
+    "chooseFiles": "Choose files",
+    "dropHere": "Drop files here",
+    "compressLevel": "Compression",
+    "levelLight": "Light (better quality)",
+    "levelBalanced": "Balanced",
+    "levelStrong": "Strong (smaller file)",
+    "compressHint": "Pages are re-rendered as images. Text may no longer be selectable.",
+    "splitMode": "Split mode",
+    "splitEach": "Each page",
+    "splitRanges": "Ranges",
+    "rangesLabel": "Page ranges (e.g. 1-3,5)",
+    "rotateAngle": "Rotate by",
+    "watermarkText": "Watermark text",
+    "opacity": "Opacity",
+    "pageNumFormat": "Number format",
+    "formatN": "Page number only",
+    "formatNofN": "Page / total",
+    "cropMargin": "Crop each side",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "run": "Process on device",
+    "processing": "Processing on your device…",
+    "processingHint": "File contents are not uploaded — work runs in the browser.",
+    "progress": "{done} / {total}",
+    "remove": "Remove",
+    "pageLabel": "Page {n}",
+    "total": "Total",
+    "download": "Download",
+    "downloadZip": "Download all as ZIP",
+    "share": "Share",
+    "grew": "Got larger — try a stronger level.",
+    "savedLocally": "Done. File saved locally.",
+    "tooLarge": "File is too large for reliable in-browser processing ({size}). Try under 100 MB.",
+    "warnSize": "Large file ({size}) — processing may be slow or run out of memory on this device.",
+    "warnPages": "Many pages ({pages}) — may be slow or run out of memory on a weak device; processing is not blocked.",
+    "watermarkColor": "লেখার রঙ",
+    "rotateCw": "ঘড়ির কাঁটার দিকে",
+    "rotateCcw": "ঘড়ির কাঁটার বিপরীতে",
+    "cropPreviewHint": "ছায়াযুক্ত অংশ কাটা হবে"
+  },
+  "trustPdf": {
+    "aria": "গোপনীয়তা",
+    "hook": "",
+    "flow": {
+      "aria": "PDF কীভাবে প্রক্রিয়া হয়",
+      "file": "আপনার PDF",
+      "device": "আপনার ব্রাউজার",
+      "result": "পরিষ্কার PDF",
+      "noCloud": "ক্লাউডে নয়"
+    },
+    "items": [
+      {
+        "title": "শুধু ডিভাইসে",
+        "text": "PDF টুল ব্রাউজারে চলে — নথি ফোন বা কম্পিউটার ছাড়ে না।"
+      },
+      {
+        "title": "ফাইল আপলোড নেই",
+        "text": "প্রক্রিয়াকালে ফাইলের মূল অংশ নেটওয়ার্কে যায় না। ডেটা বাঁচান: মেগাবাইট অন্য সার্ভারে পাঠাবেন না।"
+      },
+      {
+        "title": "বিজ্ঞাপন নেই",
+        "text": "আমরা বিজ্ঞাপন দেখাই না এবং আপনার ফাইল গ্রহণ করি না। আমরা আপনার নথি দেখি না।"
+      },
+      {
+        "title": "ফাইল সংরক্ষণ করি না",
+        "text": "আমরা সার্ভার বা ক্লাউডে PDF রাখি না। খুলুন — প্রক্রিয়া করুন — ডাউনলোড করুন।"
+      }
+    ]
+  },
+  "privacyDetailsPdf": {
+    "title": "কীভাবে কাজ করে",
+    "body": "আপনার PDF ব্রাউজার মেমোরিতে থাকে এবং প্রক্রিয়াকালে আমাদের সার্ভারে যায় না। সাইট খুললে পৃষ্ঠা স্বাভাবিকভাবে ডাউনলোড হয়। ভিজিট পরিসংখ্যানের জন্য আমরা Google Analytics ব্যবহার করতে পারি: পৃষ্ঠা, ডিভাইসের ধরন, ক্লিক — ফাইলের নাম বা নথির বিষয়বস্তু ছাড়া। ভাষা পছন্দ ব্রাউজারে মনে রাখা যেতে পারে। অ্যানালিটিক্স কুকি Google-এর; ব্রাউজার সেটিংসে সীমিত করতে পারেন। হেডারে Offline চাপলে এই ভাষার পেজ ও ইঞ্জিন ডিভাইসে সংরক্ষিত হয়; আপনার ফাইল আপলোড হয় না।"
+  },
+  "offline": {
+    "navLabel": "অফলাইন",
+    "workingBadge": "সংরক্ষণ…",
+    "readyBadge": "অফলাইন ✓",
+    "panelLead": "এই ভাষার টুল ডিভাইসে সংরক্ষণ করুন। আপনার ফাইল ব্রাউজারেই থাকে — বাটনে চাপার পরেই সাইট ক্যাশ হয়।",
+    "sizeHint": "এই ভাষায় প্রায় ৫–৮ MB। অন্য ভাষা আলাদাভাবে সংরক্ষণ করুন।",
+    "start": "অফলাইন করুন",
+    "retry": "আবার চেষ্টা",
+    "refresh": "ক্যাশ রিফ্রেশ",
+    "stepPages": "টুল পেজ (এই ভাষা)",
+    "stepImages": "ইমেজ ইঞ্জিন (HEIC)",
+    "stepPdf": "PDF ইঞ্জিন",
+    "stepDone": "প্রস্তুত",
+    "readyMessage": "ইন্টারনেট বন্ধ করে এই ভাষার টুল ব্যবহার করতে পারেন।",
+    "workingHint": "তালিকা শেষ না হওয়া পর্যন্ত ট্যাব খোলা রাখুন।",
+    "install": "অ্যাপ ইনস্টল",
+    "installIos": "iPhone/iPad: শেয়ার → হোম স্ক্রিনে যোগ করুন।",
+    "unsupported": "এই ব্রাউজার সাইট অফলাইন রাখতে পারে না।",
+    "errorPartial": "{failed} পেজ ত্রুটি সহ সংরক্ষিত। আবার চেষ্টা করুন।",
+    "errorGeneric": "সম্পূর্ণ হয়নি। নেটওয়ার্ক দেখুন।",
+    "pageTitle": "অফলাইন",
+    "pageDescription": "নেটওয়ার্ক ছাড়া পেজ।",
+    "pageBody": "সংযোগ নেই। এই ভাষায় Offline চাপলে হোম থেকে সংরক্ষিত টুল খুলুন।",
+    "pageHome": "হোম"
+  }
+}

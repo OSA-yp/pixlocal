@@ -1,0 +1,52 @@
+{
+  "title": "Kompres foto online tanpa mengunggah ke server",
+  "description": "Kompres gambar secara lokal di browser: JPG, PNG, WebP, HEIC. File tidak masuk cloud — tanpa daftar, batch dan ZIP.",
+  "h1": "Kompres foto online",
+  "lead": "Perkecil JPG, PNG, dan WebP — atau kerjakan PDF — di browser. File tetap di perangkat: tanpa daftar, tanpa cloud.",
+  "body": [
+    "PixLocal mengompres gambar di komputer atau ponsel Anda. Cocok untuk situs, marketplace, email, dan pesan: file lebih kecil berarti unggahan lebih cepat.",
+    "Berbeda dari banyak layanan online, kami tidak menerima foto Anda di server. Bekerja seperti mengedit foto di galeri ponsel atau di Paint: seluruh proses di dalam browser Anda. Secara teknis JPG/WebP/PNG lewat Canvas, HEIC dengan dekoder lokal; proses batch dan unduh ZIP.",
+    "Secara default sisi panjang dibatasi 2560 px — sehingga foto iPhone benar-benar mengecil. Kualitas, batas sisi, dan target KB bisa diubah manual."
+  ],
+  "faq": [
+    {
+      "q": "Apakah foto saya benar-benar tidak lewat jaringan saat kompresi?",
+      "a": "Isi file — ya, tetap di perangkat: kompresi di perangkat Anda, seperti di galeri atau Paint. Membuka situs tetap mengunduh halaman seperti biasa. Di DevTools → Network saat proses, Anda tidak akan melihat badan gambar diunggah ke server kami."
+    },
+    {
+      "q": "Apa bedanya dengan TinyPNG dan iLoveIMG?",
+      "a": "Kompresor online tipikal mengunggah foto ke server mereka. PixLocal memproses file hanya di browser Anda — isi tidak ke server atau cloud. Tidak ada lossless cloud seperti TinyPNG: untuk ikon, pengoptimal CLI lebih kuat."
+    },
+    {
+      "q": "Format apa yang didukung?",
+      "a": "JPG/JPEG, PNG, WebP, dan HEIC/HEIF (lewat dekoder lokal heic-to/libheif). Hasil bisa disimpan sebagai JPG, WebP, atau PNG."
+    },
+    {
+      "q": "Mengapa HEIC kadang lebih besar setelah dikonversi ke JPG?",
+      "a": "HEIC biasanya lebih ringkas daripada JPEG. Kami otomatis menurunkan kualitas dan resolusi agar JPG lebih ringan dari aslinya. Jika perlu, kurangi sisi maks. atau kualitas secara manual."
+    },
+    {
+      "q": "Bagaimana menyimpan ke Foto di iPhone?",
+      "a": "Ketuk Bagikan dan pilih Simpan Gambar di menu sistem. Di iOS, Unduh biasanya menempatkan file di File."
+    },
+    {
+      "q": "Dengan apa mengompres, dan apakah legal?",
+      "a": "JPG/PNG/WebP — Canvas bawaan browser; HEIC — heic-to open source (libheif, LGPL-3.0); ZIP — jszip (MIT). Detail di bagian lisensi di GitHub / LICENSES.md."
+    },
+    {
+      "q": "Perlu akun?",
+      "a": "Tidak. Buka halaman, letakkan file, lalu unduh atau bagikan hasilnya."
+    },
+    {
+      "q": "Mengapa semua alat PixLocal aman?",
+      "a": "Kami memakai browser Anda, bukan server jarak jauh. Alat foto dan PDF berjalan di CPU perangkat Anda. Kami secara fisik tidak dapat menerima file Anda."
+    },
+    {
+      "q": "Bisakah dipakai tanpa internet?",
+      "a": "Ya — tekan Offline di header dan tunggu. Hanya bahasa saat ini yang disimpan; file Anda tidak diunggah."
+    }
+  ],
+  "dualPitch": "PixLocal adalah dua rangkaian alat di satu tempat: kompres & konversi foto, dan utilitas PDF — keduanya privat, keduanya di perangkat.",
+  "dualPitchPhoto": "Alat foto",
+  "dualPitchPdf": "Alat PDF (mis. kompres)"
+}

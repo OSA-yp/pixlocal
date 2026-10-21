@@ -1,0 +1,411 @@
+{
+  "brandTagline": "herramientas privadas · en el navegador",
+  "nav": {
+    "compress": "Comprimir",
+    "heic-v-jpg": "iPhone→JPG",
+    "szhat-do-100kb": "100 KB",
+    "szhat-jpg": "Comprimir JPG",
+    "webp-v-jpg": "WebP→JPG",
+    "udalit-exif": "EXIF"
+  },
+  "footer": {
+    "blurb": "Herramientas privadas para tus archivos. Todo en el navegador — nada va a un servidor ni a la nube.",
+    "zeroKnowledge": "Privacidad: no pedimos, recibimos, guardamos ni vemos tus archivos.",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "contacts": "Contacto",
+    "sitemap": "Mapa del sitio",
+    "copyright": "Herramienta para archivos personales."
+  },
+  "trust": {
+    "aria": "Privacidad",
+    "hook": "Amigable con GDPR: cero transferencia de datos",
+    "flow": {
+      "aria": "Cómo se procesa una foto",
+      "photo": "Tu foto",
+      "device": "Tu navegador",
+      "result": "Foto comprimida",
+      "noCloud": "No a la nube"
+    },
+    "items": [
+      {
+        "title": "Solo en el dispositivo",
+        "text": "La compresión y conversión se hacen en el navegador: los píxeles no salen del teléfono o el ordenador."
+      },
+      {
+        "title": "Sin subir la foto",
+        "text": "Al procesar, el cuerpo del archivo no va por la red. Ahorras datos móviles: no envías megas a un servidor ajeno."
+      },
+      {
+        "title": "Sin anuncios",
+        "text": "No mostramos publicidad y no aceptamos tus archivos. Físicamente no vemos tus fotos."
+      },
+      {
+        "title": "No guardamos fotos",
+        "text": "No guardamos imágenes en un servidor ni en la nube. Abres, procesas, descargas."
+      }
+    ]
+  },
+  "faqTitle": "Preguntas",
+  "toolLinksTitle": "Otras herramientas",
+  "homeLink": {
+    "title": "Comprimir fotos",
+    "text": "JPG, PNG, WebP — con control de calidad"
+  },
+  "toolLinks": {
+    "heic-v-jpg": {
+      "title": "HEIC → JPG",
+      "text": "Fotos de iPhone a JPG para Windows y formularios"
+    },
+    "webp-v-jpg": {
+      "title": "WebP → JPG",
+      "text": "Cuando una imagen del sitio no se abre"
+    },
+    "png-v-jpg": {
+      "title": "PNG → JPG",
+      "text": "Reducir capturas y gráficos"
+    },
+    "jpg-v-png": {
+      "title": "JPG → PNG",
+      "text": "Cuando necesitas transparencia o PNG"
+    },
+    "jpg-v-webp": {
+      "title": "JPG → WebP",
+      "text": "Para sitios rápidos y CWV"
+    },
+    "png-v-webp": {
+      "title": "PNG → WebP",
+      "text": "Comprimir PNG sin megabytes de más"
+    },
+    "webp-v-png": {
+      "title": "WebP → PNG",
+      "text": "Conservar la transparencia"
+    },
+    "izmenit-razmer": {
+      "title": "Cambiar tamaño",
+      "text": "Limitar el lado largo en px"
+    },
+    "szhat-do-100kb": {
+      "title": "Comprimir a 100 KB",
+      "text": "Para límites de formularios y correo"
+    },
+    "szhat-png": {
+      "title": "Comprimir PNG",
+      "text": "Optimización PNG online"
+    },
+    "szhat-jpg": {
+      "title": "Comprimir JPG",
+      "text": "Compresión JPEG rápida"
+    },
+    "udalit-exif": {
+      "title": "Eliminar EXIF y metadatos",
+      "text": "Oculta GPS y datos de la cámara antes de enviar"
+    },
+    "skryt-oblast": {
+      "title": "Difuminar u ocultar un área",
+      "text": "Esconde rostros, matrículas y datos privados"
+    },
+    "compress-pdf": {
+      "title": "Comprimir PDF",
+      "text": "Reducir el documento en el dispositivo"
+    },
+    "merge-pdf": {
+      "title": "Unir PDF",
+      "text": "Combinar varios archivos en uno"
+    },
+    "pdf-sanitize": {
+      "title": "Quitar metadatos PDF",
+      "text": "Eliminar datos de servicio"
+    },
+    "split-pdf": {
+      "title": "Dividir PDF",
+      "text": "Extraer páginas o rangos"
+    },
+    "rotate-pdf": {
+      "title": "Rotar PDF",
+      "text": "Girar 90°, 180° o 270°"
+    },
+    "organize-pdf": {
+      "title": "Organizar PDF",
+      "text": "Reordenar, rotar o eliminar"
+    },
+    "jpg-to-pdf": {
+      "title": "JPG → PDF",
+      "text": "Crear PDF desde imágenes"
+    },
+    "pdf-to-jpg": {
+      "title": "PDF → JPG",
+      "text": "Cada página como imagen"
+    },
+    "watermark-pdf": {
+      "title": "Marca de agua",
+      "text": "Texto en todas las páginas"
+    },
+    "page-numbers-pdf": {
+      "title": "Números de página",
+      "text": "Numerar un PDF"
+    },
+    "crop-pdf": {
+      "title": "Recortar PDF",
+      "text": "Recortar márgenes"
+    },
+    "protect-pdf": {
+      "title": "Proteger PDF",
+      "text": "Contraseña AES-256"
+    },
+    "unlock-pdf": {
+      "title": "Desbloquear PDF",
+      "text": "Quitar contraseña conocida"
+    }
+  },
+  "breadcrumbHome": "Inicio",
+  "schemaFeatures": [
+    "Procesamiento local en el navegador sin subir al servidor",
+    "Los archivos no van a la nube",
+    "Compresión y conversión de JPG, PNG, WebP, HEIC",
+    "Procesamiento por lotes y descarga ZIP",
+    "Sin registro",
+    "Compress and edit PDFs locally in the browser"
+  ],
+  "language": "Idioma",
+  "tool": {
+    "processError": "No se pudo procesar el archivo",
+    "heicDecode": "No se pudo decodificar HEIC",
+    "canvasUnavailable": "Canvas no disponible",
+    "encodeFailed": "No se pudo codificar la imagen",
+    "addImages": "Añade imágenes (JPG, PNG, WebP, HEIC).",
+    "addOrReplace": "Añadir o reemplazar archivos",
+    "localBadge": "En tu dispositivo",
+    "localOnlyShort": "El procesamiento es solo en el dispositivo: nada se envía a un servidor ni a la nube.",
+    "chooseFiles": "Elegir archivos",
+    "choosePhoto": "Elige una foto",
+    "dropHere": "Suelta las fotos aquí",
+    "localOnlyMobile": "El procesamiento se hace en este dispositivo: nada se envía a un servidor ni a la nube.",
+    "localOnlyDesktop": "o haz clic para elegir archivos. El procesamiento se hace en este dispositivo: nada se envía a un servidor ni a la nube.",
+    "quality": "Calidad: {percent}%",
+    "outputFormat": "Formato de salida",
+    "maxSide": "Lado máx. (px), 0 = sin límite",
+    "targetKb": "Objetivo de tamaño (KB), 0 = off",
+    "recalc": "Recalcular con los nuevos ajustes",
+    "processing": "Procesando en tu dispositivo…",
+    "processingHint": "La foto no se envía al servidor: la compresión ocurre en el navegador.",
+    "total": "Total",
+    "shareHint": "En iPhone: Compartir → Guardar imagen para que la foto vaya a Fotos. Descargar suele guardar en Archivos.",
+    "grew": "Quedó más grande: baja la calidad o el lado máx. y recalcula.",
+    "share": "Compartir",
+    "download": "Descargar",
+    "downloadZip": "Descargar todo en ZIP",
+    "stripMetadata": "Eliminar metadatos",
+    "stripMetadataHint": "Al comprimir o cambiar el formato, los metadatos se eliminan al recodificar.",
+    "fileInMemory": "El archivo está en la memoria del navegador. No se usa conexión al servidor.",
+    "savedLocally": "Listo. Archivo guardado en el dispositivo."
+  },
+  "presetTitles": {
+    "home": "Comprimir fotos",
+    "homeSubtitle": "Compresión local",
+    "heic-v-jpg": "HEIC → JPG",
+    "webp-v-jpg": "WebP → JPG",
+    "png-v-jpg": "PNG → JPG",
+    "jpg-v-png": "JPG → PNG",
+    "jpg-v-webp": "JPG → WebP",
+    "png-v-webp": "PNG → WebP",
+    "webp-v-png": "WebP → PNG",
+    "izmenit-razmer": "Redimensionar",
+    "szhat-do-100kb": "Hasta 100 KB",
+    "szhat-png": "Comprimir PNG",
+    "szhat-jpg": "Comprimir JPG",
+    "udalit-exif": "Eliminar EXIF",
+    "skryt-oblast": "Difuminar",
+    "compress-pdf": "Comprimir PDF",
+    "merge-pdf": "Unir PDF",
+    "pdf-sanitize": "Quitar metadatos PDF",
+    "split-pdf": "Dividir PDF",
+    "rotate-pdf": "Rotar PDF",
+    "organize-pdf": "Organizar PDF",
+    "jpg-to-pdf": "JPG → PDF",
+    "pdf-to-jpg": "PDF → JPG",
+    "watermark-pdf": "Marca de agua",
+    "page-numbers-pdf": "Números de página",
+    "crop-pdf": "Recortar PDF",
+    "protect-pdf": "Proteger PDF",
+    "unlock-pdf": "Desbloquear PDF"
+  },
+  "layout": {
+    "titleDefault": "PixLocal — comprimir y convertir fotos en el navegador",
+    "titleTemplate": "%s · PixLocal",
+    "description": "Comprime y convierte JPG, PNG, WebP y HEIC online gratis. Los archivos se procesan localmente: no se suben a un servidor ni a la nube.",
+    "ogTitle": "PixLocal — comprimir fotos online sin nube",
+    "ogDescription": "Compresión y conversión privada de imágenes sin subir al servidor. HEIC, WebP, PNG, JPG."
+  },
+  "meta": {
+    "title": "Qué hay en el archivo",
+    "localNote": "La comprobación es solo en tu dispositivo — el archivo no se sube.",
+    "gpsWarn": "El archivo tiene ubicación (GPS): la foto puede revelar dónde se tomó.",
+    "noneFound": "No hay datos ocultos de ubicación o cámara.",
+    "stripped": "Datos ocultos eliminados: sin ubicación ni etiquetas de cámara en el resultado.",
+    "cleared": "limpiado",
+    "hintGps": "Deja activada la eliminación de metadatos y descarga — desaparecen ubicación y etiquetas.",
+    "hintClean": "Sin ubicación; al procesar igualmente se pueden quitar etiquetas de servicio.",
+    "techTitle": "Para técnicos",
+    "techBody": "El resultado se codifica en el navegador (Canvas API → toBlob); no se copian EXIF/GPS. Comprueba: DevTools → Network al procesar — solo carga estática del sitio; el cuerpo de tu imagen no se sube a nuestro origin.",
+    "keys": {
+      "gps": "Ubicación",
+      "camera": "Cámara",
+      "date": "Fecha",
+      "software": "Software",
+      "orientation": "Orientación"
+    },
+    "techBodyPdfCompress": "PDF pages are rendered with PDF.js into Canvas, encoded as JPEG, and rebuilt with pdf-lib. After strong compression, text is usually not selectable. While processing, Network only shows site static assets — your PDF body is not uploaded to our origin.",
+    "techBodyPdfSanitize": "Pages are copied into a new PDFDocument (pdf-lib); Info metadata fields are cleared. Check Network — no file-body upload."
+  },
+  "redact": {
+    "choosePhoto": "Elige una foto",
+    "dropHere": "Suelta una foto aquí",
+    "chooseFiles": "Elegir archivo",
+    "localBadge": "En tu dispositivo",
+    "hint": "Marca zonas — el ocultado aparece al instante. Solo en el navegador.",
+    "modePixel": "Pixelar",
+    "modeBlur": "Difuminar",
+    "strength": "Intensidad: {percent}%",
+    "download": "Descargar",
+    "clear": "Borrar zonas",
+    "replace": "Otra foto",
+    "processing": "Guardando localmente…",
+    "fileInMemory": "El archivo está en la memoria del navegador. No se usa conexión al servidor.",
+    "savedLocally": "Listo. Archivo guardado en el dispositivo.",
+    "error": "No se pudo procesar la imagen"
+  },
+  "crossSell": {
+    "title": "Listo. ¿Algo más antes de enviar?",
+    "exif": "¿Quitar las coordenadas GPS?",
+    "exifCta": "Quitar EXIF",
+    "blur": "¿Ocultar un rostro o matrícula?",
+    "blurCta": "Difuminar"
+  },
+  "toolsMenu": {
+    "trigger": "Herramientas",
+    "close": "Cerrar",
+    "photo": "Fotos",
+    "pdf": "PDF",
+    "localNote": "Local en el navegador. Sin subir al servidor."
+  },
+  "privacyDetails": {
+    "title": "Cómo funciona",
+    "body": "La foto permanece en la memoria del navegador y no se envía a nuestro servidor al comprimir. Al abrir el sitio se descarga la página como siempre. Para estadísticas de visitas podemos usar Google Analytics: página, tipo de dispositivo, clics en botones — sin nombres de archivo ni píxeles. El idioma puede recordarse en el navegador. Las cookies de analytics son de Google; puedes limitarlas en la configuración del navegador. También puedes pulsar Offline en la cabecera para guardar las páginas de este idioma y los motores en el dispositivo; tus archivos no se suben."
+  },
+  "pdfTool": {
+    "processError": "Could not process the PDF",
+    "pdfEncrypted": "This PDF is password-protected. Use Unlock PDF first.",
+    "pdfLoadFailed": "Could not read this PDF",
+    "pdfEmpty": "Nothing to process",
+    "canvasUnavailable": "Canvas is unavailable",
+    "encodeFailed": "Could not encode the result",
+    "pdfBadPassword": "Incorrect password",
+    "pdfNotEncrypted": "This PDF is not password-protected",
+    "pdfNeedPassword": "Enter a password",
+    "pdfNoImages": "Add JPG, PNG, or WebP images",
+    "passwordMismatch": "Passwords do not match",
+    "addPdfs": "Add one or more PDF files",
+    "addImages": "Add JPG, PNG, or WebP images",
+    "addOrReplace": "Add or replace files",
+    "localBadge": "100% client-side · zero-knowledge",
+    "localOnly": "Processing stays on your device — file contents are not sent to a server.",
+    "chooseFiles": "Choose files",
+    "dropHere": "Drop files here",
+    "compressLevel": "Compression",
+    "levelLight": "Light (better quality)",
+    "levelBalanced": "Balanced",
+    "levelStrong": "Strong (smaller file)",
+    "compressHint": "Pages are re-rendered as images. Text may no longer be selectable.",
+    "splitMode": "Split mode",
+    "splitEach": "Each page",
+    "splitRanges": "Ranges",
+    "rangesLabel": "Page ranges (e.g. 1-3,5)",
+    "rotateAngle": "Rotate by",
+    "watermarkText": "Watermark text",
+    "opacity": "Opacity",
+    "pageNumFormat": "Number format",
+    "formatN": "Page number only",
+    "formatNofN": "Page / total",
+    "cropMargin": "Crop each side",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "run": "Process on device",
+    "processing": "Processing on your device…",
+    "processingHint": "File contents are not uploaded — work runs in the browser.",
+    "progress": "{done} / {total}",
+    "remove": "Remove",
+    "pageLabel": "Page {n}",
+    "total": "Total",
+    "download": "Download",
+    "downloadZip": "Download all as ZIP",
+    "share": "Share",
+    "grew": "Got larger — try a stronger level.",
+    "savedLocally": "Done. File saved locally.",
+    "tooLarge": "File is too large for reliable in-browser processing ({size}). Try under 100 MB.",
+    "warnSize": "Large file ({size}) — processing may be slow or run out of memory on this device.",
+    "warnPages": "Many pages ({pages}) — may be slow or run out of memory on a weak device; processing is not blocked.",
+    "watermarkColor": "Color del texto",
+    "rotateCw": "En el sentido de las agujas",
+    "rotateCcw": "En sentido contrario",
+    "cropPreviewHint": "Las zonas sombreadas se recortarán"
+  },
+  "trustPdf": {
+    "aria": "Privacidad",
+    "hook": "",
+    "flow": {
+      "aria": "Cómo se procesa un PDF",
+      "file": "Su PDF",
+      "device": "Su navegador",
+      "result": "PDF limpio",
+      "noCloud": "No a la nube"
+    },
+    "items": [
+      {
+        "title": "Solo en el dispositivo",
+        "text": "Las herramientas PDF se ejecutan en el navegador — el documento no sale del teléfono o del ordenador."
+      },
+      {
+        "title": "Sin subir archivos",
+        "text": "Durante el procesamiento el cuerpo del archivo no va por la red. Ahorre datos: no envía megabytes a un servidor ajeno."
+      },
+      {
+        "title": "Sin anuncios",
+        "text": "No mostramos anuncios ni aceptamos sus archivos. Físicamente no vemos sus documentos."
+      },
+      {
+        "title": "No almacenamos archivos",
+        "text": "No guardamos PDF en un servidor ni en la nube. Abrir, procesar, descargar."
+      }
+    ]
+  },
+  "privacyDetailsPdf": {
+    "title": "Cómo funciona",
+    "body": "Su PDF permanece en la memoria del navegador y no se envía a nuestro servidor durante el procesamiento. Abrir el sitio sigue descargando la página como de costumbre. Para estadísticas de visitas podemos usar Google Analytics: página, tipo de dispositivo, clics — sin nombres de archivo ni contenido del documento. El idioma puede recordarse en el navegador. Las cookies de análisis son de Google; puede limitarlas en la configuración del navegador. También puedes pulsar Offline en la cabecera para guardar las páginas de este idioma y los motores en el dispositivo; tus archivos no se suben."
+  },
+  "offline": {
+    "navLabel": "Sin conexión",
+    "workingBadge": "Guardando…",
+    "readyBadge": "Offline ✓",
+    "panelLead": "Guarda las herramientas de este idioma en el dispositivo. Tus archivos no salen del navegador: solo se cachea la web tras pulsar el botón.",
+    "sizeHint": "Unos 5–8 MB para este idioma. Otros idiomas se guardan aparte.",
+    "start": "Hacer offline",
+    "retry": "Reintentar",
+    "refresh": "Actualizar caché",
+    "stepPages": "Páginas de herramientas (este idioma)",
+    "stepImages": "Motor de imágenes (HEIC)",
+    "stepPdf": "Motor PDF",
+    "stepDone": "Listo",
+    "readyMessage": "Puedes desconectar internet y usar las herramientas en este idioma.",
+    "workingHint": "Mantén esta pestaña abierta hasta terminar la lista.",
+    "install": "Instalar app",
+    "installIos": "En iPhone/iPad: Compartir → Añadir a pantalla de inicio.",
+    "unsupported": "Este navegador no puede guardar el sitio offline (sin Service Worker).",
+    "errorPartial": "Guardado con {failed} errores de página. Puedes reintentar.",
+    "errorGeneric": "No se pudo terminar. Comprueba la red y reintenta.",
+    "pageTitle": "Sin conexión",
+    "pageDescription": "Página cuando no hay red.",
+    "pageBody": "Sin conexión. Si ya pulsaste Offline para este idioma, abre una herramienta guardada desde inicio.",
+    "pageHome": "Inicio"
+  }
+}

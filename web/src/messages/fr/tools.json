@@ -1,0 +1,660 @@
+{
+  "heic-v-jpg": {
+    "title": "Photos iPhone en JPG : HEIC en ligne sans envoi au serveur",
+    "description": "Convertisseur HEIC/HEIF vers JPG gratuit dans le navigateur. Ouvrez les photos iPhone sur Windows et dans les formulaires — sans cloud ni logiciel.",
+    "h1": "HEIC en JPG en ligne",
+    "lead": "Photo prise sur iPhone — mais le fichier ne s’ouvre pas sur PC ou dans un formulaire ? Convertissez HEIC/HEIF en JPG en local, sans cloud ni inscription.",
+    "body": [
+      "L’appareil photo iPhone enregistre en HEIC par défaut (parfois HEIF). Windows, de nombreux sites, imprimantes et pièces jointes attendent un JPG classique — d’où les « photos iPhone » qui ne s’ouvrent pas sur ordinateur.",
+      "Mode d’emploi : choisissez un ou plusieurs .heic/.heif → la conversion en JPG se fait dans le navigateur → téléchargez le fichier ou un ZIP. Ajustez qualité et grand côté selon la limite du formulaire.",
+      "PixLocal n’envoie pas la photo sur un serveur — contrairement aux convertisseurs cloud typiques. Décodage HEIC et enregistrement JPEG restent sur l’appareil ; vous pouvez alléger le poids avant l’envoi."
+    ],
+    "faq": [
+      {
+        "q": "Comment ouvrir une photo iPhone sur Windows ?",
+        "a": "Transférez le HEIC sur le PC et convertissez-le ici en JPG — sans installer de codecs ni de logiciels. Le fichier ne part pas dans le cloud : traitement uniquement dans le navigateur."
+      },
+      {
+        "q": "En quoi HEIC diffère-t-il du JPG ?",
+        "a": "HEIC est plus compact et plus récent (standard caméra iPhone) ; JPG est le format universel pour Windows, le web et l’impression. La conversion vise la compatibilité."
+      },
+      {
+        "q": "La photo part-elle sur un serveur ?",
+        "a": "Non. Décodage HEIC et enregistrement JPG se font dans le navigateur. Vérifiez l’onglet Réseau : le corps de l’image n’est pas envoyé."
+      },
+      {
+        "q": "Les métadonnées sont-elles conservées ?",
+        "a": "Lors d’un réencodage via Canvas, une partie de l’EXIF peut être perdue. Gardez le HEIC original pour les archives importantes."
+      },
+      {
+        "q": "Pourquoi le JPG est-il parfois plus lourd que le HEIC ?",
+        "a": "HEIC est plus efficace que JPEG. Nous baissons automatiquement qualité et côté (2560 px par défaut) pour alléger le fichier. Réduisez qualité ou côté max si besoin."
+      },
+      {
+        "q": "Peut-on convertir plusieurs fichiers d’un coup ?",
+        "a": "Oui — sélectionnez un lot de HEIC et téléchargez un ZIP de JPG, ou partagez des clichés séparés vers Photos via Partager."
+      }
+    ]
+  },
+  "webp-v-jpg": {
+    "title": "WebP en JPG en ligne sans envoi au serveur",
+    "description": "Convertisseur WebP vers JPG gratuit en local dans le navigateur. Les fichiers ne partent pas dans le cloud.",
+    "h1": "WebP en JPG",
+    "lead": "Ouvrez un WebP téléchargé dans n’importe quel éditeur : conversion en JPG en local sur l’appareil.",
+    "body": [
+      "WebP est fréquent sur le web et dans les messageries. Si l’éditeur, l’imprimante ou un formulaire Windows n’ouvre que le JPG — réencodez le fichier ici.",
+      "Décodage et enregistrement JPEG se font dans le navigateur : la source n’est jamais envoyée. Vous pouvez limiter le grand côté pour éviter un fichier trop lourd.",
+      "Lot : plusieurs WebP d’un coup, puis ZIP ou Partager sur iPhone. Utilisez le curseur de qualité pour le compromis netteté / poids."
+    ],
+    "faq": [
+      {
+        "q": "Pourquoi le JPG est-il plus lourd que le WebP ?",
+        "a": "WebP est en général plus efficace. Le JPG sert à la compatibilité, pas à un poids plus faible."
+      },
+      {
+        "q": "L’animation WebP est-elle conservée ?",
+        "a": "Non : le JPG ne garde qu’une image. Pour une séquence, gardez le WebP d’origine ou convertissez en vidéo."
+      },
+      {
+        "q": "Faut-il s’inscrire ?",
+        "a": "Non. Choisissez des fichiers sur cette page et téléchargez le JPG — sans compte ni cloud."
+      }
+    ]
+  },
+  "png-v-jpg": {
+    "title": "PNG en JPG en ligne",
+    "description": "Convertisseur PNG vers JPG en ligne gratuit, en local dans le navigateur.",
+    "h1": "PNG en JPG",
+    "lead": "Passez du PNG au JPG et réduisez fortement le poids pour le web et les messageries.",
+    "body": [
+      "Le PNG convient aux graphiques, captures et transparence, mais est souvent excessif pour les photos : un JPG de la même scène peut peser bien moins.",
+      "Les zones transparentes deviennent un fond clair Canvas en JPG — vérifiez l’aperçu si le canal alpha compte.",
+      "Pratique avant un e-mail, un CMS ou une marketplace où le PNG bute sur une limite. Vous pouvez encore baisser qualité et côté max."
+    ],
+    "faq": [
+      {
+        "q": "Comment garder la transparence ?",
+        "a": "Restez en PNG ou choisissez WebP dans le compresseur général de l’accueil."
+      },
+      {
+        "q": "Pourquoi la capture est-elle floue ?",
+        "a": "JPEG gère mal le texte fin. Montez la qualité vers 90 % ou gardez PNG/WebP pour les interfaces."
+      },
+      {
+        "q": "Peut-on traiter un lot d’un coup ?",
+        "a": "Oui — sélectionnez plusieurs PNG et téléchargez un ZIP de JPG."
+      }
+    ]
+  },
+  "jpg-v-png": {
+    "title": "JPG en PNG en ligne",
+    "description": "Convertisseur JPG vers PNG en ligne dans le navigateur sans inscription.",
+    "h1": "JPG en PNG",
+    "lead": "Convertissez JPEG en PNG en local lorsque vous avez besoin du format PNG pour la suite.",
+    "body": [
+      "La conversion JPG→PNG ne restaure pas le détail déjà perdu par JPEG. Mais vous pouvez éditer ensuite sans nouveaux artefacts de « génération JPEG ».",
+      "Le PNG sera nettement plus lourd que la source — normal pour un format sans perte. Si l’objectif est le poids, préférez WebP ou recomprimez le JPG.",
+      "Traitement local : pratique quand un modèle, une imprimerie ou une banque d’images exige du PNG."
+    ],
+    "faq": [
+      {
+        "q": "Le fichier sera-t-il plus gros ?",
+        "a": "Souvent oui : le PNG sans perte est en général plus lourd que le JPEG."
+      },
+      {
+        "q": "Y aura-t-il de la transparence ?",
+        "a": "Non. Le JPEG n’a pas de canal alpha ; le PNG sera opaque. La transparence doit être ajoutée à part."
+      },
+      {
+        "q": "À quoi bon si le PNG est plus lourd ?",
+        "a": "Quand l’étape suivante est un éditeur ou une impression qui exige du PNG, pas d’économiser des kilo-octets."
+      }
+    ]
+  },
+  "jpg-v-webp": {
+    "title": "JPG en WebP en ligne",
+    "description": "Convertisseur JPG vers WebP pour sites — en local dans le navigateur.",
+    "h1": "JPG en WebP",
+    "lead": "Préparez des images pour des pages rapides : JPG → WebP sans cloud.",
+    "body": [
+      "Le WebP sur un site est en général plus léger que le JPEG à rendu comparable — moins d’octets pour le LCP et le mobile.",
+      "PixLocal encode le WebP dans le navigateur : les JPG sources ne partent pas sur un serveur. Réglez la qualité et, au besoin, limitez le côté.",
+      "Gardez un fallback JPG dans la mise en page pour les anciens clients : le convertisseur sert à obtenir un fichier moderne, pas à faire « oublier » le JPEG."
+    ],
+    "faq": [
+      {
+        "q": "Tous les navigateurs ouvrent-ils le WebP ?",
+        "a": "Les modernes, oui. Gardez un fallback JPG pour les anciens clients."
+      },
+      {
+        "q": "Convient-il aux photos produits ?",
+        "a": "Oui — qualité 75–85 % suffit souvent. Vérifiez l’aperçu sur texte fin et dégradés."
+      },
+      {
+        "q": "Peut-on traiter par lot ?",
+        "a": "Oui — chargez plusieurs JPG et téléchargez un ZIP de WebP."
+      }
+    ]
+  },
+  "png-v-webp": {
+    "title": "PNG en WebP en ligne",
+    "description": "Convertisseur PNG vers WebP en ligne gratuit dans le navigateur.",
+    "h1": "PNG en WebP",
+    "lead": "Compressez le PNG en WebP en local — idéal pour landings et fiches produit.",
+    "body": [
+      "Le WebP est souvent plus léger que le PNG à rendu proche — surtout photos et dégradés doux. Pour les icônes à aplats, le gain est moindre ; regardez l’aperçu.",
+      "Le WebP gère la transparence : un logo sur fond transparent survit en général, mais vérifiez les bords anti-aliasés.",
+      "Fait en local, sans file d’attente cloud. Pour un lossless PNG maximal, ce mode ne remplace pas oxipng/pngquant."
+    ],
+    "faq": [
+      {
+        "q": "La transparence est-elle conservée ?",
+        "a": "WebP prend en charge le canal alpha ; le résultat dépend de l’encodeur du navigateur. Vérifiez les bords dans l’aperçu."
+      },
+      {
+        "q": "Quand garder le PNG ?",
+        "a": "Petite UI, pixel art, captures avec texte — si le WebP devient boueux. Alors redimensionnez le PNG sans changer de format."
+      },
+      {
+        "q": "C’est pour une boutique en ligne ?",
+        "a": "Oui : fiches et bannières s’allègent souvent sans perte visible. Ne remplacez pas tout en masse sans contrôle par échantillon."
+      }
+    ]
+  },
+  "webp-v-png": {
+    "title": "WebP en PNG en ligne",
+    "description": "Convertisseur WebP vers PNG en ligne, traitement dans le navigateur.",
+    "h1": "WebP en PNG",
+    "lead": "Besoin d’un PNG depuis WebP — convertissez en local et téléchargez le résultat.",
+    "body": [
+      "Vous avez besoin de PNG parce que Photoshop, l’imprimerie ou un formulaire n’accepte pas le WebP — réencodez en local et téléchargez.",
+      "Le PNG sans perte est presque toujours plus lourd que le WebP source. Si l’objectif est le poids, restez en WebP ou passez en JPG sans transparence.",
+      "Un WebP animé se réduit à une image. Cet outil ne convient pas aux clips."
+    ],
+    "faq": [
+      {
+        "q": "Le fichier sera-t-il plus gros ?",
+        "a": "En général oui — le PNG sans perte pèse plus que le WebP."
+      },
+      {
+        "q": "La transparence restera-t-elle ?",
+        "a": "Si le WebP avait un canal alpha, le PNG le conserve. Un WebP opaque donne un PNG opaque."
+      },
+      {
+        "q": "Pourquoi une seule image alors que la source « clignotait » ?",
+        "a": "L’animation n’est pas transférée. Exportez une vidéo ou un GIF depuis un éditeur, pas via ce convertisseur."
+      }
+    ]
+  },
+  "izmenit-razmer": {
+    "title": "Redimensionner une photo en ligne",
+    "description": "Réduire la résolution d’une photo en ligne — redimensionner le grand côté dans le navigateur.",
+    "h1": "Redimensionner une photo",
+    "lead": "Limitez le grand côté en pixels et, si besoin, réduisez le poids du fichier.",
+    "body": [
+      "Redimensionner le grand côté est un moyen rapide de respecter les limites réseaux/CMS et d’accélérer les pages : moins de pixels, moins de poids à qualité JPEG égale.",
+      "Définissez un maximum sur le côté le plus long (1920 px par défaut) ; les proportions sont conservées. Pas besoin de calculer le petit côté.",
+      "L’agrandissement est techniquement possible, mais la netteté n’apparaît pas : l’outil vise la réduction. Les fichiers ne quittent pas l’appareil."
+    ],
+    "faq": [
+      {
+        "q": "Peut-on agrandir une photo ?",
+        "a": "Techniquement oui, mais la qualité n’augmente pas. L’outil est conçu pour réduire."
+      },
+      {
+        "q": "Les proportions sont-elles conservées ?",
+        "a": "Oui — le redimensionnement suit le côté le plus long, le ratio reste intact."
+      },
+      {
+        "q": "Comment encore alléger le poids ?",
+        "a": "Après redimensionnement, baissez la qualité JPEG/WebP ou fixez une cible en Ko sur l’accueil / la page « à 100 Ko »."
+      }
+    ]
+  },
+  "szhat-do-100kb": {
+    "title": "Compresser une photo à 100 Ko en ligne sans cloud",
+    "description": "Compressez une image à 100 Ko en local dans le navigateur — sans envoi au serveur. Pratique pour formulaires et pièces jointes.",
+    "h1": "Compresser une photo à 100 Ko",
+    "lead": "Faites tenir le fichier sous la limite d’un formulaire ou d’une pièce jointe — cible 100 Ko, traitement local.",
+    "body": [
+      "La limite de 100 Ko est fréquente sur formulaires officiels, candidatures, pièces jointes et anciens forums. L’outil ajuste qualité JPEG/WebP et résolution jusqu’à approcher la cible.",
+      "Par défaut le grand côté va jusqu’à 1600 px et la cible est 100 Ko. Si l’image est bruitée ou très détaillée, descendez à 1280 ou 1024 px et recalculez.",
+      "Tout se calcule dans le navigateur — un scan de passeport ou une photo de formulaire ne part pas dans le cloud d’autrui. Exactement 102400 octets n’est pas toujours possible : l’objectif est de « rentrer », pas le bit près."
+    ],
+    "faq": [
+      {
+        "q": "Est-il sûr de compresser des documents ?",
+        "a": "Le contenu du fichier n’est pas envoyé au serveur PixLocal. Traitement uniquement dans le navigateur. L’analytique compte des clics, pas les noms ni les pixels des fichiers."
+      },
+      {
+        "q": "Obtient-on toujours exactement 100 Ko ?",
+        "a": "Pas toujours — cela dépend du contenu. Vous pouvez aussi baisser le côté max en pixels."
+      },
+      {
+        "q": "Pourquoi la photo est-elle floue ?",
+        "a": "Pour tenir en 100 Ko, il faut sacrifier du détail. Redimensionnez d’abord, puis la qualité : le rendu est souvent plus vivant qu’un seul JPEG très bas."
+      },
+      {
+        "q": "Le PNG se compresse-t-il aussi à 100 Ko ?",
+        "a": "Plus souvent via JPG ou WebP. Un PNG pur sans perte sous 100 Ko pour une photo est presque irréaliste."
+      }
+    ]
+  },
+  "szhat-png": {
+    "title": "Compresser un PNG en ligne sans envoi au serveur",
+    "description": "Compressez un PNG en local dans le navigateur gratuitement — le fichier ne part pas dans le cloud.",
+    "h1": "Compresser un PNG en ligne",
+    "lead": "Réduisez le poids du PNG : réencodez en WebP/JPG ou gardez le PNG avec redimensionnement.",
+    "body": [
+      "L’encodeur PNG du navigateur ne fait pas de heavy lossless comme pngquant ou oxipng. Sans besoin de transparence, WebP ou JPG allège bien plus.",
+      "Pour les captures avec texte, essayez d’abord WebP : souvent plus léger que le PNG et plus lisible qu’un JPEG dur. Vérifiez les bords alpha des logos.",
+      "Lot PNG → ZIP sur l’appareil, sans inscription. Si le fichier bouge à peine — changez le format de sortie, pas le curseur PNG."
+    ],
+    "faq": [
+      {
+        "q": "Pourquoi le PNG a-t-il à peine diminué ?",
+        "a": "Le PNG sans perte a un plafond. Passez le format de sortie en WebP ou JPG."
+      },
+      {
+        "q": "Transparence et petit poids ?",
+        "a": "Visez le WebP. Le JPG tue la transparence avec un fond clair."
+      },
+      {
+        "q": "Est-ce un remplacement de TinyPNG ?",
+        "a": "Non : pas de lossless cloud ici. Mais le fichier ne quitte pas l’ordinateur. Pour les archives d’icônes, les optimiseurs CLI restent plus forts."
+      }
+    ]
+  },
+  "szhat-jpg": {
+    "title": "Compresser un JPG en ligne sans envoi au serveur",
+    "description": "Compressez un JPEG en local dans le navigateur gratuitement — sans cloud ni inscription.",
+    "h1": "Compresser un JPG en ligne",
+    "lead": "Recompressez le JPEG avec contrôle de qualité et de poids cible — tout dans le navigateur.",
+    "body": [
+      "Recompresser un JPEG ajoute des artefacts : commencez vers 70–85 % et regardez l’aperçu, plutôt que de descendre tout de suite au minimum.",
+      "Le poids baisse surtout avec un redimensionnement du grand côté (ex. 1920 ou 1600 px). Le curseur de qualité seul sur un cliché 12 Mpx aide moins.",
+      "Plusieurs JPG d’un coup, ZIP à la fin. Les sources restent chez vous — pratique avant un site, une annonce ou un e-mail."
+    ],
+    "faq": [
+      {
+        "q": "Peut-on traiter par lot ?",
+        "a": "Oui — chargez plusieurs JPG et téléchargez un ZIP."
+      },
+      {
+        "q": "75 % de qualité, c’est trop bas ?",
+        "a": "Pour le web et les messageries, c’est souvent suffisant. Pour l’impression ou l’archive, gardez l’original et évitez les recompressions répétées."
+      },
+      {
+        "q": "Pourquoi le fichier est-il un peu plus gros après compression ?",
+        "a": "Rare, si la source était déjà très légère. Baissez le côté ou la qualité et cliquez sur Recalculer."
+      }
+    ]
+  },
+  "udalit-exif": {
+    "title": "Supprimer EXIF et métadonnées en ligne",
+    "description": "Masquez GPS et données appareil avant d’envoyer — dans le navigateur, sans upload serveur.",
+    "h1": "Supprimer EXIF et métadonnées",
+    "lead": "Masquez les coordonnées GPS et les données de l’appareil avant d’envoyer.",
+    "body": [
+      "Les photos gardent plus que vous ne croyez : lieu, modèle du téléphone, heure exacte. Nous effaçons ces données dans votre navigateur. L’original ne quitte pas l’appareil — vous obtenez un fichier propre prêt à publier.",
+      "Pratique avant d’envoyer sur un chat ou un réseau social. Qualité élevée par défaut ; réduisez la taille seulement si besoin.",
+      "Rien n’est envoyé sur un serveur pour inspecter ou nettoyer — même modèle de confidentialité que la compression."
+    ],
+    "faq": [
+      {
+        "q": "Le lieu est-il vraiment supprimé ?",
+        "a": "Oui. Le téléchargement est réécrit localement sans GPS ni balises appareil."
+      },
+      {
+        "q": "Stockez-vous mes photos ?",
+        "a": "Non. Pour cet outil, les fichiers ne quittent pas l’appareil."
+      },
+      {
+        "q": "Et le HEIC ?",
+        "a": "Le HEIC est décodé localement et enregistré sans métadonnées en JPG, WebP ou PNG."
+      }
+    ]
+  },
+  "skryt-oblast": {
+    "title": "Flouter ou masquer une zone sur une photo",
+    "description": "Cachez visages, plaques et données privées dans le navigateur — sans upload serveur.",
+    "h1": "Flouter ou masquer une zone sur une photo",
+    "lead": "Cachez visages, plaques et données privées.",
+    "body": [
+      "Sélectionnez la zone à masquer — flou ou pixelisation apparaissent aussitôt. Idéal pour captures de chat et photos de documents. Traitement sur votre appareil : l’original non masqué n’est ni envoyé ni stocké.",
+      "Réglez l’intensité avec le curseur. Quand le résultat convient, téléchargez le fichier.",
+      "Le fichier enregistré n’a pas de métadonnées de service — la même promesse de confidentialité locale que le reste de PixLocal."
+    ],
+    "faq": [
+      {
+        "q": "Y a-t-il une détection automatique des visages ?",
+        "a": "Non. Vous marquez les zones vous-même — plus simple et totalement hors ligne."
+      },
+      {
+        "q": "L’original est-il uploadé ?",
+        "a": "Non. Tout reste dans l’onglet."
+      },
+      {
+        "q": "Plusieurs zones ?",
+        "a": "Oui. Tracez plusieurs cadres — l’effet s’applique à chacun tout de suite."
+      }
+    ]
+  },
+  "compress-pdf": {
+    "h1": "Compresser un PDF",
+    "lead": "Réduire le document sur l’appareil",
+    "title": "Compresser un PDF en ligne sans envoi sur un serveur",
+    "description": "Réduire le document sur l’appareil — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Nous compressons le PDF sur l’appareil : chaque page est rendue et enregistrée en JPEG dans un nouveau PDF. Idéal pour les scans et fichiers lourds.",
+      "Important : après une compression forte, le texte n’est souvent plus sélectionnable — les pages deviennent des images. Utilisez un niveau plus léger si vous avez besoin de texte sélectionnable.",
+      "Le corps du fichier n’est pas envoyé à notre serveur."
+    ],
+    "faq": [
+      {
+        "q": "Pourquoi je ne peux pas sélectionner le texte ?",
+        "a": "La compression forte redessine les pages en JPEG. C’est ainsi que fonctionne la réduction côté client sans Ghostscript serveur."
+      },
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "merge-pdf": {
+    "h1": "Fusionner des PDF",
+    "lead": "Combiner plusieurs fichiers en un",
+    "title": "Fusionner des PDF en ligne sans envoi sur un serveur",
+    "description": "Combiner plusieurs fichiers en un — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Fusionnez plusieurs PDF en un document. Glissez dans la liste pour l’ordre. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "pdf-sanitize": {
+    "h1": "Supprimer les métadonnées PDF",
+    "lead": "Effacer les données de service avant partage",
+    "title": "Supprimer les métadonnées PDF en ligne sans envoi sur un serveur",
+    "description": "Effacer les données de service avant partage — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Nous effaçons Title, Author, Creator, Producer, Keywords et dates en copiant les pages dans un PDF propre.",
+      "Utile avant d’envoyer un contrat ou un CV lorsque des noms d’apps et d’auteurs restent dans les métadonnées."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "split-pdf": {
+    "h1": "Diviser un PDF",
+    "lead": "Extraire des pages ou plages",
+    "title": "Diviser un PDF en ligne sans envoi sur un serveur",
+    "description": "Extraire des pages ou plages — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Extrayez des pages ou des plages. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "rotate-pdf": {
+    "h1": "Pivoter un PDF",
+    "lead": "Tourner de 90°, 180° ou 270°",
+    "title": "Pivoter un PDF en ligne sans envoi sur un serveur",
+    "description": "Tourner les pages de 90°, 180° ou 270° — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Tournez les pages de 90°, 180° ou 270°. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "organize-pdf": {
+    "h1": "Organiser un PDF",
+    "lead": "Réordonner, pivoter ou supprimer",
+    "title": "Organiser un PDF en ligne sans envoi sur un serveur",
+    "description": "Réordonner, pivoter ou supprimer des pages — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Réordonnez, pivotez ou supprimez des pages. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "jpg-to-pdf": {
+    "h1": "JPG vers PDF",
+    "lead": "Créer un PDF à partir d’images",
+    "title": "JPG vers PDF en ligne sans envoi sur un serveur",
+    "description": "Créer un PDF à partir d’images — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Créez un PDF à partir d’images. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "pdf-to-jpg": {
+    "h1": "PDF vers JPG",
+    "lead": "Exporter chaque page en image",
+    "title": "PDF vers JPG en ligne sans envoi sur un serveur",
+    "description": "Exporter chaque page en image — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Exportez chaque page en image. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "watermark-pdf": {
+    "h1": "Filigrane",
+    "lead": "Texte sur toutes les pages",
+    "title": "Filigrane PDF en ligne sans envoi sur un serveur",
+    "description": "Texte sur toutes les pages — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Ajoutez un texte en filigrane sur toutes les pages. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "page-numbers-pdf": {
+    "h1": "Numéros de page",
+    "lead": "Numéroter un PDF",
+    "title": "Numéros de page en ligne sans envoi sur un serveur",
+    "description": "Numéroter un PDF — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Ajoutez des numéros de page au PDF. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "crop-pdf": {
+    "h1": "Rogner un PDF",
+    "lead": "Couper les marges de chaque page",
+    "title": "Rogner un PDF en ligne sans envoi sur un serveur",
+    "description": "Couper les marges de chaque page — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Coupez les marges de chaque page. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "protect-pdf": {
+    "h1": "Protéger un PDF",
+    "lead": "Verrouiller avec un mot de passe (AES-256)",
+    "title": "Protéger un PDF en ligne sans envoi sur un serveur",
+    "description": "Verrouiller avec un mot de passe (AES-256) — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Verrouillez le PDF avec un mot de passe AES-256. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "unlock-pdf": {
+    "h1": "Déverrouiller un PDF",
+    "lead": "Retirer le mot de passe connu",
+    "title": "Déverrouiller un PDF en ligne sans envoi sur un serveur",
+    "description": "Retirer le mot de passe connu — localement dans le navigateur, sans envoi au serveur.",
+    "body": [
+      "Retirez la protection avec le mot de passe connu. Le traitement reste local dans le navigateur, sans envoi au serveur.",
+      "Téléchargez le résultat immédiatement ; le contenu du fichier n’est pas envoyé."
+    ],
+    "faq": [
+      {
+        "q": "Les fichiers sont-ils envoyés ?",
+        "a": "Non. Le traitement s’exécute dans le navigateur de cet appareil."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Choisissez un fichier et téléchargez le résultat."
+      },
+      {
+        "q": "Quelles bibliothèques ?",
+        "a": "Open source : pdf-lib et PDF.js (Mozilla). Mots de passe via @pdfsmaller (MIT)."
+      }
+    ]
+  }
+}

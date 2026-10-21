@@ -1,0 +1,78 @@
+# One build → GitHub Pages (pixlocal.app) + Yandex Object Storage (pixlocal.ru).
+# Secrets: YC_SA_ACCESS_KEY_ID, YC_SA_SECRET_ACCESS_KEY
+# Optional vars: NEXT_PUBLIC_GA4_ID, NEXT_PUBLIC_GA4_ID_RU, verification tokens
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    env:
+      NEXT_PUBLIC_SITE_URL: https://pixlocal.app
+      NEXT_PUBLIC_SITE_URL_RU: https://pixlocal.ru
+      NEXT_PUBLIC_GA4_ID: ${{ vars.NEXT_PUBLIC_GA4_ID }}
+      NEXT_PUBLIC_GA4_ID_RU: ${{ vars.NEXT_PUBLIC_GA4_ID_RU }}
+      NEXT_PUBLIC_YANDEX_VERIFICATION: ${{ vars.NEXT_PUBLIC_YANDEX_VERIFICATION }}
+      NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}
+      YC_SA_ACCESS_KEY_ID: ${{ secrets.YC_SA_ACCESS_KEY_ID }}
+      YC_SA_SECRET_ACCESS_KEY: ${{ secrets.YC_SA_SECRET_ACCESS_KEY }}
+      YC_BUCKET: ${{ vars.YC_BUCKET || 'pixlocal.ru' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/out
+
+      - name: Sync to Yandex Object Storage
+        if: ${{ env.YC_SA_ACCESS_KEY_ID != '' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ env.YC_SA_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ env.YC_SA_SECRET_ACCESS_KEY }}
+        run: bash scripts/sync-yandex-s3.sh
+
+      - name: Skip Yandex sync
+        if: ${{ env.YC_SA_ACCESS_KEY_ID == '' }}
+        run: echo "Yandex keys missing — Pages artifact still uploaded."
+
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

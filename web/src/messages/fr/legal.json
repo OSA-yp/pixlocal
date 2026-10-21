@@ -1,0 +1,32 @@
+{
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "description": "Comment PixLocal traite les données : traitement local des photos, sans publicité, stats anonymisées via Google Analytics.",
+    "h1": "Confidentialité",
+    "body": [
+      "Nous ne demandons, ne recevons, ne stockons ni ne voyons vos images. Point final.",
+      "PixLocal est un outil en ligne de compression et de conversion d’images. Le traitement des fichiers s’effectue dans votre navigateur, sur votre appareil. Le contenu des images chargées n’est pas envoyé à nos serveurs pour compression ou conversion.",
+      "Transfert zéro de pixels : lors de la compression et de la conversion, le corps du fichier n’est pas envoyé au serveur PixLocal et n’est pas stocké dans le cloud. Le site ne sert que des ressources statiques (HTML, JS, CSS) ; l’encodage passe par Canvas et des bibliothèques locales dans le navigateur. Vous pouvez le vérifier dans l’onglet Réseau des outils de développement pendant le traitement.",
+      "Il n’y a pas de publicité sur le site, et aucune n’est prévue.",
+      "Si un identifiant Google Analytics est défini, nous pouvons collecter des statistiques techniques anonymisées de visite : URL de page, type d’appareil, événements d’interface (choix de fichiers, téléchargement, ZIP). Les noms et le contenu des fichiers ne sont pas transmis. Les cookies d’analytique peuvent être limités dans les réglages du navigateur.",
+      "Bouton Hors ligne : au clic, le navigateur peut mettre en cache les pages et bibliothèques de la langue actuelle. Le contenu de vos fichiers n’y entre pas.",
+      "Pour toute question de confidentialité, écrivez à l’adresse indiquée sur la page Contact."
+    ]
+  },
+  "terms": {
+    "title": "Conditions d’utilisation",
+    "description": "Règles d’utilisation du service PixLocal.",
+    "h1": "Conditions d’utilisation",
+    "body": [
+      "Le service est fourni « tel quel », gratuitement, sans garantie de disponibilité continue. Vous vérifiez vous-même le résultat avant publication ou transmission de fichiers à des tiers.",
+      "Il est interdit d’utiliser le service pour traiter du contenu illégal. Vous êtes responsable des fichiers que vous ouvrez dans le navigateur.",
+      "Nous pouvons modifier les fonctions, le design et les conditions. La version à jour est toujours sur cette page."
+    ]
+  },
+  "contacts": {
+    "title": "Contact",
+    "description": "Contacter l’équipe PixLocal.",
+    "h1": "Contact",
+    "intro": "Pour toute question sur le service, écrivez à :"
+  }
+}

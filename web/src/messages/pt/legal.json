@@ -1,0 +1,32 @@
+{
+  "privacy": {
+    "title": "Política de privacidade",
+    "description": "Como o PixLocal trata dados: processamento local de fotos, sem anúncios, estatísticas anonimizadas via Google Analytics.",
+    "h1": "Privacidade",
+    "body": [
+      "Não solicitamos, não recebemos, não armazenamos nem vemos suas imagens. Ponto.",
+      "O PixLocal é uma ferramenta online de compressão e conversão de imagens. O processamento dos arquivos ocorre no seu navegador, no seu dispositivo. O conteúdo das imagens carregadas não é enviado aos nossos servidores para compressão ou conversão.",
+      "Transferência zero de pixels: na compressão e conversão, o corpo do arquivo não é enviado ao servidor do PixLocal nem armazenado na nuvem. O site só serve estáticos (HTML, JS, CSS); a codificação usa Canvas e bibliotecas locais no navegador. Dá para verificar na aba Rede das ferramentas de desenvolvedor durante o processamento.",
+      "Não há anúncios no site e não planejamos tê-los.",
+      "Se um ID do Google Analytics estiver definido, podemos recolher estatísticas técnicas anonimizadas de visitas: URL da página, tipo de dispositivo, eventos de interface (seleção de ficheiros, download, ZIP). Nomes e conteúdo de ficheiros não são transmitidos. Cookies de analytics podem ser limitados nas definições do navegador.",
+      "Botão Offline: ao tocar, o navegador pode colocar em cache páginas e bibliotecas do idioma atual. O conteúdo dos seus arquivos não entra nesse cache.",
+      "Para dúvidas de privacidade, escreva para o endereço indicado na página Contato."
+    ]
+  },
+  "terms": {
+    "title": "Termos de uso",
+    "description": "Regras de uso do serviço PixLocal.",
+    "h1": "Termos de uso",
+    "body": [
+      "O serviço é oferecido «como está», gratuitamente, sem garantia de disponibilidade contínua. Você verifica o resultado antes de publicar ou enviar arquivos a terceiros.",
+      "É proibido usar o serviço para processar conteúdo ilegal. Você é responsável pelos arquivos que abre no navegador.",
+      "Podemos alterar funções, design e termos. A versão atual está sempre nesta página."
+    ]
+  },
+  "contacts": {
+    "title": "Contato",
+    "description": "Fale com a equipe PixLocal.",
+    "h1": "Contato",
+    "intro": "Para dúvidas sobre o serviço, escreva para:"
+  }
+}

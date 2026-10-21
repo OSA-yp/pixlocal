@@ -1,0 +1,660 @@
+{
+  "heic-v-jpg": {
+    "title": "Foto iPhone ke JPG: HEIC online tanpa unggah ke server",
+    "description": "Konverter HEIC/HEIF ke JPG gratis di browser. Buka foto iPhone di Windows dan formulir — tanpa cloud dan tanpa aplikasi.",
+    "h1": "HEIC ke JPG online",
+    "lead": "Diambil di iPhone — tapi file tidak terbuka di PC atau formulir? Konversi HEIC/HEIF ke JPG secara lokal, tanpa cloud dan tanpa daftar.",
+    "body": [
+      "Kamera iPhone secara default menulis HEIC (kadang HEIF). Windows, banyak situs, printer, dan lampiran email mengharapkan JPG biasa — sehingga «foto iPhone» sering tidak terbuka di komputer.",
+      "Cara pakai: pilih satu atau beberapa .heic/.heif → konversi ke JPG berjalan di browser → unduh file atau ZIP. Sesuaikan kualitas dan sisi panjang dengan batas formulir.",
+      "PixLocal tidak mengunggah foto ke server — berbeda dari konverter cloud tipikal. Dekode HEIC dan penyimpanan JPEG tetap di perangkat; Anda bisa mengecilkan ukuran sebelum mengirim."
+    ],
+    "faq": [
+      {
+        "q": "Bagaimana membuka foto iPhone di Windows?",
+        "a": "Transfer HEIC ke PC dan konversi di sini ke JPG — tanpa menginstal codec atau aplikasi. File tidak masuk cloud: pemrosesan hanya di browser."
+      },
+      {
+        "q": "Apa bedanya HEIC dengan JPG?",
+        "a": "HEIC lebih ringkas dan lebih baru (standar kamera iPhone); JPG adalah format universal untuk Windows, situs, dan cetak. Konversi untuk kompatibilitas."
+      },
+      {
+        "q": "Apakah foto dikirim ke server?",
+        "a": "Tidak. Dekode HEIC dan penyimpanan JPG berjalan di browser. Periksa tab Network: badan gambar tidak dikirim."
+      },
+      {
+        "q": "Apakah metadata dipertahankan?",
+        "a": "Saat dikode ulang lewat Canvas, sebagian EXIF bisa hilang. Simpan HEIC asli untuk arsip penting."
+      },
+      {
+        "q": "Mengapa JPG kadang lebih besar dari HEIC?",
+        "a": "HEIC lebih efisien daripada JPEG. Kami otomatis menurunkan kualitas dan membatasi sisi (default 2560 px) agar file lebih ringan. Turunkan kualitas atau sisi maks. jika perlu."
+      },
+      {
+        "q": "Bisa beberapa file sekaligus?",
+        "a": "Ya — pilih batch HEIC dan unduh ZIP berisi JPG, atau bagikan frame terpisah ke Foto lewat Bagikan."
+      }
+    ]
+  },
+  "webp-v-jpg": {
+    "title": "WebP ke JPG online tanpa unggah ke server",
+    "description": "Konverter WebP ke JPG gratis secara lokal di browser. File tidak masuk cloud.",
+    "h1": "WebP ke JPG",
+    "lead": "Buka WebP yang diunduh di editor apa pun: konversi ke JPG secara lokal di perangkat.",
+    "body": [
+      "WebP sering muncul di situs dan pesan. Jika editor, printer, atau formulir Windows hanya membuka JPG — kode ulang file di sini.",
+      "Dekode dan penyimpanan JPEG berjalan di browser: sumber tidak pernah diunggah. Anda bisa membatasi sisi panjang agar lampiran tidak membengkak.",
+      "Batch: beberapa WebP sekaligus, lalu ZIP atau Bagikan di iPhone. Gunakan penggeser kualitas bila perlu kompromi ketajaman vs ukuran."
+    ],
+    "faq": [
+      {
+        "q": "Mengapa JPG lebih berat daripada WebP?",
+        "a": "WebP biasanya lebih efisien. JPG untuk kompatibilitas, bukan ukuran lebih kecil."
+      },
+      {
+        "q": "Apakah animasi WebP dipertahankan?",
+        "a": "Tidak: JPG hanya satu frame. Untuk klip, simpan WebP asli atau konversi ke video."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file di halaman ini dan unduh JPG — tanpa akun dan tanpa cloud."
+      }
+    ]
+  },
+  "png-v-jpg": {
+    "title": "PNG ke JPG online",
+    "description": "Konverter PNG ke JPG online gratis, secara lokal di browser.",
+    "h1": "PNG ke JPG",
+    "lead": "Ubah PNG ke JPG dan potong ukuran file secara signifikan untuk web dan pesan.",
+    "body": [
+      "PNG bagus untuk grafis, tangkapan layar, dan transparansi, tetapi sering berlebihan untuk foto: JPG adegan yang sama bisa jauh lebih kecil.",
+      "Area transparan menjadi latar Canvas terang saat disimpan sebagai JPG — periksa pratinjau jika saluran alfa penting.",
+      "Praktis sebelum email, CMS, atau marketplace di mana PNG menabrak batas. Kualitas dan sisi maks. masih bisa diturunkan lagi."
+    ],
+    "faq": [
+      {
+        "q": "Bagaimana mempertahankan transparansi?",
+        "a": "Tetap di PNG atau pilih WebP di kompresor utama di beranda."
+      },
+      {
+        "q": "Mengapa tangkapan layar terlihat buram?",
+        "a": "JPEG kurang bagus untuk teks halus. Naikkan kualitas mendekati 90% atau tetap pakai PNG/WebP untuk UI."
+      },
+      {
+        "q": "Bisa batch sekaligus?",
+        "a": "Ya — pilih beberapa PNG dan unduh ZIP berisi JPG."
+      }
+    ]
+  },
+  "jpg-v-png": {
+    "title": "JPG ke PNG online",
+    "description": "Konverter JPG ke PNG online di browser tanpa pendaftaran.",
+    "h1": "JPG ke PNG",
+    "lead": "Konversi JPEG ke PNG secara lokal bila Anda butuh format PNG untuk pengeditan lanjutan.",
+    "body": [
+      "Konversi JPG→PNG tidak mengembalikan detail yang sudah hilang di JPEG. Namun Anda bisa mengedit lebih lanjut tanpa artefak «generasi JPEG» baru.",
+      "PNG akan jauh lebih berat dari sumber — normal untuk format tanpa kehilangan. Jika tujuannya ukuran, lebih baik WebP atau kompres ulang JPG.",
+      "Pemrosesan lokal: praktis saat template, percetakan, atau stok meminta PNG khusus."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file akan lebih besar?",
+        "a": "Sering ya: PNG tanpa kehilangan biasanya lebih berat daripada JPEG."
+      },
+      {
+        "q": "Apakah akan muncul transparansi?",
+        "a": "Tidak. JPEG tidak punya saluran alfa; PNG akan buram. Transparansi harus digambar terpisah."
+      },
+      {
+        "q": "Untuk apa jika PNG lebih berat?",
+        "a": "Saat langkah berikutnya adalah editor atau cetak yang butuh PNG, bukan hemat kilobita."
+      }
+    ]
+  },
+  "jpg-v-webp": {
+    "title": "JPG ke WebP online",
+    "description": "Konverter JPG ke WebP untuk situs — secara lokal di browser.",
+    "h1": "JPG ke WebP",
+    "lead": "Siapkan gambar untuk halaman cepat: JPG → WebP tanpa cloud.",
+    "body": [
+      "WebP di situs biasanya lebih ringan daripada JPEG dengan tampilan setara — lebih sedikit byte untuk LCP dan data seluler.",
+      "PixLocal mengode WebP di browser: JPG sumber tidak ke server. Atur kualitas dan, jika perlu, batasi sisi.",
+      "Simpan fallback JPG di markup untuk klien lama: konverter memberi file modern, bukan membuat semua browser «lupa JPEG»."
+    ],
+    "faq": [
+      {
+        "q": "Apakah semua browser membuka WebP?",
+        "a": "Yang modern, ya. Simpan fallback JPG untuk klien lama."
+      },
+      {
+        "q": "Cocok untuk foto produk?",
+        "a": "Ya — kualitas 75–85% biasanya cukup. Periksa pratinjau pada teks halus dan gradien."
+      },
+      {
+        "q": "Bisa batch?",
+        "a": "Ya — unggah beberapa JPG dan unduh ZIP berisi WebP."
+      }
+    ]
+  },
+  "png-v-webp": {
+    "title": "PNG ke WebP online",
+    "description": "Konverter PNG ke WebP online gratis di browser.",
+    "h1": "PNG ke WebP",
+    "lead": "Kompres PNG ke WebP secara lokal — cocok untuk landing dan kartu produk.",
+    "body": [
+      "WebP sering lebih ringan daripada PNG dengan tampilan mirip — terutama foto dan gradien lembut. Untuk ikon warna datar, keuntungannya lebih kecil; lihat pratinjau.",
+      "WebP mendukung transparansi: logo berlatar transparan biasanya aman, tetapi periksa tepi antialias.",
+      "Dilakukan secara lokal, tanpa antrean cloud. Jika butuh lossless PNG maksimal, mode ini bukan pengganti oxipng/pngquant."
+    ],
+    "faq": [
+      {
+        "q": "Apakah transparansi dipertahankan?",
+        "a": "WebP mendukung saluran alfa; hasil bergantung pada encoder browser. Periksa tepi objek di pratinjau."
+      },
+      {
+        "q": "Kapan lebih baik tetap PNG?",
+        "a": "UI kecil, pixel art, tangkapan dengan teks — jika WebP terlihat buram. Lalu ubah ukuran PNG tanpa ganti format."
+      },
+      {
+        "q": "Ini untuk toko online?",
+        "a": "Ya: kartu dan banner sering mengecil tanpa kehilangan yang terlihat. Jangan ganti semuanya sekaligus tanpa cek sampel."
+      }
+    ]
+  },
+  "webp-v-png": {
+    "title": "WebP ke PNG online",
+    "description": "Konverter WebP ke PNG online, diproses di browser.",
+    "h1": "WebP ke PNG",
+    "lead": "Butuh PNG dari WebP — konversi secara lokal dan unduh hasilnya.",
+    "body": [
+      "Anda butuh PNG karena Photoshop, percetakan, atau formulir tidak menerima WebP — kode ulang secara lokal dan unduh file.",
+      "PNG tanpa kehilangan hampir selalu lebih berat daripada WebP sumber. Jika tujuannya ukuran, tetap di WebP atau ke JPG tanpa transparansi.",
+      "WebP animasi menjadi satu frame. Alat ini tidak untuk klip."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file akan lebih besar?",
+        "a": "Biasanya ya — PNG tanpa kehilangan lebih berat daripada WebP."
+      },
+      {
+        "q": "Apakah transparansi tetap ada?",
+        "a": "Jika WebP punya saluran alfa, PNG mempertahankannya. WebP buram menghasilkan PNG buram."
+      },
+      {
+        "q": "Mengapa hanya satu gambar padahal sumber «berkedip»?",
+        "a": "Animasi tidak dipindahkan. Ekspor video atau GIF dari editor, bukan lewat konverter ini."
+      }
+    ]
+  },
+  "izmenit-razmer": {
+    "title": "Ubah ukuran foto online",
+    "description": "Perkecil resolusi foto online — ubah ukuran sisi panjang di browser.",
+    "h1": "Ubah ukuran foto",
+    "lead": "Batasi sisi panjang dalam piksel dan, jika perlu, perkecil ukuran file.",
+    "body": [
+      "Mengubah ukuran sisi panjang adalah cara cepat memenuhi batas sosial/CMS dan mempercepat halaman: lebih sedikit piksel berarti lebih ringan meski kualitas JPEG sama.",
+      "Tetapkan maksimum pada sisi lebih panjang (default 1920 px); proporsi tetap. Tidak perlu menghitung sisi pendek.",
+      "Pembesaran secara teknis mungkin, tetapi ketajaman tidak muncul: alat ini untuk pengecilan. File tidak meninggalkan perangkat."
+    ],
+    "faq": [
+      {
+        "q": "Bisakah memperbesar foto?",
+        "a": "Secara teknis ya, tetapi kualitas tidak naik. Alat ini untuk mengecilkan."
+      },
+      {
+        "q": "Apakah proporsi dipertahankan?",
+        "a": "Ya — ubah ukuran mengikuti sisi lebih panjang, rasio aspek tetap utuh."
+      },
+      {
+        "q": "Bagaimana lagi mengecilkan ukuran?",
+        "a": "Setelah resize, turunkan kualitas JPEG/WebP atau setel target KB di beranda / halaman «ke 100 KB»."
+      }
+    ]
+  },
+  "szhat-do-100kb": {
+    "title": "Kompres foto ke 100 KB online tanpa cloud",
+    "description": "Kompres gambar ke 100 KB secara lokal di browser — tanpa unggah ke server. Cocok untuk formulir dan lampiran.",
+    "h1": "Kompres foto ke 100 KB",
+    "lead": "Sesuaikan ukuran file dengan batas formulir atau lampiran — target 100 KB, diproses secara lokal.",
+    "body": [
+      "Batas 100 KB sering ada di formulir resmi, lamaran, lampiran email, dan forum lama. Alat ini menyesuaikan kualitas JPEG/WebP dan resolusi hingga ukuran mendekati target.",
+      "Secara default sisi panjang hingga 1600 px dan target 100 KB. Jika bingkai berisik atau sangat detail, turunkan sisi ke 1280 atau 1024 px lalu hitung ulang.",
+      "Semuanya dihitung di browser — pindaian paspor atau foto formulir tidak masuk cloud orang lain. Tepat 102400 byte tidak selalu mungkin: tujuannya «muat», bukan bit-per-bit."
+    ],
+    "faq": [
+      {
+        "q": "Aman mengompres dokumen?",
+        "a": "Isi file tidak dikirim ke server PixLocal. Pemrosesan hanya di browser. Analitik menghitung klik, bukan nama atau piksel file."
+      },
+      {
+        "q": "Apakah selalu tepat 100 KB?",
+        "a": "Tidak selalu — bergantung pada isi. Anda juga bisa menurunkan sisi maks. dalam piksel."
+      },
+      {
+        "q": "Mengapa foto terlihat buram?",
+        "a": "Untuk masuk 100 KB harus mengorbankan detail. Resize dulu, lalu kualitas: biasanya lebih hidup daripada hanya JPEG sangat rendah."
+      },
+      {
+        "q": "Apakah PNG juga dikompres ke 100 KB?",
+        "a": "Lebih sering lewat JPG atau WebP. PNG murni tanpa kehilangan di bawah 100 KB untuk foto hampir tidak realistis."
+      }
+    ]
+  },
+  "szhat-png": {
+    "title": "Kompres PNG online tanpa unggah ke server",
+    "description": "Kompres PNG secara lokal di browser gratis — file tidak masuk cloud.",
+    "h1": "Kompres PNG online",
+    "lead": "Perkecil ukuran PNG: kode ulang ke WebP/JPG atau tetap PNG dengan resize.",
+    "body": [
+      "Encoder PNG browser tidak melakukan heavy lossless seperti pngquant atau oxipng. Jika tidak butuh transparansi, WebP atau JPG jauh lebih mengecil.",
+      "Untuk tangkapan dengan teks, coba WebP dulu: sering lebih ringan dari PNG dan lebih terbaca daripada JPEG keras. Periksa tepi alfa logo.",
+      "Batch PNG → ZIP di perangkat, tanpa daftar. Jika file hampir tidak berubah — ganti format keluaran, bukan penggeser PNG."
+    ],
+    "faq": [
+      {
+        "q": "Mengapa PNG hampir tidak mengecil?",
+        "a": "PNG tanpa kehilangan punya batas. Ganti format keluaran ke WebP atau JPG."
+      },
+      {
+        "q": "Butuh transparansi dan ukuran kecil?",
+        "a": "Bidik WebP. JPG menghilangkan transparansi dengan isi terang."
+      },
+      {
+        "q": "Apakah ini pengganti TinyPNG?",
+        "a": "Tidak: di sini tidak ada lossless cloud. Namun file tidak meninggalkan komputer. Untuk arsip ikon, pengoptimal CLI masih lebih kuat."
+      }
+    ]
+  },
+  "szhat-jpg": {
+    "title": "Kompres JPG online tanpa unggah ke server",
+    "description": "Kompres JPEG secara lokal di browser gratis — tanpa cloud dan tanpa daftar.",
+    "h1": "Kompres JPG online",
+    "lead": "Kompres ulang JPEG dengan kontrol kualitas dan target ukuran — semuanya di browser.",
+    "body": [
+      "Mengompres ulang JPEG menambah artefak: mulai sekitar 70–85% dan lihat pratinjau, jangan langsung ke minimum.",
+      "Ukuran paling turun saat Anda juga mengubah ukuran sisi panjang (mis. 1920 atau 1600 px). Penggeser kualitas saja pada frame 12 megapiksel kurang membantu.",
+      "Beberapa JPG sekaligus, ZIP di akhir. Sumber tetap di sisi Anda — praktis sebelum situs, iklan, atau email."
+    ],
+    "faq": [
+      {
+        "q": "Bisa batch?",
+        "a": "Ya — unggah beberapa JPG dan unduh ZIP."
+      },
+      {
+        "q": "Apakah kualitas 75% terlalu rendah?",
+        "a": "Untuk web dan pesan biasanya cukup. Untuk cetak atau arsip, simpan asli dan jangan kompres ulang berulang."
+      },
+      {
+        "q": "Mengapa setelah kompres file sedikit lebih besar?",
+        "a": "Jarang, jika sumber sudah sangat ringan. Turunkan sisi atau kualitas lalu ketuk Hitung ulang."
+      }
+    ]
+  },
+  "udalit-exif": {
+    "title": "Hapus EXIF dan metadata online",
+    "description": "Sembunyikan koordinat GPS dan data kamera sebelum mengirim — lokal di browser, tanpa unggah ke server.",
+    "h1": "Hapus EXIF dan metadata",
+    "lead": "Sembunyikan koordinat GPS dan data kamera sebelum mengirim.",
+    "body": [
+      "Foto menyimpan lebih dari yang Anda kira: lokasi pengambilan, model ponsel, waktu tepat. Kami menghapus data itu di browser Anda. Asli tidak meninggalkan perangkat — Anda mendapat file bersih siap dipublikasikan.",
+      "Berguna sebelum kirim ke chat atau jejaring sosial. Kualitas tinggi secara default; perkecil hanya jika perlu file lebih ringan.",
+      "Tidak ada yang dikirim ke server untuk diperiksa atau dibersihkan — model privasi yang sama seperti kompresi."
+    ],
+    "faq": [
+      {
+        "q": "Lokasi pengambilan benar-benar dihapus?",
+        "a": "Ya. Unduhan ditulis ulang secara lokal tanpa GPS atau tag kamera."
+      },
+      {
+        "q": "Apakah Anda menyimpan foto saya?",
+        "a": "Tidak. Untuk alat ini file tidak meninggalkan perangkat."
+      },
+      {
+        "q": "Bagaimana dengan HEIC?",
+        "a": "HEIC didekode lokal dan disimpan tanpa metadata sebagai JPG, WebP, atau PNG."
+      }
+    ]
+  },
+  "skryt-oblast": {
+    "title": "Buramkan atau samarkan area pada foto",
+    "description": "Sembunyikan wajah, plat, dan data pribadi lokal di browser — tanpa unggah ke server.",
+    "h1": "Buramkan atau samarkan area pada foto",
+    "lead": "Sembunyikan wajah, plat kendaraan, dan data pribadi.",
+    "body": [
+      "Pilih area yang ingin disembunyikan — buram atau pixelasi muncul langsung. Ideal untuk tangkapan chat dan foto dokumen. Pemrosesan di perangkat Anda — asli tanpa samaran tidak dikirim atau disimpan.",
+      "Atur kekuatan dengan penggeser. Jika hasilnya cocok, unduh file.",
+      "File tersimpan tanpa metadata layanan — janji privasi lokal yang sama seperti alat PixLocal lainnya."
+    ],
+    "faq": [
+      {
+        "q": "Ada deteksi wajah otomatis?",
+        "a": "Tidak. Anda menandai area sendiri — lebih sederhana dan sepenuhnya offline."
+      },
+      {
+        "q": "Apakah asli diunggah?",
+        "a": "Tidak. Semuanya tetap di tab."
+      },
+      {
+        "q": "Bisa beberapa area?",
+        "a": "Ya. Gambar beberapa kotak — efek diterapkan ke masing-masing segera."
+      }
+    ]
+  },
+  "compress-pdf": {
+    "h1": "Kompres PDF",
+    "lead": "Perkecil dokumen di perangkat",
+    "title": "Kompres PDF online tanpa unggah ke server",
+    "description": "Perkecil dokumen di perangkat — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Kami mengecilkan PDF di perangkat: setiap halaman dirender dan disimpan sebagai JPEG dalam PDF baru. Cocok untuk hasil pindaian dan file berat.",
+      "Penting: setelah kompresi kuat, teks biasanya tidak bisa dipilih — halaman menjadi gambar. Gunakan tingkat lebih ringan jika teks harus bisa dipilih.",
+      "Isi file tidak dikirim ke server kami."
+    ],
+    "faq": [
+      {
+        "q": "Mengapa teks tidak bisa dipilih?",
+        "a": "Kompresi kuat menggambar ulang halaman sebagai JPEG. Begitulah pengecilan sisi klien tanpa Ghostscript di server."
+      },
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "merge-pdf": {
+    "h1": "Gabung PDF",
+    "lead": "Gabungkan beberapa file jadi satu",
+    "title": "Gabung PDF online tanpa unggah ke server",
+    "description": "Gabungkan beberapa file jadi satu — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Gabungkan beberapa PDF menjadi satu dokumen. Seret di daftar untuk mengatur urutan. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "pdf-sanitize": {
+    "h1": "Hapus metadata PDF",
+    "lead": "Bersihkan data layanan sebelum berbagi",
+    "title": "Hapus metadata PDF online tanpa unggah ke server",
+    "description": "Bersihkan data layanan sebelum berbagi — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Kami menghapus Title, Author, Creator, Producer, Keywords, dan tanggal dengan menyalin halaman ke PDF bersih.",
+      "Berguna sebelum mengirim kontrak atau CV ketika nama aplikasi dan penulis masih ada di metadata."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "split-pdf": {
+    "h1": "Pisah PDF",
+    "lead": "Ambil halaman atau rentang",
+    "title": "Pisah PDF online tanpa unggah ke server",
+    "description": "Ambil halaman atau rentang — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Ambil halaman atau rentang. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "rotate-pdf": {
+    "h1": "Putar PDF",
+    "lead": "Putar 90°, 180°, atau 270°",
+    "title": "Putar PDF online tanpa unggah ke server",
+    "description": "Putar halaman 90°, 180°, atau 270° — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Putar halaman 90°, 180°, atau 270°. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "organize-pdf": {
+    "h1": "Atur PDF",
+    "lead": "Urutkan ulang, putar, atau hapus halaman",
+    "title": "Atur PDF online tanpa unggah ke server",
+    "description": "Urutkan ulang, putar, atau hapus halaman — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Urutkan ulang, putar, atau hapus halaman. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "jpg-to-pdf": {
+    "h1": "JPG ke PDF",
+    "lead": "Buat PDF dari gambar",
+    "title": "JPG ke PDF online tanpa unggah ke server",
+    "description": "Buat PDF dari gambar — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Buat PDF dari gambar. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "pdf-to-jpg": {
+    "h1": "PDF ke JPG",
+    "lead": "Ekspor setiap halaman sebagai gambar",
+    "title": "PDF ke JPG online tanpa unggah ke server",
+    "description": "Ekspor setiap halaman sebagai gambar — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Ekspor setiap halaman sebagai gambar. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "watermark-pdf": {
+    "h1": "Tanda air",
+    "lead": "Teks di semua halaman",
+    "title": "Tanda air PDF online tanpa unggah ke server",
+    "description": "Teks di semua halaman — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Tambahkan teks sebagai tanda air di semua halaman. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "page-numbers-pdf": {
+    "h1": "Nomor halaman",
+    "lead": "Nomori PDF",
+    "title": "Nomor halaman online tanpa unggah ke server",
+    "description": "Nomori PDF — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Tambahkan nomor halaman ke PDF. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "crop-pdf": {
+    "h1": "Potong PDF",
+    "lead": "Potong margin setiap halaman",
+    "title": "Potong PDF online tanpa unggah ke server",
+    "description": "Potong margin setiap halaman — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Potong margin setiap halaman. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "protect-pdf": {
+    "h1": "Lindungi PDF",
+    "lead": "Kunci dengan kata sandi (AES-256)",
+    "title": "Lindungi PDF online tanpa unggah ke server",
+    "description": "Kunci dengan kata sandi (AES-256) — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Kunci PDF dengan kata sandi AES-256. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  },
+  "unlock-pdf": {
+    "h1": "Buka kunci PDF",
+    "lead": "Hapus kata sandi yang diketahui",
+    "title": "Buka kunci PDF online tanpa unggah ke server",
+    "description": "Hapus kata sandi yang diketahui — lokal di browser, tanpa unggah ke server.",
+    "body": [
+      "Hapus perlindungan dengan kata sandi yang diketahui. Pemrosesan tetap lokal di browser, tanpa unggah ke server.",
+      "Unduh hasil segera; isi file tidak diunggah."
+    ],
+    "faq": [
+      {
+        "q": "Apakah file diunggah?",
+        "a": "Tidak. Pemrosesan berjalan di browser perangkat ini."
+      },
+      {
+        "q": "Perlu akun?",
+        "a": "Tidak. Pilih file dan unduh hasilnya."
+      },
+      {
+        "q": "Pustaka apa?",
+        "a": "Sumber terbuka: pdf-lib dan PDF.js (Mozilla). Kata sandi memakai @pdfsmaller (MIT)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "brandTagline": "隐私工具 · 浏览器内",
+  "nav": {
+    "compress": "压缩",
+    "heic-v-jpg": "iPhone→JPG",
+    "szhat-do-100kb": "100 KB",
+    "szhat-jpg": "压缩 JPG",
+    "webp-v-jpg": "WebP→JPG",
+    "udalit-exif": "EXIF"
+  },
+  "footer": {
+    "blurb": "私密文件工具。一切在浏览器中完成——不会上传到服务器或云端。",
+    "zeroKnowledge": "隐私：我们不会索取、接收、存储或查看您的文件。",
+    "privacy": "隐私",
+    "terms": "条款",
+    "contacts": "联系我们",
+    "sitemap": "网站地图",
+    "copyright": "个人文件工具。"
+  },
+  "trust": {
+    "aria": "隐私",
+    "hook": "",
+    "flow": {
+      "aria": "照片如何处理",
+      "photo": "您的照片",
+      "device": "您的浏览器",
+      "result": "压缩后的照片",
+      "noCloud": "不进云端"
+    },
+    "items": [
+      {
+        "title": "仅在设备上",
+        "text": "压缩与转换在浏览器中完成——像素不会离开手机或电脑。"
+      },
+      {
+        "title": "不上传照片",
+        "text": "处理时文件内容不上网。节省流量：不必把几兆照片传到别人的服务器。"
+      },
+      {
+        "title": "无广告",
+        "text": "我们不展示广告，也不接收您的文件。我们物理上看不到您的照片。"
+      },
+      {
+        "title": "不存储照片",
+        "text": "我们不会把图片保存在服务器或云端。打开、处理、下载即可。"
+      }
+    ]
+  },
+  "faqTitle": "常见问题",
+  "toolLinksTitle": "其他工具",
+  "homeLink": {
+    "title": "压缩照片",
+    "text": "JPG、PNG、WebP — 可控制质量"
+  },
+  "toolLinks": {
+    "heic-v-jpg": {
+      "title": "HEIC → JPG",
+      "text": "iPhone 照片转 JPG，方便 Windows 与表单"
+    },
+    "webp-v-jpg": {
+      "title": "WebP → JPG",
+      "text": "网站图片打不开时"
+    },
+    "png-v-jpg": {
+      "title": "PNG → JPG",
+      "text": "缩小截图与图形体积"
+    },
+    "jpg-v-png": {
+      "title": "JPG → PNG",
+      "text": "需要透明或 PNG 时"
+    },
+    "jpg-v-webp": {
+      "title": "JPG → WebP",
+      "text": "适合快速网站与 CWV"
+    },
+    "png-v-webp": {
+      "title": "PNG → WebP",
+      "text": "压缩 PNG，避免多余体积"
+    },
+    "webp-v-png": {
+      "title": "WebP → PNG",
+      "text": "保留透明度"
+    },
+    "izmenit-razmer": {
+      "title": "调整尺寸",
+      "text": "限制长边像素"
+    },
+    "szhat-do-100kb": {
+      "title": "压缩到 100 KB",
+      "text": "适配表单与邮件限制"
+    },
+    "szhat-png": {
+      "title": "压缩 PNG",
+      "text": "在线优化 PNG"
+    },
+    "szhat-jpg": {
+      "title": "压缩 JPG",
+      "text": "快速压缩 JPEG"
+    },
+    "udalit-exif": {
+      "title": "删除 EXIF 与元数据",
+      "text": "发送前隐藏 GPS 与相机信息"
+    },
+    "skryt-oblast": {
+      "title": "模糊或遮挡区域",
+      "text": "隐藏人脸、车牌与隐私信息"
+    },
+    "compress-pdf": {
+      "title": "压缩 PDF",
+      "text": "在设备上缩小文档"
+    },
+    "merge-pdf": {
+      "title": "合并 PDF",
+      "text": "将多个文件合成一个"
+    },
+    "pdf-sanitize": {
+      "title": "清除 PDF 元数据",
+      "text": "分享前去掉服务信息"
+    },
+    "split-pdf": {
+      "title": "拆分 PDF",
+      "text": "提取页面或范围"
+    },
+    "rotate-pdf": {
+      "title": "旋转 PDF",
+      "text": "旋转 90°、180° 或 270°"
+    },
+    "organize-pdf": {
+      "title": "整理 PDF",
+      "text": "调整顺序、旋转或删除"
+    },
+    "jpg-to-pdf": {
+      "title": "JPG → PDF",
+      "text": "用图片生成 PDF"
+    },
+    "pdf-to-jpg": {
+      "title": "PDF → JPG",
+      "text": "每页导出为图片"
+    },
+    "watermark-pdf": {
+      "title": "水印",
+      "text": "在每页叠加文字"
+    },
+    "page-numbers-pdf": {
+      "title": "页码",
+      "text": "为 PDF 添加页码"
+    },
+    "crop-pdf": {
+      "title": "裁剪 PDF",
+      "text": "裁掉每页边距"
+    },
+    "protect-pdf": {
+      "title": "保护 PDF",
+      "text": "密码 AES-256"
+    },
+    "unlock-pdf": {
+      "title": "解锁 PDF",
+      "text": "用已知密码移除保护"
+    }
+  },
+  "breadcrumbHome": "首页",
+  "schemaFeatures": [
+    "浏览器本地处理，无需上传服务器",
+    "文件不会进入云端",
+    "压缩与转换 JPG、PNG、WebP、HEIC",
+    "批量处理并下载 ZIP",
+    "无需注册",
+    "Compress and edit PDFs locally in the browser"
+  ],
+  "language": "语言",
+  "tool": {
+    "processError": "无法处理该文件",
+    "heicDecode": "无法解码 HEIC",
+    "canvasUnavailable": "Canvas 不可用",
+    "encodeFailed": "无法编码图像",
+    "addImages": "添加图片（JPG、PNG、WebP、HEIC）。",
+    "addOrReplace": "添加或替换文件",
+    "localBadge": "在您的设备上",
+    "localOnlyShort": "仅在本机处理 — 不会发送到服务器或云端。",
+    "chooseFiles": "选择文件",
+    "choosePhoto": "选择照片",
+    "dropHere": "将照片拖到此处",
+    "localOnlyMobile": "在本设备上处理 — 不会发送到服务器或云端。",
+    "localOnlyDesktop": "或点击选择文件。在本设备上处理 — 不会发送到服务器或云端。",
+    "quality": "质量：{percent}%",
+    "outputFormat": "输出格式",
+    "maxSide": "最大边长（px），0 = 不限制",
+    "targetKb": "目标大小（KB），0 = 关闭",
+    "recalc": "用新设置重新计算",
+    "processing": "正在您的设备上处理…",
+    "processingHint": "照片不会发送到服务器 — 压缩就在浏览器中完成。",
+    "total": "合计",
+    "shareHint": "在 iPhone 上：点「共享」→「存储图像」可保存到相册。「下载」通常会存到「文件」。",
+    "grew": "体积变大了 — 请降低质量或最大边长后重新计算。",
+    "share": "共享",
+    "download": "下载",
+    "downloadZip": "全部下载为 ZIP",
+    "stripMetadata": "删除元数据",
+    "stripMetadataHint": "压缩或更改格式时，元数据会在重新编码时被移除。",
+    "fileInMemory": "文件在浏览器内存中。不使用服务器连接。",
+    "savedLocally": "完成。文件已保存在本地。"
+  },
+  "presetTitles": {
+    "home": "压缩照片",
+    "homeSubtitle": "本地压缩",
+    "heic-v-jpg": "HEIC → JPG",
+    "webp-v-jpg": "WebP → JPG",
+    "png-v-jpg": "PNG → JPG",
+    "jpg-v-png": "JPG → PNG",
+    "jpg-v-webp": "JPG → WebP",
+    "png-v-webp": "PNG → WebP",
+    "webp-v-png": "WebP → PNG",
+    "izmenit-razmer": "调整尺寸",
+    "szhat-do-100kb": "到 100 KB",
+    "szhat-png": "压缩 PNG",
+    "szhat-jpg": "压缩 JPG",
+    "udalit-exif": "删除 EXIF",
+    "skryt-oblast": "遮盖区域",
+    "compress-pdf": "压缩 PDF",
+    "merge-pdf": "合并 PDF",
+    "pdf-sanitize": "清除 PDF 元数据",
+    "split-pdf": "拆分 PDF",
+    "rotate-pdf": "旋转 PDF",
+    "organize-pdf": "整理 PDF",
+    "jpg-to-pdf": "JPG → PDF",
+    "pdf-to-jpg": "PDF → JPG",
+    "watermark-pdf": "水印",
+    "page-numbers-pdf": "页码",
+    "crop-pdf": "裁剪 PDF",
+    "protect-pdf": "保护 PDF",
+    "unlock-pdf": "解锁 PDF"
+  },
+  "layout": {
+    "titleDefault": "PixLocal — 在浏览器中压缩与转换照片",
+    "titleTemplate": "%s · PixLocal",
+    "description": "免费在线压缩与转换 JPG、PNG、WebP 和 HEIC。文件在本地处理 — 不会上传到服务器或云端。",
+    "ogTitle": "PixLocal — 无云端在线压缩照片",
+    "ogDescription": "私密图片压缩与转换，无需上传服务器。支持 HEIC、WebP、PNG、JPG。"
+  },
+  "meta": {
+    "title": "文件里有什么",
+    "localNote": "检查只在您的设备上进行——文件不会上传。",
+    "gpsWarn": "文件含拍摄位置（GPS）——可能暴露拍摄地点。",
+    "noneFound": "未发现隐藏的位置或相机数据。",
+    "stripped": "隐藏数据已删除：结果中无拍摄位置或相机标签。",
+    "cleared": "已清除",
+    "hintGps": "保持删除元数据开启并下载——位置与服务标签会消失。",
+    "hintClean": "没有拍摄位置；处理仍可去掉服务标签。",
+    "techTitle": "给技术读者",
+    "techBody": "结果在浏览器中编码（Canvas API → toBlob），不复制 EXIF/GPS。验证：处理时打开 DevTools → Network——只会加载站点静态资源，图片本体不会上传到我们的 origin。",
+    "keys": {
+      "gps": "位置",
+      "camera": "相机",
+      "date": "日期",
+      "software": "软件",
+      "orientation": "方向"
+    },
+    "techBodyPdfCompress": "PDF pages are rendered with PDF.js into Canvas, encoded as JPEG, and rebuilt with pdf-lib. After strong compression, text is usually not selectable. While processing, Network only shows site static assets — your PDF body is not uploaded to our origin.",
+    "techBodyPdfSanitize": "Pages are copied into a new PDFDocument (pdf-lib); Info metadata fields are cleared. Check Network — no file-body upload."
+  },
+  "redact": {
+    "choosePhoto": "选择照片",
+    "dropHere": "将照片拖到这里",
+    "chooseFiles": "选择文件",
+    "localBadge": "在您的设备上",
+    "hint": "框选区域——遮挡立即显示。仅在浏览器中处理。",
+    "modePixel": "像素化",
+    "modeBlur": "模糊",
+    "strength": "强度：{percent}%",
+    "download": "下载",
+    "clear": "清除区域",
+    "replace": "换一张",
+    "processing": "正在本地保存…",
+    "fileInMemory": "文件在浏览器内存中。不使用服务器连接。",
+    "savedLocally": "完成。文件已保存在本地。",
+    "error": "无法处理图像"
+  },
+  "crossSell": {
+    "title": "完成。发送前还要做什么？",
+    "exif": "要删除 GPS 坐标吗？",
+    "exifCta": "删除 EXIF",
+    "blur": "需要遮住人脸或车牌？",
+    "blurCta": "模糊区域"
+  },
+  "toolsMenu": {
+    "trigger": "工具",
+    "close": "关闭",
+    "photo": "照片",
+    "pdf": "PDF",
+    "localNote": "在浏览器本地处理。不上传到服务器。"
+  },
+  "privacyDetails": {
+    "title": "工作原理",
+    "body": "照片留在浏览器内存中，压缩时不会发到我们的服务器。打开网站仍会照常下载页面。访问统计可能使用 Google Analytics：页面、设备类型、按钮点击——不含文件名与像素。语言偏好可能记在浏览器中。分析 Cookie 属于 Google，可在浏览器设置中限制。 也可点击页眉中的「离线」，将当前语言的工具页和引擎缓存到设备；您的文件仍不会上传。"
+  },
+  "pdfTool": {
+    "processError": "Could not process the PDF",
+    "pdfEncrypted": "This PDF is password-protected. Use Unlock PDF first.",
+    "pdfLoadFailed": "Could not read this PDF",
+    "pdfEmpty": "Nothing to process",
+    "canvasUnavailable": "Canvas is unavailable",
+    "encodeFailed": "Could not encode the result",
+    "pdfBadPassword": "Incorrect password",
+    "pdfNotEncrypted": "This PDF is not password-protected",
+    "pdfNeedPassword": "Enter a password",
+    "pdfNoImages": "Add JPG, PNG, or WebP images",
+    "passwordMismatch": "Passwords do not match",
+    "addPdfs": "Add one or more PDF files",
+    "addImages": "Add JPG, PNG, or WebP images",
+    "addOrReplace": "Add or replace files",
+    "localBadge": "100% client-side · zero-knowledge",
+    "localOnly": "Processing stays on your device — file contents are not sent to a server.",
+    "chooseFiles": "Choose files",
+    "dropHere": "Drop files here",
+    "compressLevel": "Compression",
+    "levelLight": "Light (better quality)",
+    "levelBalanced": "Balanced",
+    "levelStrong": "Strong (smaller file)",
+    "compressHint": "Pages are re-rendered as images. Text may no longer be selectable.",
+    "splitMode": "Split mode",
+    "splitEach": "Each page",
+    "splitRanges": "Ranges",
+    "rangesLabel": "Page ranges (e.g. 1-3,5)",
+    "rotateAngle": "Rotate by",
+    "watermarkText": "Watermark text",
+    "opacity": "Opacity",
+    "pageNumFormat": "Number format",
+    "formatN": "Page number only",
+    "formatNofN": "Page / total",
+    "cropMargin": "Crop each side",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "run": "Process on device",
+    "processing": "Processing on your device…",
+    "processingHint": "File contents are not uploaded — work runs in the browser.",
+    "progress": "{done} / {total}",
+    "remove": "Remove",
+    "pageLabel": "Page {n}",
+    "total": "Total",
+    "download": "Download",
+    "downloadZip": "Download all as ZIP",
+    "share": "Share",
+    "grew": "Got larger — try a stronger level.",
+    "savedLocally": "Done. File saved locally.",
+    "tooLarge": "File is too large for reliable in-browser processing ({size}). Try under 100 MB.",
+    "warnSize": "Large file ({size}) — processing may be slow or run out of memory on this device.",
+    "warnPages": "Many pages ({pages}) — may be slow or run out of memory on a weak device; processing is not blocked.",
+    "watermarkColor": "文字颜色",
+    "rotateCw": "顺时针",
+    "rotateCcw": "逆时针",
+    "cropPreviewHint": "阴影区域将被裁切"
+  },
+  "trustPdf": {
+    "aria": "隐私",
+    "hook": "",
+    "flow": {
+      "aria": "PDF 如何处理",
+      "file": "您的 PDF",
+      "device": "您的浏览器",
+      "result": "干净的 PDF",
+      "noCloud": "不进云端"
+    },
+    "items": [
+      {
+        "title": "仅在设备上",
+        "text": "PDF 工具在浏览器中运行 — 文档不会离开手机或电脑。"
+      },
+      {
+        "title": "不上传文件",
+        "text": "处理时文件正文不经过网络。节省流量：不会把兆字节传到别人的服务器。"
+      },
+      {
+        "title": "无广告",
+        "text": "我们不展示广告，也不接收您的文件。我们无法看到您的文档。"
+      },
+      {
+        "title": "不存储文件",
+        "text": "我们不在服务器或云端保存 PDF。打开 — 处理 — 下载。"
+      }
+    ]
+  },
+  "privacyDetailsPdf": {
+    "title": "如何运作",
+    "body": "您的 PDF 留在浏览器内存中，处理时不会发到我们的服务器。打开网站仍会照常下载页面。访问统计可使用 Google Analytics：页面、设备类型、按钮点击 — 不含文件名或文档内容。语言选择可记在浏览器中。分析 Cookie 属于 Google；可在浏览器设置中限制。 也可点击页眉中的「离线」，将当前语言的工具页和引擎缓存到设备；您的文件仍不会上传。"
+  },
+  "offline": {
+    "navLabel": "离线",
+    "workingBadge": "保存中…",
+    "readyBadge": "离线 ✓",
+    "panelLead": "将当前语言的工具保存到设备。您的文件仍留在浏览器内——仅在点击按钮后缓存网站静态资源。",
+    "sizeHint": "本语言约 5–8 MB。其他语言需单独保存。",
+    "start": "设为离线",
+    "retry": "重试",
+    "refresh": "刷新缓存",
+    "stepPages": "工具页面（当前语言）",
+    "stepImages": "图像引擎（HEIC）",
+    "stepPdf": "PDF 引擎",
+    "stepDone": "完成",
+    "readyMessage": "可以断开网络，使用当前语言的工具。",
+    "workingHint": "请保持此标签页打开直至完成。",
+    "install": "安装应用",
+    "installIos": "在 iPhone/iPad：分享 → 添加到主屏幕。",
+    "unsupported": "此浏览器无法离线保存网站。",
+    "errorPartial": "已保存，但有 {failed} 个页面错误。可重试。",
+    "errorGeneric": "无法完成保存。请检查网络后重试。",
+    "pageTitle": "已离线",
+    "pageDescription": "无网络时显示的页面。",
+    "pageBody": "无连接。若已为本语言点击「离线」，请从首页打开已保存的工具。",
+    "pageHome": "首页"
+  }
+}

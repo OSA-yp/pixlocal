@@ -1,0 +1,411 @@
+{
+  "brandTagline": "alat privat · di browser",
+  "nav": {
+    "compress": "Kompres",
+    "heic-v-jpg": "iPhone→JPG",
+    "szhat-do-100kb": "100 KB",
+    "szhat-jpg": "Kompres JPG",
+    "webp-v-jpg": "WebP→JPG",
+    "udalit-exif": "EXIF"
+  },
+  "footer": {
+    "blurb": "Alat privat untuk file. Semuanya di browser — tidak ada yang ke server atau cloud.",
+    "zeroKnowledge": "Privasi: kami tidak meminta, menerima, menyimpan, atau melihat file Anda.",
+    "privacy": "Privasi",
+    "terms": "Ketentuan",
+    "contacts": "Kontak",
+    "sitemap": "Peta situs",
+    "copyright": "Alat untuk file pribadi."
+  },
+  "trust": {
+    "aria": "Privasi",
+    "hook": "Hemat kuota internet & privasi terjaga 100%",
+    "flow": {
+      "aria": "Bagaimana foto diproses",
+      "photo": "Foto Anda",
+      "device": "Browser Anda",
+      "result": "Foto terkompresi",
+      "noCloud": "Bukan ke cloud"
+    },
+    "items": [
+      {
+        "title": "Hanya di perangkat",
+        "text": "Kompresi dan konversi di browser — piksel tidak meninggalkan ponsel atau komputer."
+      },
+      {
+        "title": "Tanpa unggah foto",
+        "text": "Saat diproses, isi file tidak dikirim lewat jaringan. Hemat data seluler: jangan kirim megabyte ke server orang lain."
+      },
+      {
+        "title": "Tanpa iklan",
+        "text": "Kami tidak menampilkan iklan dan tidak menerima file Anda. Secara fisik kami tidak melihat foto Anda."
+      },
+      {
+        "title": "Tidak menyimpan foto",
+        "text": "Kami tidak menyimpan gambar di server atau cloud. Buka, proses, unduh."
+      }
+    ]
+  },
+  "faqTitle": "Pertanyaan",
+  "toolLinksTitle": "Alat lain",
+  "homeLink": {
+    "title": "Kompres foto",
+    "text": "JPG, PNG, WebP — dengan kontrol kualitas"
+  },
+  "toolLinks": {
+    "heic-v-jpg": {
+      "title": "HEIC → JPG",
+      "text": "Foto iPhone ke JPG untuk Windows dan formulir"
+    },
+    "webp-v-jpg": {
+      "title": "WebP → JPG",
+      "text": "Saat gambar dari situs tidak terbuka"
+    },
+    "png-v-jpg": {
+      "title": "PNG → JPG",
+      "text": "Perkecil tangkapan layar dan grafis"
+    },
+    "jpg-v-png": {
+      "title": "JPG → PNG",
+      "text": "Saat butuh transparansi atau PNG"
+    },
+    "jpg-v-webp": {
+      "title": "JPG → WebP",
+      "text": "Untuk situs cepat dan CWV"
+    },
+    "png-v-webp": {
+      "title": "PNG → WebP",
+      "text": "Kompres PNG tanpa megabita ekstra"
+    },
+    "webp-v-png": {
+      "title": "WebP → PNG",
+      "text": "Pertahankan transparansi"
+    },
+    "izmenit-razmer": {
+      "title": "Ubah ukuran",
+      "text": "Batasi sisi panjang dalam px"
+    },
+    "szhat-do-100kb": {
+      "title": "Kompres ke 100 KB",
+      "text": "Untuk batas formulir dan email"
+    },
+    "szhat-png": {
+      "title": "Kompres PNG",
+      "text": "Optimasi PNG online"
+    },
+    "szhat-jpg": {
+      "title": "Kompres JPG",
+      "text": "Kompresi JPEG cepat"
+    },
+    "udalit-exif": {
+      "title": "Hapus EXIF & metadata",
+      "text": "Sembunyikan GPS dan data kamera sebelum kirim"
+    },
+    "skryt-oblast": {
+      "title": "Buramkan atau samarkan area",
+      "text": "Sembunyikan wajah, plat, dan data pribadi"
+    },
+    "compress-pdf": {
+      "title": "Kompres PDF",
+      "text": "Perkecil dokumen di perangkat"
+    },
+    "merge-pdf": {
+      "title": "Gabung PDF",
+      "text": "Gabungkan beberapa file"
+    },
+    "pdf-sanitize": {
+      "title": "Hapus metadata PDF",
+      "text": "Bersihkan data layanan"
+    },
+    "split-pdf": {
+      "title": "Pisah PDF",
+      "text": "Ambil halaman atau rentang"
+    },
+    "rotate-pdf": {
+      "title": "Putar PDF",
+      "text": "Putar 90°, 180°, atau 270°"
+    },
+    "organize-pdf": {
+      "title": "Atur PDF",
+      "text": "Urutkan, putar, atau hapus"
+    },
+    "jpg-to-pdf": {
+      "title": "JPG → PDF",
+      "text": "Buat PDF dari gambar"
+    },
+    "pdf-to-jpg": {
+      "title": "PDF → JPG",
+      "text": "Setiap halaman jadi gambar"
+    },
+    "watermark-pdf": {
+      "title": "Tanda air",
+      "text": "Teks di semua halaman"
+    },
+    "page-numbers-pdf": {
+      "title": "Nomor halaman",
+      "text": "Nomori PDF"
+    },
+    "crop-pdf": {
+      "title": "Potong PDF",
+      "text": "Potong margin"
+    },
+    "protect-pdf": {
+      "title": "Lindungi PDF",
+      "text": "Kata sandi AES-256"
+    },
+    "unlock-pdf": {
+      "title": "Buka kunci PDF",
+      "text": "Hapus kata sandi"
+    }
+  },
+  "breadcrumbHome": "Beranda",
+  "schemaFeatures": [
+    "Pemrosesan lokal di browser tanpa unggah ke server",
+    "File tidak masuk ke cloud",
+    "Kompres dan konversi JPG, PNG, WebP, HEIC",
+    "Pemrosesan batch dan unduhan ZIP",
+    "Tanpa pendaftaran",
+    "Compress and edit PDFs locally in the browser"
+  ],
+  "language": "Bahasa",
+  "tool": {
+    "processError": "Tidak dapat memproses file",
+    "heicDecode": "Tidak dapat mendekode HEIC",
+    "canvasUnavailable": "Canvas tidak tersedia",
+    "encodeFailed": "Tidak dapat mengodekan gambar",
+    "addImages": "Tambahkan gambar (JPG, PNG, WebP, HEIC).",
+    "addOrReplace": "Tambah atau ganti file",
+    "localBadge": "Di perangkat Anda",
+    "localOnlyShort": "Pemrosesan hanya di perangkat — tidak ada yang dikirim ke server atau cloud.",
+    "chooseFiles": "Pilih file",
+    "choosePhoto": "Pilih foto",
+    "dropHere": "Letakkan foto di sini",
+    "localOnlyMobile": "Pemrosesan berjalan di perangkat ini — tidak ada yang dikirim ke server atau cloud.",
+    "localOnlyDesktop": "atau klik untuk memilih file. Pemrosesan berjalan di perangkat ini — tidak ada yang dikirim ke server atau cloud.",
+    "quality": "Kualitas: {percent}%",
+    "outputFormat": "Format keluaran",
+    "maxSide": "Sisi maks. (px), 0 = tanpa batas",
+    "targetKb": "Target ukuran (KB), 0 = mati",
+    "recalc": "Hitung ulang dengan pengaturan baru",
+    "processing": "Memproses di perangkat Anda…",
+    "processingHint": "Foto tidak dikirim ke server — kompresi berjalan di browser.",
+    "total": "Total",
+    "shareHint": "Di iPhone: Bagikan → Simpan Gambar agar masuk ke Foto. Unduh biasanya menyimpan ke File.",
+    "grew": "Menjadi lebih besar — turunkan kualitas atau sisi maks. lalu hitung ulang.",
+    "share": "Bagikan",
+    "download": "Unduh",
+    "downloadZip": "Unduh semua sebagai ZIP",
+    "stripMetadata": "Hapus metadata",
+    "stripMetadataHint": "Saat kompresi atau ganti format, metadata hilang saat re-encode.",
+    "fileInMemory": "File di memori browser. Tidak memakai koneksi server.",
+    "savedLocally": "Selesai. File disimpan secara lokal."
+  },
+  "presetTitles": {
+    "home": "Kompres foto",
+    "homeSubtitle": "Kompresi lokal",
+    "heic-v-jpg": "HEIC → JPG",
+    "webp-v-jpg": "WebP → JPG",
+    "png-v-jpg": "PNG → JPG",
+    "jpg-v-png": "JPG → PNG",
+    "jpg-v-webp": "JPG → WebP",
+    "png-v-webp": "PNG → WebP",
+    "webp-v-png": "WebP → PNG",
+    "izmenit-razmer": "Ubah ukuran",
+    "szhat-do-100kb": "Ke 100 KB",
+    "szhat-png": "Kompres PNG",
+    "szhat-jpg": "Kompres JPG",
+    "udalit-exif": "Hapus EXIF",
+    "skryt-oblast": "Samarkan",
+    "compress-pdf": "Kompres PDF",
+    "merge-pdf": "Gabung PDF",
+    "pdf-sanitize": "Hapus metadata PDF",
+    "split-pdf": "Pisah PDF",
+    "rotate-pdf": "Putar PDF",
+    "organize-pdf": "Atur PDF",
+    "jpg-to-pdf": "JPG → PDF",
+    "pdf-to-jpg": "PDF → JPG",
+    "watermark-pdf": "Tanda air",
+    "page-numbers-pdf": "Nomor halaman",
+    "crop-pdf": "Potong PDF",
+    "protect-pdf": "Lindungi PDF",
+    "unlock-pdf": "Buka kunci PDF"
+  },
+  "layout": {
+    "titleDefault": "PixLocal — kompres dan konversi foto di browser",
+    "titleTemplate": "%s · PixLocal",
+    "description": "Kompres dan konversi JPG, PNG, WebP, dan HEIC online gratis. File diproses secara lokal — tidak diunggah ke server atau cloud.",
+    "ogTitle": "PixLocal — kompres foto online tanpa cloud",
+    "ogDescription": "Kompresi dan konversi gambar pribadi tanpa unggah ke server. HEIC, WebP, PNG, JPG."
+  },
+  "meta": {
+    "title": "Isi file",
+    "localNote": "Pemeriksaan hanya di perangkat Anda — file tidak diunggah.",
+    "gpsWarn": "File punya lokasi pengambilan (GPS) — foto bisa mengungkap di mana dibuat.",
+    "noneFound": "Tidak ada data lokasi atau kamera tersembunyi.",
+    "stripped": "Data tersembunyi dihapus: hasil tanpa lokasi atau tag kamera.",
+    "cleared": "dibersihkan",
+    "hintGps": "Biarkan Hapus metadata aktif lalu unduh — lokasi dan tag layanan hilang.",
+    "hintClean": "Tidak ada lokasi; pemrosesan tetap bisa menghapus tag layanan.",
+    "techTitle": "Untuk teknisi",
+    "techBody": "Hasil di-encode di browser (Canvas API → toBlob); segmen EXIF/GPS tidak disalin. Cek: DevTools → Network saat memproses — hanya aset statis situs; tubuh gambar Anda tidak diunggah ke origin kami.",
+    "keys": {
+      "gps": "Lokasi",
+      "camera": "Kamera",
+      "date": "Tanggal",
+      "software": "Perangkat lunak",
+      "orientation": "Orientasi"
+    },
+    "techBodyPdfCompress": "PDF pages are rendered with PDF.js into Canvas, encoded as JPEG, and rebuilt with pdf-lib. After strong compression, text is usually not selectable. While processing, Network only shows site static assets — your PDF body is not uploaded to our origin.",
+    "techBodyPdfSanitize": "Pages are copied into a new PDFDocument (pdf-lib); Info metadata fields are cleared. Check Network — no file-body upload."
+  },
+  "redact": {
+    "choosePhoto": "Pilih foto",
+    "dropHere": "Letakkan foto di sini",
+    "chooseFiles": "Pilih file",
+    "localBadge": "Di perangkat Anda",
+    "hint": "Gambar area — efek langsung muncul. Hanya di browser.",
+    "modePixel": "Pixelasi",
+    "modeBlur": "Buram",
+    "strength": "Kekuatan: {percent}%",
+    "download": "Unduh",
+    "clear": "Hapus area",
+    "replace": "Foto lain",
+    "processing": "Menyimpan secara lokal…",
+    "fileInMemory": "File di memori browser. Tidak memakai koneksi server.",
+    "savedLocally": "Selesai. File disimpan secara lokal.",
+    "error": "Tidak dapat memproses gambar"
+  },
+  "crossSell": {
+    "title": "Selesai. Ada lagi sebelum mengirim?",
+    "exif": "Hapus koordinat GPS?",
+    "exifCta": "Hapus EXIF",
+    "blur": "Sembunyikan wajah atau plat?",
+    "blurCta": "Samarkan"
+  },
+  "toolsMenu": {
+    "trigger": "Alat",
+    "close": "Tutup",
+    "photo": "Foto",
+    "pdf": "PDF",
+    "localNote": "Lokal di browser. Tanpa unggah ke server."
+  },
+  "privacyDetails": {
+    "title": "Cara kerjanya",
+    "body": "Foto tetap di memori browser dan tidak dikirim ke server kami saat kompresi. Membuka situs tetap mengunduh halaman seperti biasa. Untuk statistik kunjungan kami dapat memakai Google Analytics: halaman, jenis perangkat, klik tombol — tanpa nama file atau piksel. Pilihan bahasa dapat diingat di browser. Cookie analitik milik Google; Anda dapat membatasinya di pengaturan browser. Anda juga bisa menekan Offline di header untuk menyimpan halaman bahasa ini dan mesinnya; file Anda tetap tidak diunggah."
+  },
+  "pdfTool": {
+    "processError": "Could not process the PDF",
+    "pdfEncrypted": "This PDF is password-protected. Use Unlock PDF first.",
+    "pdfLoadFailed": "Could not read this PDF",
+    "pdfEmpty": "Nothing to process",
+    "canvasUnavailable": "Canvas is unavailable",
+    "encodeFailed": "Could not encode the result",
+    "pdfBadPassword": "Incorrect password",
+    "pdfNotEncrypted": "This PDF is not password-protected",
+    "pdfNeedPassword": "Enter a password",
+    "pdfNoImages": "Add JPG, PNG, or WebP images",
+    "passwordMismatch": "Passwords do not match",
+    "addPdfs": "Add one or more PDF files",
+    "addImages": "Add JPG, PNG, or WebP images",
+    "addOrReplace": "Add or replace files",
+    "localBadge": "100% client-side · zero-knowledge",
+    "localOnly": "Processing stays on your device — file contents are not sent to a server.",
+    "chooseFiles": "Choose files",
+    "dropHere": "Drop files here",
+    "compressLevel": "Compression",
+    "levelLight": "Light (better quality)",
+    "levelBalanced": "Balanced",
+    "levelStrong": "Strong (smaller file)",
+    "compressHint": "Pages are re-rendered as images. Text may no longer be selectable.",
+    "splitMode": "Split mode",
+    "splitEach": "Each page",
+    "splitRanges": "Ranges",
+    "rangesLabel": "Page ranges (e.g. 1-3,5)",
+    "rotateAngle": "Rotate by",
+    "watermarkText": "Watermark text",
+    "opacity": "Opacity",
+    "pageNumFormat": "Number format",
+    "formatN": "Page number only",
+    "formatNofN": "Page / total",
+    "cropMargin": "Crop each side",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "run": "Process on device",
+    "processing": "Processing on your device…",
+    "processingHint": "File contents are not uploaded — work runs in the browser.",
+    "progress": "{done} / {total}",
+    "remove": "Remove",
+    "pageLabel": "Page {n}",
+    "total": "Total",
+    "download": "Download",
+    "downloadZip": "Download all as ZIP",
+    "share": "Share",
+    "grew": "Got larger — try a stronger level.",
+    "savedLocally": "Done. File saved locally.",
+    "tooLarge": "File is too large for reliable in-browser processing ({size}). Try under 100 MB.",
+    "warnSize": "Large file ({size}) — processing may be slow or run out of memory on this device.",
+    "warnPages": "Many pages ({pages}) — may be slow or run out of memory on a weak device; processing is not blocked.",
+    "watermarkColor": "Warna teks",
+    "rotateCw": "Searah jarum jam",
+    "rotateCcw": "Berlawanan jarum jam",
+    "cropPreviewHint": "Area berbayang akan dipotong"
+  },
+  "trustPdf": {
+    "aria": "Privasi",
+    "hook": "",
+    "flow": {
+      "aria": "Bagaimana PDF diproses",
+      "file": "PDF Anda",
+      "device": "Browser Anda",
+      "result": "PDF bersih",
+      "noCloud": "Bukan ke cloud"
+    },
+    "items": [
+      {
+        "title": "Hanya di perangkat",
+        "text": "Alat PDF berjalan di browser — dokumen tidak meninggalkan telepon atau komputer."
+      },
+      {
+        "title": "Tanpa unggah file",
+        "text": "Saat memproses, isi file tidak lewat jaringan. Hemat kuota: Anda tidak mengirim megabyte ke server orang lain."
+      },
+      {
+        "title": "Tanpa iklan",
+        "text": "Kami tidak menampilkan iklan dan tidak menerima file Anda. Kami secara fisik tidak melihat dokumen Anda."
+      },
+      {
+        "title": "Tidak menyimpan file",
+        "text": "Kami tidak menyimpan PDF di server atau cloud. Buka, proses, unduh."
+      }
+    ]
+  },
+  "privacyDetailsPdf": {
+    "title": "Cara kerjanya",
+    "body": "PDF Anda tetap di memori browser dan tidak dikirim ke server kami selama pemrosesan. Membuka situs tetap mengunduh halaman seperti biasa. Untuk statistik kunjungan kami dapat memakai Google Analytics: halaman, jenis perangkat, klik — tanpa nama file atau isi dokumen. Pilihan bahasa dapat diingat di browser. Cookie analitik milik Google; Anda dapat membatasinya di pengaturan browser. Anda juga bisa menekan Offline di header untuk menyimpan halaman bahasa ini dan mesinnya; file Anda tetap tidak diunggah."
+  },
+  "offline": {
+    "navLabel": "Offline",
+    "workingBadge": "Menyimpan…",
+    "readyBadge": "Offline ✓",
+    "panelLead": "Simpan alat bahasa ini di perangkat. File Anda tetap di browser — hanya situs yang di-cache setelah tombol ditekan.",
+    "sizeHint": "Sekitar 5–8 MB untuk bahasa ini. Bahasa lain perlu disimpan terpisah.",
+    "start": "Jadikan offline",
+    "retry": "Coba lagi",
+    "refresh": "Perbarui cache",
+    "stepPages": "Halaman alat (bahasa ini)",
+    "stepImages": "Mesin gambar (HEIC)",
+    "stepPdf": "Mesin PDF",
+    "stepDone": "Selesai",
+    "readyMessage": "Anda dapat mematikan internet dan memakai alat dalam bahasa ini.",
+    "workingHint": "Biarkan tab ini terbuka sampai daftar selesai.",
+    "install": "Pasang aplikasi",
+    "installIos": "Di iPhone/iPad: Bagikan → Tambah ke Layar Utama.",
+    "unsupported": "Browser ini tidak bisa menyimpan situs offline.",
+    "errorPartial": "Tersimpan dengan {failed} error halaman. Coba lagi.",
+    "errorGeneric": "Gagal menyelesaikan. Periksa jaringan.",
+    "pageTitle": "Offline",
+    "pageDescription": "Halaman saat tanpa jaringan.",
+    "pageBody": "Tidak ada koneksi. Jika sudah menekan Offline untuk bahasa ini, buka alat tersimpan dari beranda.",
+    "pageHome": "Beranda"
+  }
+}

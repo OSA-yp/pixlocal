@@ -1,0 +1,52 @@
+{
+  "title": "Comprimir fotos online sem enviar a um servidor",
+  "description": "Comprima imagens localmente no navegador: JPG, PNG, WebP, HEIC. Fora da nuvem — sem cadastro, lote e ZIP.",
+  "h1": "Comprimir fotos online",
+  "lead": "Reduza JPG, PNG e WebP — ou trabalhe com PDF — no navegador. Os ficheiros ficam no dispositivo: sem registo nem nuvem.",
+  "body": [
+    "O PixLocal comprime imagens no seu computador ou telefone. Útil para sites, marketplaces, e-mail e mensageiros: arquivo menor, upload mais rápido.",
+    "Diferente de muitos serviços online, não aceitamos suas fotos em um servidor. Funciona como editar uma foto na galeria do telefone ou no Paint: todo o processo fica no seu navegador. Tecnicamente JPG/WebP/PNG usam Canvas, HEIC um decodificador local; processe um lote e baixe um ZIP.",
+    "Por padrão o lado longo fica limitado a 2560 px — assim fotos de iPhone realmente emagrecem. Qualidade, limite de lado e meta em KB podem ser alterados manualmente."
+  ],
+  "faq": [
+    {
+      "q": "A foto realmente não vai pela rede ao comprimir?",
+      "a": "O conteúdo do ficheiro — sim, fica: a compressão é no seu dispositivo, como editar na galeria ou no Paint. Abrir o site ainda descarrega a página como habitual. Em DevTools → Rede durante o processamento, não verá o corpo da imagem enviado ao nosso servidor."
+    },
+    {
+      "q": "Qual a diferença em relação ao TinyPNG e ao iLoveIMG?",
+      "a": "Compresores online típicos enviam as fotos ao servidor deles. O PixLocal processa o arquivo só no seu navegador — o conteúdo não vai a servidor nem à nuvem. Não há lossless na nuvem como o TinyPNG: para ícones, otimizadores CLI são mais fortes."
+    },
+    {
+      "q": "Quais formatos são suportados?",
+      "a": "JPG/JPEG, PNG, WebP e HEIC/HEIF (via decodificador local heic-to/libheif). O resultado pode ser salvo como JPG, WebP ou PNG."
+    },
+    {
+      "q": "Por que o HEIC às vezes fica maior após converter para JPG?",
+      "a": "HEIC costuma ser mais compacto que JPEG. Baixamos qualidade e resolução automaticamente para o JPG ficar mais leve que o original. Se precisar, reduza o lado máx. ou a qualidade manualmente."
+    },
+    {
+      "q": "Como salvar em Fotos no iPhone?",
+      "a": "Toque em Compartilhar e escolha Salvar imagem no menu do sistema. No iOS, Baixar geralmente coloca o arquivo em Arquivos."
+    },
+    {
+      "q": "Com o que vocês comprimem e é legal?",
+      "a": "JPG/PNG/WebP — Canvas integrado do navegador; HEIC — heic-to open source (libheif, LGPL-3.0); ZIP — jszip (MIT). Detalhes na seção de licenças no GitHub / LICENSES.md."
+    },
+    {
+      "q": "Preciso de cadastro?",
+      "a": "Não. Abra a página, solte os arquivos e baixe ou compartilhe o resultado."
+    },
+    {
+      "q": "Por que todas as ferramentas PixLocal são seguras?",
+      "a": "Usamos o seu navegador em vez de servidores remotos. As ferramentas de fotos e PDF correm na CPU do dispositivo. Fisicamente não podemos receber os seus ficheiros."
+    },
+    {
+      "q": "Posso usar sem internet?",
+      "a": "Sim — toque em Offline no cabeçalho e aguarde. Só o idioma atual é salvo; seus arquivos não sobem."
+    }
+  ],
+  "dualPitch": "PixLocal são dois conjuntos num só sítio: comprimir e converter fotos, e utilitários PDF — ambos privados, ambos no dispositivo.",
+  "dualPitchPhoto": "Ferramentas de fotos",
+  "dualPitchPdf": "Ferramentas PDF (ex. comprimir)"
+}

@@ -1,0 +1,32 @@
+{
+  "privacy": {
+    "title": "Kebijakan privasi",
+    "description": "Bagaimana PixLocal menangani data: pemrosesan foto lokal, tanpa iklan, statistik kunjungan anonim lewat Google Analytics.",
+    "h1": "Privasi",
+    "body": [
+      "Kami tidak meminta, menerima, menyimpan, atau melihat gambar Anda. Titik.",
+      "PixLocal adalah alat online untuk kompresi dan konversi gambar. Pemrosesan file berjalan di browser Anda, di perangkat Anda. Isi gambar yang dimuat tidak dikirim ke server kami untuk kompresi atau konversi.",
+      "Transfer piksel nol: saat kompresi dan konversi, badan file tidak dikirim ke server PixLocal dan tidak disimpan di cloud. Situs hanya menyajikan aset statis (HTML, JS, CSS); encoding lewat Canvas dan pustaka lokal di browser. Anda bisa memverifikasinya di tab Network DevTools saat pemrosesan.",
+      "Tidak ada iklan di situs dan tidak direncanakan.",
+      "Jika ID Google Analytics disetel, kami dapat mengumpulkan statistik kunjungan teknis yang dianonimkan: URL halaman, jenis perangkat, peristiwa antarmuka (pemilihan file, unduhan, ZIP). Nama dan isi file tidak dikirim. Cookie analitik dapat dibatasi di pengaturan browser.",
+      "Tombol Offline: saat ditekan, browser dapat menyimpan cache halaman dan pustaka bahasa saat ini. Isi file pengguna tidak masuk cache itu.",
+      "Untuk pertanyaan privasi, tulis ke alamat yang tertera di halaman Kontak."
+    ]
+  },
+  "terms": {
+    "title": "Ketentuan penggunaan",
+    "description": "Aturan penggunaan layanan PixLocal.",
+    "h1": "Ketentuan penggunaan",
+    "body": [
+      "Layanan disediakan «sebagaimana adanya», gratis, tanpa jaminan ketersediaan terus-menerus. Anda sendiri memeriksa hasil sebelum memublikasikan atau mengirim file ke pihak ketiga.",
+      "Dilarang memakai layanan untuk memproses konten ilegal. Anda bertanggung jawab atas file yang dibuka di browser.",
+      "Kami dapat mengubah fitur, desain, dan ketentuan. Versi terkini selalu ada di halaman ini."
+    ]
+  },
+  "contacts": {
+    "title": "Kontak",
+    "description": "Hubungi tim PixLocal.",
+    "h1": "Kontak",
+    "intro": "Untuk pertanyaan tentang layanan, tulis ke:"
+  }
+}

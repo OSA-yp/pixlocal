@@ -1,0 +1,32 @@
+{
+  "privacy": {
+    "title": "Política de privacidad",
+    "description": "Cómo PixLocal trata los datos: procesamiento local de fotos, sin anuncios, estadísticas anónimas con Google Analytics.",
+    "h1": "Privacidad",
+    "body": [
+      "No solicitamos, no recibimos, no almacenamos ni vemos tus imágenes. Punto.",
+      "PixLocal es una herramienta online para comprimir y convertir imágenes. El procesamiento de archivos se realiza en tu navegador, en tu dispositivo. El contenido de las imágenes cargadas no se envía a nuestros servidores para comprimir o convertir.",
+      "Transferencia cero de píxeles: al comprimir y convertir, el cuerpo del archivo no se envía al servidor de PixLocal ni se guarda en la nube. El sitio solo sirve estáticos (HTML, JS, CSS); la codificación usa Canvas y bibliotecas locales en el navegador. Puedes comprobarlo en la pestaña Red de las herramientas de desarrollo durante el proceso.",
+      "No hay anuncios en el sitio y no estánamos añadirlos.",
+      "Si hay un ID de Google Analytics, podemos recopilar estadísticas técnicas anonimizadas de visitas: URL de página, tipo de dispositivo, eventos de interfaz (selección de archivos, descarga, ZIP). No se transmiten nombres ni contenido de archivos. Las cookies de analítica se pueden limitar en los ajustes del navegador.",
+      "Botón Offline opcional: al pulsarlo, el navegador puede cachear páginas estáticas y librerías del idioma actual. El contenido de tus archivos no entra en esa caché.",
+      "Para preguntas de privacidad, escribe a la dirección indicada en la página Contacto."
+    ]
+  },
+  "terms": {
+    "title": "Términos de uso",
+    "description": "Normas de uso del servicio PixLocal.",
+    "h1": "Términos de uso",
+    "body": [
+      "El servicio se ofrece «tal cual», de forma gratuita, sin garantía de disponibilidad continua. Tú compruebas el resultado antes de publicar o enviar archivos a terceros.",
+      "Está prohibido usar el servicio para procesar contenido ilegal. Eres responsable de los archivos que abres en el navegador.",
+      "Podemos cambiar funciones, diseño y condiciones. La versión vigente está siempre en esta página."
+    ]
+  },
+  "contacts": {
+    "title": "Contacto",
+    "description": "Contacto con el equipo de PixLocal.",
+    "h1": "Contacto",
+    "intro": "Para consultas sobre el servicio, escribe a:"
+  }
+}
