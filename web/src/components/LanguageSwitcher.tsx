@@ -1,5 +1,6 @@
 "use client";
 
+import { HEADER_CHIP } from "@/components/headerChip";
 import {
   defaultLocale,
   localeNativeName,
@@ -40,20 +41,27 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <label className="relative inline-flex items-center">
+    <label className="relative inline-flex shrink-0 items-center">
       <span className="sr-only">{t("language")}</span>
       <select
-        className="max-w-[10.5rem] cursor-pointer appearance-none rounded-full border border-[var(--line)] bg-white/70 py-1.5 pl-3 pr-7 text-xs text-[var(--ink-soft)] hover:border-[var(--brand)]/40 hover:text-[var(--ink)]"
+        className={`${HEADER_CHIP} w-[3.25rem] cursor-pointer appearance-none bg-white/70 pe-6 ps-2.5 text-[var(--ink-soft)] hover:border-[var(--brand)]/40 hover:text-[var(--ink)] sm:w-[4.25rem]`}
         value={locale}
         onChange={(e) => onChange(e.target.value as Locale)}
-        aria-label={t("language")}
+        aria-label={`${t("language")}: ${localeNativeName[locale]}`}
+        title={localeNativeName[locale]}
       >
         {locales.map((code) => (
-          <option key={code} value={code}>
-            {localeNativeName[code]} · {localeShortCode[code]}
+          <option key={code} value={code} title={localeNativeName[code]}>
+            {localeShortCode[code]}
           </option>
         ))}
       </select>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute end-2 top-1/2 -translate-y-1/2 text-[10px] text-[var(--ink-soft)]"
+      >
+        ▾
+      </span>
     </label>
   );
 }

@@ -36,7 +36,7 @@ const { count, size, warnings } = await injectManifest({
   globDirectory: OUT,
   globPatterns: [
     "manifest.webmanifest",
-    "icons/*.png",
+    "icons/**/*.png",
     "pdf.worker.min.mjs",
     "offline/index.html",
   ],

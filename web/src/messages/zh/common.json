@@ -406,6 +406,9 @@
     "pageTitle": "已离线",
     "pageDescription": "无网络时显示的页面。",
     "pageBody": "无连接。若已为本语言点击「离线」，请从首页打开已保存的工具。",
-    "pageHome": "首页"
+    "pageHome": "首页",
+    "close": "关闭",
+    "clear": "清除离线",
+    "clearedHint": "已清除此语言的离线缓存。网站将重新从网络加载。"
   }
 }

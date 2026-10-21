@@ -406,6 +406,9 @@
     "pageTitle": "Hors ligne",
     "pageDescription": "Page sans réseau.",
     "pageBody": "Pas de connexion. Si vous avez déjà cliqué Hors ligne pour cette langue, ouvrez un outil depuis l’accueil.",
-    "pageHome": "Accueil"
+    "pageHome": "Accueil",
+    "close": "Fermer",
+    "clear": "Supprimer hors ligne",
+    "clearedHint": "Le cache hors ligne de cette langue a été supprimé. Le site se chargera à nouveau depuis le réseau."
   }
 }

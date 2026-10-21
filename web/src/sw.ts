@@ -145,11 +145,45 @@ async function precacheUrls(
   report({ type: "PRECACHE_DONE", requestId, ok, failed });
 }
 
+type ClearMessage = {
+  type: "CLEAR_URLS";
+  requestId: string;
+  urls: string[];
+};
+
+async function clearUrls(
+  urls: string[],
+  requestId: string,
+  client: Client | null,
+) {
+  const cache = await caches.open(RUNTIME_CACHE);
+  let removed = 0;
+  for (const url of urls) {
+    if (await cache.delete(url)) removed += 1;
+    // Also try absolute URL form if relative was stored differently
+    try {
+      const abs = new URL(url, self.location.origin).href;
+      if (abs !== url && (await cache.delete(abs))) removed += 1;
+    } catch {
+      /* ignore */
+    }
+  }
+  client?.postMessage({
+    type: "CLEAR_DONE",
+    requestId,
+    removed,
+  });
+}
+
 self.addEventListener("message", (event: ExtendableMessageEvent) => {
-  const data = event.data as PrecacheMessage | undefined;
-  if (!data || data.type !== "PRECACHE_URLS" || !Array.isArray(data.urls)) {
+  const data = event.data as PrecacheMessage | ClearMessage | undefined;
+  if (!data || !Array.isArray(data.urls)) return;
+  const client = event.source as Client | null;
+  if (data.type === "PRECACHE_URLS") {
+    event.waitUntil(precacheUrls(data.urls, data.requestId, client));
     return;
   }
-  const client = event.source as Client | null;
-  event.waitUntil(precacheUrls(data.urls, data.requestId, client));
+  if (data.type === "CLEAR_URLS") {
+    event.waitUntil(clearUrls(data.urls, data.requestId, client));
+  }
 });

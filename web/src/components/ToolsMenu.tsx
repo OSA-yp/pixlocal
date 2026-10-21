@@ -1,5 +1,6 @@
 "use client";
 
+import { HEADER_CHIP } from "@/components/headerChip";
 import { type Locale } from "@/i18n/config";
 import { pagePath } from "@/i18n/paths";
 import {
@@ -44,14 +45,14 @@ export function ToolsMenu() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
-    const onPointer = (e: MouseEvent) => {
+    const onPointer = (e: PointerEvent) => {
       if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener("keydown", onKey);
-    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("pointerdown", onPointer);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("pointerdown", onPointer);
     };
   }, [open]);
 
@@ -134,11 +135,11 @@ export function ToolsMenu() {
         aria-controls={panelId}
         onMouseDown={(e) => e.stopPropagation()}
         onClick={() => setOpen((v) => !v)}
-        className={`cursor-pointer rounded-full px-3 py-1.5 text-sm transition ${
+        className={
           open
-            ? "bg-[var(--brand)] text-white"
-            : "text-[var(--ink-soft)] hover:bg-white/60 hover:text-[var(--ink)]"
-        }`}
+            ? `${HEADER_CHIP} cursor-pointer border-transparent bg-[var(--brand)] text-white`
+            : `${HEADER_CHIP} cursor-pointer bg-white/70 text-[var(--ink-soft)] hover:border-[var(--brand)]/40 hover:text-[var(--ink)]`
+        }
       >
         {t("toolsMenu.trigger")}
       </button>
@@ -154,7 +155,7 @@ export function ToolsMenu() {
             id={panelId}
             role="dialog"
             aria-label={t("toolsMenu.trigger")}
-            className="fixed inset-x-0 bottom-0 top-14 z-50 flex max-h-[calc(100dvh-3.5rem)] flex-col overflow-hidden rounded-t-3xl border border-[var(--line)] bg-[#f7faf6] shadow-[0_24px_80px_rgba(20,32,26,0.22)] sm:absolute sm:inset-auto sm:end-0 sm:top-full sm:mt-2 sm:max-h-[min(70vh,560px)] sm:w-[min(92vw,42rem)] sm:rounded-2xl"
+            className="fixed inset-x-0 bottom-0 z-50 flex max-h-[min(85dvh,calc(100dvh-3.5rem))] flex-col overflow-hidden rounded-t-3xl border border-[var(--line)] bg-[#f7faf6] shadow-[0_24px_80px_rgba(20,32,26,0.22)] sm:absolute sm:inset-auto sm:end-0 sm:top-full sm:mt-2 sm:max-h-[min(70vh,560px)] sm:w-[min(92vw,42rem)] sm:rounded-2xl"
           >
             <div className="flex items-center justify-between border-b border-[var(--line)] px-4 py-3 sm:hidden">
               <p
@@ -193,7 +194,7 @@ export function ToolsMenu() {
               ))}
             </div>
 
-            <div className="overflow-y-auto px-4 py-4 sm:px-5 sm:py-5">
+            <div className="overflow-y-auto px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-5 sm:py-5 sm:pb-5">
               <div className="hidden sm:grid sm:grid-cols-2 sm:gap-6">
                 <div>
                   <p className="text-sm font-medium uppercase tracking-[0.14em] text-[var(--brand)]">

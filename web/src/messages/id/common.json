@@ -406,6 +406,9 @@
     "pageTitle": "Offline",
     "pageDescription": "Halaman saat tanpa jaringan.",
     "pageBody": "Tidak ada koneksi. Jika sudah menekan Offline untuk bahasa ini, buka alat tersimpan dari beranda.",
-    "pageHome": "Beranda"
+    "pageHome": "Beranda",
+    "close": "Tutup",
+    "clear": "Hapus offline",
+    "clearedHint": "Cache offline bahasa ini dihapus. Situs akan dimuat dari jaringan lagi."
   }
 }

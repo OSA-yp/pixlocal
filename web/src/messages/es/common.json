@@ -406,6 +406,9 @@
     "pageTitle": "Sin conexión",
     "pageDescription": "Página cuando no hay red.",
     "pageBody": "Sin conexión. Si ya pulsaste Offline para este idioma, abre una herramienta guardada desde inicio.",
-    "pageHome": "Inicio"
+    "pageHome": "Inicio",
+    "close": "Cerrar",
+    "clear": "Quitar offline",
+    "clearedHint": "Se eliminó la caché offline de este idioma. El sitio volverá a cargar desde la red."
   }
 }

@@ -9,7 +9,7 @@ Live sites: [pixlocal.app](https://pixlocal.app) · [pixlocal.ru](https://pixloc
 - **Images** — compress and convert JPG, PNG, WebP, and HEIC; resize; target file size; strip EXIF/metadata; blur/redact regions
 - **PDF** — compress, merge, split, rotate, organize, crop, watermark, page numbers, protect/unlock, JPG ↔ PDF
 - **Privacy** — no ads, no accounts, no cloud processing of your files
-- **Offline** — optional PWA pack caches tool pages and engines for a chosen language
+- **Offline (PWA)** — header button **Offline** packs **only the current language** on demand (tool pages + HEIC/PDF engines), with a visible progress checklist; refresh or **remove** the pack anytime; installable with brand icons (any + maskable)
 - **i18n** — ten locales with locale-aware routing and SEO metadata
 
 ## Tech stack
@@ -19,7 +19,7 @@ Live sites: [pixlocal.app](https://pixlocal.app) · [pixlocal.ru](https://pixloc
 - Images: browser Canvas API, [heic-to](https://github.com/hoppergee/heic-to) (libheif)
 - PDF: pdf-lib, pdf.js, @pdfsmaller encrypt/decrypt helpers
 - ZIP downloads: jszip
-- PWA: Serwist
+- PWA: Serwist service worker (`web/src/sw.ts`), manifest + icons under `web/public/`
 - Analytics: Google Analytics 4 (optional; Measurement ID chosen by hostname)
 
 ## Develop
@@ -33,6 +33,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+Offline pack / service worker run in **production builds** only (`npm run build` + static host). In `next dev` the Offline control shows as unsupported.
+
 ## Build
 
 ```bash
@@ -41,7 +43,9 @@ npm ci
 npm run build
 ```
 
-Static output is written to `web/out/`. One build deploys to both hosts (GitHub Pages for `.app`, Yandex Object Storage for `.ru`) via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+`prebuild` copies the PDF.js worker and regenerates PWA icons. After Next export, `scripts/build-sw.mjs` writes `out/sw.js`.
+
+Static output is `web/out/`. One build deploys to both hosts (GitHub Pages for `.app`, Yandex Object Storage for `.ru`) via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
 Optional public env vars (also as GitHub Actions Variables):
 

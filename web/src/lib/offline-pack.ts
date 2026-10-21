@@ -127,6 +127,51 @@ export async function runOfflinePack(
   };
 }
 
+/** Remove cached pages for this locale and clear the ready flag (back to online). */
+export async function clearOfflinePack(locale: Locale): Promise<void> {
+  const urls = offlineLocaleUrls(locale);
+  const sw = await waitForSw();
+
+  if (sw) {
+    const id = requestId();
+    await new Promise<void>((resolve, reject) => {
+      const onMessage = (event: MessageEvent) => {
+        const data = event.data as
+          | { type: string; requestId: string; message?: string }
+          | undefined;
+        if (!data || data.requestId !== id) return;
+        if (data.type === "CLEAR_DONE") {
+          navigator.serviceWorker.removeEventListener("message", onMessage);
+          resolve();
+        }
+        if (data.type === "PRECACHE_ERROR") {
+          navigator.serviceWorker.removeEventListener("message", onMessage);
+          reject(new Error(data.message || "clear failed"));
+        }
+      };
+      navigator.serviceWorker.addEventListener("message", onMessage);
+      sw.postMessage({ type: "CLEAR_URLS", requestId: id, urls });
+      // Safety timeout — flag is cleared even if SW is slow
+      window.setTimeout(() => {
+        navigator.serviceWorker.removeEventListener("message", onMessage);
+        resolve();
+      }, 8000);
+    });
+  } else if (typeof caches !== "undefined") {
+    const cache = await caches.open("pixlocal-runtime-v1");
+    for (const url of urls) {
+      await cache.delete(url);
+      try {
+        await cache.delete(new URL(url, window.location.origin).href);
+      } catch {
+        /* ignore */
+      }
+    }
+  }
+
+  setOfflineReady(locale, false);
+}
+
 export function serviceWorkerSupported(): boolean {
   return typeof navigator !== "undefined" && "serviceWorker" in navigator;
 }

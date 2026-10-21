@@ -407,6 +407,9 @@
     "pageTitle": "You’re offline",
     "pageDescription": "This page opens when the network is unavailable.",
     "pageBody": "No connection. If you already pressed Offline for this language, open a saved tool from the home page.",
-    "pageHome": "Home"
+    "pageHome": "Home",
+    "close": "Close",
+    "clear": "Remove offline",
+    "clearedHint": "Offline cache for this language was removed. The site will load from the network again."
   }
 }
