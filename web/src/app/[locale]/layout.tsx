@@ -1,4 +1,5 @@
 import { Analytics } from "@/components/Analytics";
+import { ProductHuntBanner } from "@/components/ProductHuntBanner";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -131,6 +132,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <ServiceWorkerRegister />
           <div className="grain" aria-hidden />
           <div className="site-shell">
+            <ProductHuntBanner />
             <SiteHeader />
             <main>{children}</main>
             <SiteFooter />

@@ -5,6 +5,7 @@ export const siteConfig = {
   urlRu: process.env.NEXT_PUBLIC_SITE_URL_RU ?? "https://pixlocal.ru",
   name: "PixLocal",
   contactEmail: "sergey.xdr@gmail.com",
+  githubUrl: "https://github.com/OSA-yp/pixlocal",
   /** Дата смыслового обновления контента — для sitemap lastmod, не «сейчас». */
   contentUpdated: "2026-10-20",
   indexNowKey: "7f3a9c2e4b18d056a91c4e8f02b7d3c5",

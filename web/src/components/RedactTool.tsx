@@ -282,12 +282,18 @@ export function RedactTool() {
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-      <div className="rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[0_20px_60px_rgba(20,32,26,0.08)] backdrop-blur-md sm:p-8">
+      <div
+        className={`rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[0_20px_60px_rgba(20,32,26,0.08)] backdrop-blur-md sm:p-8 ${
+          busy ? "opacity-90" : ""
+        }`}
+        aria-busy={busy}
+      >
         {!hasImage ? (
           <button
             type="button"
+            disabled={busy}
             onClick={() => inputRef.current?.click()}
-            className="group flex min-h-[220px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-6 py-10 text-center transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)]"
+            className="group flex min-h-[220px] w-full flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-6 py-10 text-center transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)] disabled:pointer-events-none disabled:opacity-60"
           >
             <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-[rgba(15,107,92,0.12)] px-2.5 py-1 text-xs font-medium text-[var(--brand)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" aria-hidden />
@@ -308,7 +314,23 @@ export function RedactTool() {
               {t("chooseFiles")}
             </span>
           </button>
-        ) : (
+        ) : null}
+        {!hasImage && busy ? (
+          <div
+            className="mt-4 flex items-center justify-center gap-2"
+            role="status"
+            aria-live="polite"
+          >
+            <span
+              className="inline-block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-[var(--brand)]/25 border-t-[var(--brand)]"
+              aria-hidden
+            />
+            <p className="text-sm font-medium text-[var(--brand)]">
+              {t("processing")}
+            </p>
+          </div>
+        ) : null}
+        {hasImage ? (
           <div className="space-y-4">
             <p className="text-sm text-[var(--ink-soft)]">{t("hint")}</p>
             {status ? (
@@ -350,8 +372,9 @@ export function RedactTool() {
               </button>
               <button
                 type="button"
+                disabled={busy}
                 onClick={() => inputRef.current?.click()}
-                className="rounded-full border border-[var(--line)] bg-white/70 px-3 py-1.5 text-xs text-[var(--ink-soft)]"
+                className="rounded-full border border-[var(--line)] bg-white/70 px-3 py-1.5 text-xs text-[var(--ink-soft)] disabled:opacity-40"
               >
                 {t("replace")}
               </button>
@@ -410,12 +433,18 @@ export function RedactTool() {
               type="button"
               disabled={busy || !rects.length}
               onClick={() => void download()}
-              className="w-full rounded-xl bg-[var(--brand)] px-4 py-3 text-sm font-medium text-white disabled:opacity-40 sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-4 py-3 text-sm font-medium text-white disabled:opacity-40 sm:w-auto"
             >
+              {busy ? (
+                <span
+                  className="inline-block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-white/30 border-t-white"
+                  aria-hidden
+                />
+              ) : null}
               {busy ? t("processing") : t("download")}
             </button>
           </div>
-        )}
+        ) : null}
 
         <input
           ref={inputRef}

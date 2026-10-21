@@ -15,7 +15,10 @@
     "terms": "Ketentuan",
     "contacts": "Kontak",
     "sitemap": "Peta situs",
-    "copyright": "Alat untuk file pribadi."
+    "copyright": "Alat untuk file pribadi.",
+    "github": "GitHub",
+    "licenses": "Lisensi",
+    "maker": "Dibuat oleh pengembang indie yang menghargai privasi."
   },
   "trust": {
     "aria": "Privasi",
@@ -409,6 +412,7 @@
     "pageHome": "Beranda",
     "close": "Tutup",
     "clear": "Hapus offline",
-    "clearedHint": "Cache offline bahasa ini dihapus. Situs akan dimuat dari jaringan lagi."
+    "clearedHint": "Cache offline bahasa ini dihapus. Situs akan dimuat dari jaringan lagi.",
+    "readyHint": "Siap digunakan offline"
   }
 }

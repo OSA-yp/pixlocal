@@ -21,12 +21,14 @@
       "Layanan disediakan «sebagaimana adanya», gratis, tanpa jaminan ketersediaan terus-menerus. Anda sendiri memeriksa hasil sebelum memublikasikan atau mengirim file ke pihak ketiga.",
       "Dilarang memakai layanan untuk memproses konten ilegal. Anda bertanggung jawab atas file yang dibuka di browser.",
       "Kami dapat mengubah fitur, desain, dan ketentuan. Versi terkini selalu ada di halaman ini."
-    ]
+    ],
+    "github": "Kode sumber dan lisensi pihak ketiga — di GitHub"
   },
   "contacts": {
     "title": "Kontak",
     "description": "Hubungi tim PixLocal.",
     "h1": "Kontak",
-    "intro": "Untuk pertanyaan tentang layanan, tulis ke:"
+    "intro": "Untuk pertanyaan tentang layanan, tulis ke:",
+    "github": "GitHub — kode dan lisensi"
   }
 }

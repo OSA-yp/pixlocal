@@ -41,13 +41,36 @@ function mimeMatchesOutput(file: File, outputType: OutputFormat): boolean {
   return false;
 }
 
-/** True when settings/file force a re-encode (metadata cannot be kept). */
+/**
+ * Sync: settings/file that always force a Canvas re-encode
+ * (metadata cannot be preserved). Max-side alone is NOT enough —
+ * a small image under the limit can still pass through.
+ */
 export function needsReencode(file: File, options: ToolOptions): boolean {
   if (isHeicFile(file)) return true;
-  if (options.maxWidthOrHeight && options.maxWidthOrHeight > 0) return true;
   if (options.targetBytes && options.targetBytes > 0) return true;
   if (!mimeMatchesOutput(file, options.outputType)) return true;
   return false;
+}
+
+function passThroughResult(file: File, outputType: OutputFormat): ProcessedFile {
+  const blob = file.slice(0, file.size, file.type || outputType);
+  const ext = extFor(outputType);
+  const name = file.name.includes(".")
+    ? file.name
+    : `${baseName(file.name)}.${ext}`;
+  return {
+    id: `${file.name}-${file.size}-${Date.now()}-${Math.random()}`,
+    name,
+    originalName: file.name,
+    originalSize: file.size,
+    resultSize: blob.size,
+    blob,
+    previewUrl: URL.createObjectURL(blob),
+    outputExt: ext,
+    grew: false,
+    metaStripped: false,
+  };
 }
 
 const BITMAP_OPTS: ImageBitmapOptions = { imageOrientation: "from-image" };
@@ -280,24 +303,22 @@ export async function processImageFile(
   const stripMetadata = options.stripMetadata !== false;
   const mustReencode = needsReencode(file, options);
 
+  // Keep original bytes (and metadata) only when the user asked and no
+  // forced re-encode — including when max-side is set but the image fits.
   if (!stripMetadata && !mustReencode) {
-    const blob = file.slice(0, file.size, file.type || options.outputType);
-    const ext = extFor(options.outputType);
-    const name = file.name.includes(".")
-      ? file.name
-      : `${baseName(file.name)}.${ext}`;
-    return {
-      id: `${file.name}-${file.size}-${Date.now()}-${Math.random()}`,
-      name,
-      originalName: file.name,
-      originalSize: file.size,
-      resultSize: blob.size,
-      blob,
-      previewUrl: URL.createObjectURL(blob),
-      outputExt: ext,
-      grew: false,
-      metaStripped: false,
-    };
+    const maxSide = options.maxWidthOrHeight;
+    if (!maxSide || maxSide <= 0) {
+      return passThroughResult(file, options.outputType);
+    }
+    const probe = await fileToBitmap(file);
+    try {
+      if (Math.max(probe.width, probe.height) <= maxSide) {
+        return passThroughResult(file, options.outputType);
+      }
+    } finally {
+      probe.close();
+    }
+    // Needs resize → Canvas path; metadata cannot be kept.
   }
 
   const quality = isHeicFile(file)

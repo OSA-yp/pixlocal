@@ -21,12 +21,14 @@
       "Le service est fourni « tel quel », gratuitement, sans garantie de disponibilité continue. Vous vérifiez vous-même le résultat avant publication ou transmission de fichiers à des tiers.",
       "Il est interdit d’utiliser le service pour traiter du contenu illégal. Vous êtes responsable des fichiers que vous ouvrez dans le navigateur.",
       "Nous pouvons modifier les fonctions, le design et les conditions. La version à jour est toujours sur cette page."
-    ]
+    ],
+    "github": "Code source et licences tierces — sur GitHub"
   },
   "contacts": {
     "title": "Contact",
     "description": "Contacter l’équipe PixLocal.",
     "h1": "Contact",
-    "intro": "Pour toute question sur le service, écrivez à :"
+    "intro": "Pour toute question sur le service, écrivez à :",
+    "github": "GitHub — code et licences"
   }
 }

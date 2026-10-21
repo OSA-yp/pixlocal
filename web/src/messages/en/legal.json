@@ -21,12 +21,14 @@
       "The service is provided “as is”, free of charge, with no guarantee of uninterrupted availability. You are responsible for checking the result before publishing or sharing files with third parties.",
       "You may not use the service to process illegal content. You are responsible for the files you open in the browser.",
       "We may change features, design, and terms. The current version is always on this page."
-    ]
+    ],
+    "github": "Source code and third-party licenses — on GitHub"
   },
   "contacts": {
     "title": "Contact",
     "description": "Get in touch with the PixLocal team.",
     "h1": "Contact",
-    "intro": "For questions about the service, write to:"
+    "intro": "For questions about the service, write to:",
+    "github": "GitHub — source and licenses"
   }
 }

@@ -15,6 +15,9 @@
     "terms": "Terms",
     "contacts": "Contact",
     "sitemap": "Sitemap",
+    "github": "GitHub",
+    "licenses": "Licenses",
+    "maker": "Built by an indie developer who values privacy.",
     "copyright": "A tool for personal files."
   },
   "trust": {
@@ -388,6 +391,7 @@
     "navLabel": "Offline",
     "workingBadge": "Saving…",
     "readyBadge": "Offline ✓",
+    "readyHint": "Ready for offline use",
     "panelLead": "Save this language’s tools on your device. Your files still never leave the browser — only site pages and engines are cached, and only after you press the button.",
     "sizeHint": "About 5–8 MB for this language. Other languages need a separate save.",
     "start": "Make offline",

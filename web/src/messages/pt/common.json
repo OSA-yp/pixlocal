@@ -15,7 +15,10 @@
     "terms": "Termos",
     "contacts": "Contato",
     "sitemap": "Mapa do site",
-    "copyright": "Ferramenta para arquivos pessoais."
+    "copyright": "Ferramenta para arquivos pessoais.",
+    "github": "GitHub",
+    "licenses": "Licenças",
+    "maker": "Feito por um desenvolvedor indie que valoriza a privacidade."
   },
   "trust": {
     "aria": "Privacidade",
@@ -409,6 +412,7 @@
     "pageHome": "Início",
     "close": "Fechar",
     "clear": "Remover offline",
-    "clearedHint": "O cache offline deste idioma foi removido. O site voltará a carregar da rede."
+    "clearedHint": "O cache offline deste idioma foi removido. O site voltará a carregar da rede.",
+    "readyHint": "Pronto para uso offline"
   }
 }

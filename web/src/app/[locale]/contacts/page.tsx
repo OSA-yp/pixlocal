@@ -19,6 +19,7 @@ export default async function ContactsPage({ params }: Props) {
   const locale = raw as Locale;
   const t = await getTranslations({ locale, namespace: "legal" });
   const email = siteConfig.contactEmail;
+  const githubUrl = siteConfig.githubUrl;
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
@@ -36,6 +37,16 @@ export default async function ContactsPage({ params }: Props) {
             href={`mailto:${email}`}
           >
             {email}
+          </a>
+        </p>
+        <p>
+          <a
+            className="text-[var(--brand)] underline-offset-2 hover:underline"
+            href={githubUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {t("contacts.github")}
           </a>
         </p>
       </div>

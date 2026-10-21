@@ -15,7 +15,10 @@
     "terms": "Conditions",
     "contacts": "Contact",
     "sitemap": "Plan du site",
-    "copyright": "Outil pour fichiers personnels."
+    "copyright": "Outil pour fichiers personnels.",
+    "github": "GitHub",
+    "licenses": "Licences",
+    "maker": "Créé par un développeur indie qui valorise la vie privée."
   },
   "trust": {
     "aria": "Confidentialité",
@@ -409,6 +412,7 @@
     "pageHome": "Accueil",
     "close": "Fermer",
     "clear": "Supprimer hors ligne",
-    "clearedHint": "Le cache hors ligne de cette langue a été supprimé. Le site se chargera à nouveau depuis le réseau."
+    "clearedHint": "Le cache hors ligne de cette langue a été supprimé. Le site se chargera à nouveau depuis le réseau.",
+    "readyHint": "Prêt pour une utilisation hors ligne"
   }
 }

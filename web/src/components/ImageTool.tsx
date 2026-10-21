@@ -81,22 +81,25 @@ export function ImageTool({ preset, toolId }: Props) {
 
   const effectiveOutput = preset.lockOutput ? preset.defaultOutput : outputType;
 
+  /**
+   * Lock only when metadata cannot be kept for the current selection/settings
+   * (format change, HEIC, target KB). Max-side alone does not lock — a smaller
+   * image can still pass through with metadata if the user unchecks strip.
+   */
   const stripLocked = useMemo(() => {
-    if (!preset.allowKeepMetadata) return true;
-    if (maxSide > 0 || targetKb > 0) return true;
+    if (targetKb > 0) return true;
+    if (preset.mode === "convert") return true;
     const files = sourceFiles.current;
     if (!files.length) return false;
-    return files.some((f) =>
-      needsReencode(f, {
-        mode: preset.mode,
-        quality,
-        maxWidthOrHeight: maxSide > 0 ? maxSide : undefined,
-        targetBytes: targetKb > 0 ? targetKb * 1024 : undefined,
-        outputType: effectiveOutput,
-      }),
-    );
+    const opts = {
+      mode: preset.mode,
+      quality,
+      maxWidthOrHeight: maxSide > 0 ? maxSide : undefined,
+      targetBytes: targetKb > 0 ? targetKb * 1024 : undefined,
+      outputType: effectiveOutput,
+    };
+    return files.every((f) => needsReencode(f, opts));
   }, [
-    preset.allowKeepMetadata,
     preset.mode,
     maxSide,
     targetKb,
@@ -152,16 +155,14 @@ export function ImageTool({ preset, toolId }: Props) {
           targetBytes: targetKb > 0 ? targetKb * 1024 : undefined,
           outputType: out,
         };
-        const forced =
-          !preset.allowKeepMetadata ||
-          list.some((f) => needsReencode(f, optsBase));
-        const strip = forced || stripMetadata;
-
         const next: ProcessedFile[] = [];
         for (const file of list) {
+          // Per file: forced re-encode still strips in processImageFile;
+          // respect the checkbox when pass-through is possible.
+          const must = needsReencode(file, optsBase);
           const processed = await processImageFile(file, {
             ...optsBase,
-            stripMetadata: strip,
+            stripMetadata: must || stripMetadata,
           });
           next.push(processed);
         }
@@ -252,14 +253,21 @@ export function ImageTool({ preset, toolId }: Props) {
     <section className="mx-auto w-full max-w-6xl px-4 sm:px-6">
       <div
         className={`rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[0_20px_60px_rgba(20,32,26,0.08)] backdrop-blur-md sm:p-8 ${
-          dragging ? "dropzone-active" : ""
-        }`}
+          dragging && !busy ? "dropzone-active" : ""
+        } ${busy ? "opacity-90" : ""}`}
+        aria-busy={busy}
         onDragOver={(e) => {
           e.preventDefault();
-          setDragging(true);
+          if (!busy) setDragging(true);
         }}
         onDragLeave={() => setDragging(false)}
-        onDrop={onDrop}
+        onDrop={(e) => {
+          if (busy) {
+            e.preventDefault();
+            return;
+          }
+          onDrop(e);
+        }}
       >
         {/*
           Mobile order: picker → results → settings
@@ -268,11 +276,12 @@ export function ImageTool({ preset, toolId }: Props) {
         <div className="flex flex-col gap-6 lg:flex-row lg:flex-wrap lg:items-start">
           <button
             type="button"
+            disabled={busy}
             onClick={() => inputRef.current?.click()}
             className={
               hasResults
-                ? "group order-1 flex w-full items-center justify-between gap-3 rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-4 py-3 text-left transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)] lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:px-6 lg:py-6 lg:text-center"
-                : "group order-1 flex min-h-[220px] w-full flex-1 flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-6 py-10 text-center transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)]"
+                ? "group order-1 flex w-full items-center justify-between gap-3 rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-4 py-3 text-left transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)] disabled:pointer-events-none disabled:opacity-60 lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:px-6 lg:py-6 lg:text-center"
+                : "group order-1 flex min-h-[220px] w-full flex-1 flex-col items-center justify-center rounded-2xl border border-dashed border-[var(--brand)]/40 bg-[rgba(15,107,92,0.04)] px-6 py-10 text-center transition hover:border-[var(--brand)] hover:bg-[rgba(15,107,92,0.08)] disabled:pointer-events-none disabled:opacity-60"
             }
           >
             {hasResults ? (
@@ -325,6 +334,7 @@ export function ImageTool({ preset, toolId }: Props) {
               type="file"
               accept={preset.accept}
               multiple
+              disabled={busy}
               className="hidden"
               onChange={(e) => {
                 if (e.target.files) void runFiles(e.target.files);
@@ -399,7 +409,7 @@ export function ImageTool({ preset, toolId }: Props) {
               />
               <span>
                 <span className="text-[var(--ink)]">{t("stripMetadata")}</span>
-                {stripLocked ? (
+                {stripLocked || maxSide > 0 ? (
                   <span className="mt-0.5 block text-xs">{t("stripMetadataHint")}</span>
                 ) : null}
               </span>
@@ -418,13 +428,23 @@ export function ImageTool({ preset, toolId }: Props) {
           </div>
 
           {busy ? (
-            <div className="order-2 w-full lg:order-3 lg:basis-full">
-              <p className="text-sm font-medium text-[var(--brand)]">
-                {t("processing")}
-              </p>
-              <p className="mt-0.5 text-xs text-[var(--ink-soft)]">
-                {t("processingHint")}
-              </p>
+            <div
+              className="order-2 flex w-full items-start gap-3 lg:order-3 lg:basis-full"
+              role="status"
+              aria-live="polite"
+            >
+              <span
+                className="mt-0.5 inline-block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-[var(--brand)]/25 border-t-[var(--brand)]"
+                aria-hidden
+              />
+              <div>
+                <p className="text-sm font-medium text-[var(--brand)]">
+                  {t("processing")}
+                </p>
+                <p className="mt-0.5 text-xs text-[var(--ink-soft)]">
+                  {t("processingHint")}
+                </p>
+              </div>
             </div>
           ) : null}
           {error ? (

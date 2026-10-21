@@ -311,15 +311,26 @@ export function OfflineFeature() {
 
   return (
     <div className="relative shrink-0" ref={rootRef}>
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-controls={panelId}
-        onClick={toggle}
-        className={chipClass}
-      >
-        {buttonLabel}
-      </button>
+      <div className="flex flex-col items-end gap-1">
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={toggle}
+          className={chipClass}
+        >
+          {buttonLabel}
+        </button>
+        {state === "ready" ? (
+          <p
+            className="hidden max-w-[9.5rem] text-end text-[10px] leading-tight text-[var(--brand)] sm:block"
+            aria-live="polite"
+          >
+            <span className="me-1 inline-block h-1.5 w-1.5 rounded-full bg-[var(--brand)]" aria-hidden />
+            {t("readyHint")}
+          </p>
+        ) : null}
+      </div>
 
       {open ? (
         <>

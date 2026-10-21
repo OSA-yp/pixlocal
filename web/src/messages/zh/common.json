@@ -15,7 +15,10 @@
     "terms": "条款",
     "contacts": "联系我们",
     "sitemap": "网站地图",
-    "copyright": "个人文件工具。"
+    "copyright": "个人文件工具。",
+    "github": "GitHub",
+    "licenses": "许可证",
+    "maker": "由重视隐私的独立开发者打造。"
   },
   "trust": {
     "aria": "隐私",
@@ -409,6 +412,7 @@
     "pageHome": "首页",
     "close": "关闭",
     "clear": "清除离线",
-    "clearedHint": "已清除此语言的离线缓存。网站将重新从网络加载。"
+    "clearedHint": "已清除此语言的离线缓存。网站将重新从网络加载。",
+    "readyHint": "已可离线使用"
   }
 }

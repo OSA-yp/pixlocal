@@ -1,7 +1,12 @@
+"use client";
+
 import { brandName, type Locale } from "@/i18n/config";
 import { pagePath } from "@/i18n/paths";
+import { siteConfig } from "@/lib/config";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+
+const LICENSES_URL = `${siteConfig.githubUrl}/blob/main/web/LICENSES.md`;
 
 export function SiteFooter() {
   const locale = useLocale() as Locale;
@@ -42,6 +47,22 @@ export function SiteFooter() {
           >
             {t("footer.contacts")}
           </Link>
+          <a
+            href={siteConfig.githubUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="hover:text-[var(--ink)]"
+          >
+            {t("footer.github")}
+          </a>
+          <a
+            href={LICENSES_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="hover:text-[var(--ink)]"
+          >
+            {t("footer.licenses")}
+          </a>
           <a href="/sitemap.xml" className="hover:text-[var(--ink)]">
             {t("footer.sitemap")}
           </a>
@@ -49,6 +70,17 @@ export function SiteFooter() {
       </div>
       <p className="mt-8 text-xs opacity-70">
         © {new Date().getFullYear()} {brand}. {t("footer.copyright")}
+      </p>
+      <p className="mt-2 text-xs opacity-70">
+        {t("footer.maker")}{" "}
+        <a
+          href={siteConfig.githubUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+          className="underline-offset-2 hover:text-[var(--ink)] hover:underline"
+        >
+          GitHub
+        </a>
       </p>
     </footer>
   );

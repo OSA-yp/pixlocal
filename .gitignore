@@ -29,6 +29,9 @@ web/public/pdf.worker.min.mjs
 /package-lock.json
 /тест/
 
+# Marketing drafts and assets (not published with the site)
+/marketing/
+
 # IDE / OS
 .idea/
 .vscode/

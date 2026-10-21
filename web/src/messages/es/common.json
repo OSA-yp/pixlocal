@@ -15,7 +15,10 @@
     "terms": "Términos",
     "contacts": "Contacto",
     "sitemap": "Mapa del sitio",
-    "copyright": "Herramienta para archivos personales."
+    "copyright": "Herramienta para archivos personales.",
+    "github": "GitHub",
+    "licenses": "Licencias",
+    "maker": "Hecho por un desarrollador indie que valora la privacidad."
   },
   "trust": {
     "aria": "Privacidad",
@@ -409,6 +412,7 @@
     "pageHome": "Inicio",
     "close": "Cerrar",
     "clear": "Quitar offline",
-    "clearedHint": "Se eliminó la caché offline de este idioma. El sitio volverá a cargar desde la red."
+    "clearedHint": "Se eliminó la caché offline de este idioma. El sitio volverá a cargar desde la red.",
+    "readyHint": "Listo para uso sin conexión"
   }
 }
